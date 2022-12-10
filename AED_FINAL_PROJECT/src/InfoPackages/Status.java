@@ -9,5 +9,11 @@ package InfoPackages;
  * @author Sonur
  */
 public class Status {
+     private int result;
+    
+    public Status(){
+        
+    }
+    
     
 }

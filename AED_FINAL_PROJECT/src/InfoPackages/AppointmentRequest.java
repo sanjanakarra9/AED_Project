@@ -10,4 +10,22 @@ package InfoPackages;
  */
 public class AppointmentRequest {
     
+    private Appointments appointment;
+    
+    public AppointmentRequest(Appointments appointment){
+        this.appointment = appointment;
+        
+    }
+    
+    public String toString(){
+        return this.appointment.toString();
+    }
+
+    public Appointments getAppointment() {
+        return appointment;
+    }
+
+    public void setAppointment(Appointments appointment) {
+        this.appointment = appointment;
+    }
 }
