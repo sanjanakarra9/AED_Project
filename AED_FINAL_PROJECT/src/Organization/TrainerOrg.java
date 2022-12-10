@@ -4,13 +4,22 @@
  */
 package Organization;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author sanja
  */
-public class TrainerOrg {
+public class TrainerOrg extends Organization{
 
     public TrainerOrg() {
+        
+         super(Organization.Type.Trainer.getValue());
     }
-    
+    @Override
+    public ArrayList<Role> getSupportedRole() {
+        ArrayList<Role> roles = new ArrayList();
+        roles.add(new TrainerRole());
+        return roles;
+    }
 }
