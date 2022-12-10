@@ -4,10 +4,26 @@
  */
 package InfoPackages;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Sonur
  */
 public class QueueOfCourses {
+    
+     private ArrayList<CourseRequest> courseRequestList;
+    
+    public QueueOfCourses(){
+        this.courseRequestList = new ArrayList();
+    }
+
+    public ArrayList<CourseRequest> getCourseRequestList() {
+        return courseRequestList;
+    }
+
+    public void setCourseRequestList(ArrayList<CourseRequest> courseRequestList) {
+        this.courseRequestList = courseRequestList;
+    }
     
 }

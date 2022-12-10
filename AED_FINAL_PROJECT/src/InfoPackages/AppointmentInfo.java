@@ -4,10 +4,27 @@
  */
 package InfoPackages;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Sonur
  */
 public class AppointmentInfo {
+    
+    private ArrayList<AppointmentRequest> appointmentRequestList;
+    
+    public AppointmentInfo(){
+        this.appointmentRequestList = new ArrayList();
+        
+    }
+
+    public ArrayList<AppointmentRequest> getAppointmentRequestList() {
+        return appointmentRequestList;
+    }
+
+    public void setAppointmentRequestList(ArrayList<AppointmentRequest> appointmentRequestList) {
+        this.appointmentRequestList = appointmentRequestList;
+    }
     
 }
