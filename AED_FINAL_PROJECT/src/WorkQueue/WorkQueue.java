@@ -8,6 +8,6 @@ package WorkQueue;
  *
  * @author Sonur
  */
-public class InfoQueue {
+public class WorkQueue {
     
 }
