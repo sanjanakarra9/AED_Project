@@ -4,10 +4,22 @@
  */
 package Organization;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author sanja
  */
-public class FitnessClubManagerOrg {
+public class FitnessClubManagerOrg extends Organization{
+    public FitnessClubManagerOrg() {
+        super(Organization.Type.FitnessClubManager.getValue());
+    }
+
+    @Override
+   public ArrayList<Role> getSupportedRole() {
+        ArrayList<Role> roles = new ArrayList();
+        roles.add(new FitnessClubManagerRole());
+        return roles;
+    }
     
 }
