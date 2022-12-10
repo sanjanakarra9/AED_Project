@@ -10,11 +10,11 @@ import java.util.ArrayList;
  *
  * @author Sonur
  */
-public class InfoQueue {
+public class WorkQueue {
     
     private ArrayList<RequestInfo> infoRequestList;
     
-    public InfoQueue(){
+    public WorkQueue(){
         infoRequestList= new ArrayList();
     }
 
