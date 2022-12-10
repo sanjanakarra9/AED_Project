@@ -4,10 +4,24 @@
  */
 package InfoPackages;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Sonur
  */
 public class InfoQueue {
+    
+    private ArrayList<RequestInfo> infoRequestList;
+    
+    public InfoQueue(){
+        infoRequestList= new ArrayList();
+    }
+
+    public ArrayList<RequestInfo> getInfoRequestList() {
+        return infoRequestList;
+    }
+    
+    
     
 }
