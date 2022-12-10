@@ -5,59 +5,19 @@
 package Organization;
 
 import Employee.EmployeeDirectory;
+import InfoPackages.WorkQueue;
 import Person.PersonDirectory;
+import Role.Role;
+import UserAccount.AccountUserDirectory;
 import java.util.ArrayList;
 
 /**
  *
  * @author sanja
  */
-public class Organization {
+public abstract class Organization {
     
     private String name;
-    private WorkQueue workQueue;
-    private EmployeeDirectory employeeDirectory;
-    private UserAccountDirectory userAccountDirectory;
-    private PersonDirectory personDirectory;
-    private int organizationID;
-    private OrganizationsDirectory organizationsDirectory;
-    private static int counter=0;
-    
-    
-    public enum Type{
-        Admin("Admin Organization"), 
-        Trainer("Trainer Organization"), 
-        Customer("Customer Organization"), 
-        OnlineSales("Sales Organization"),
-        FitnessClubManager("Fitness Club Manager Organization"),
-        Analysis("Analysis Organization");
-        
-        private String value;
-        private Type(String value) {
-            this.value = value;
-        }
-        public String getValue() {
-            return value;
-        }
-    }
-    
-    public Organization(String name) {
-        this.name = name;
-        workQueue = new WorkQueue();
-        employeeDirectory = new EmployeeDirectory();
-        personDirectory = new PersonDirectory();
-        userAccountDirectory = new UserAccountDirectory();
-        organizationsDirectory = new OrganizationsDirectory();
-        organizationID = counter;
-        ++counter;
-    }
-    
-    public abstract ArrayList<Role> getSupportedRole();
-    
-    @Override
-    public String toString() {
-        return name;
-    }
 
     public String getName() {
         return name;
@@ -83,11 +43,11 @@ public class Organization {
         this.employeeDirectory = employeeDirectory;
     }
 
-    public UserAccountDirectory getUserAccountDirectory() {
+    public AccountUserDirectory getUserAccountDirectory() {
         return userAccountDirectory;
     }
 
-    public void setUserAccountDirectory(UserAccountDirectory userAccountDirectory) {
+    public void setUserAccountDirectory(AccountUserDirectory userAccountDirectory) {
         this.userAccountDirectory = userAccountDirectory;
     }
 
@@ -122,6 +82,50 @@ public class Organization {
     public static void setCounter(int counter) {
         Organization.counter = counter;
     }
+    private WorkQueue workQueue;
+    private EmployeeDirectory employeeDirectory;
+    private AccountUserDirectory userAccountDirectory;
+    private PersonDirectory personDirectory;
+    private int organizationID;
+    private OrganizationsDirectory organizationsDirectory;
+    private static int counter=0;
+    
+    
+    public enum Type{
+        Admin("Admin Organization"), 
+        Trainer("Trainer Organization"), 
+        Customer("Customer Organization"), 
+        OnlineSales("Sales Organization"),
+        FitnessClubManager("Fitness Club Manager Organization"),
+        Analysis("Analysis Organization");
+        
+        private String value;
+        private Type(String value) {
+            this.value = value;
+        }
+        public String getValue() {
+            return value;
+        }
+    }
+    
+    public Organization(String name) {
+        this.name = name;
+        workQueue = new WorkQueue();
+        employeeDirectory = new EmployeeDirectory();
+        personDirectory = new PersonDirectory();
+        userAccountDirectory = new AccountUserDirectory();
+        organizationsDirectory = new OrganizationsDirectory();
+        organizationID = counter;
+        ++counter;
+    }
+    
+    public abstract ArrayList<Role> getSupportedRole();
+    
+    @Override
+    public String toString() {
+        return name;
+    }
+
     
     
 
