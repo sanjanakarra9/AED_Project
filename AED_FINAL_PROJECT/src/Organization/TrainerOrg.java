@@ -9,5 +9,8 @@ package Organization;
  * @author sanja
  */
 public class TrainerOrg {
+
+    public TrainerOrg() {
+    }
     
 }

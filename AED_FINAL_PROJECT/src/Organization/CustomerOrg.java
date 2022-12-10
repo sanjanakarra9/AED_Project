@@ -4,10 +4,26 @@
  */
 package Organization;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author sanja
  */
-public class CustomerOrg {
+public class CustomerOrg extends Organization {
+
+    public CustomerOrg() {
+        
+        super(Organization.Type.Customer.getValue());
+    }
+    
+     @Override
+    public ArrayList<Role> getSupportedRole() {
+        ArrayList<Role> roles = new ArrayList();
+        roles.add(new CustomerRole());
+        return roles;
+    }
+
+    
     
 }
