@@ -2,6 +2,7 @@
 
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   <Properties>
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -9,6 +10,9 @@
     </Property>
   </Properties>
 >>>>>>> 295ef40cacf9e7612e439260232c0ac7d1851c9c
+=======
+
+>>>>>>> 49f2e2cd1f6d23ed08c8d19511ae61889dcac698
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>

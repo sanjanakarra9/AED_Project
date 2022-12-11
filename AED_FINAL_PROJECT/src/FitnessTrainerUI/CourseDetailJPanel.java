@@ -4,22 +4,35 @@
  */
 package FitnessTrainerUI;
 
+import Course.Course;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
  * @author Sonur
  */
 public class CourseDetailJPanel extends javax.swing.JPanel {
+    private Course course;
+    private JPanel container;
 
     /**
      * Creates new form CourseDetailJPanel
      */
     public CourseDetailJPanel() {
         initComponents();
+        this.course = course;
+        this.container = container;
+        nameTxt.setText(course.getCourseName());
+        idTxt.setText(String.valueOf(course.getCourseId()));
+        
+        nameTxt.setEditable(false);
+        idTxt.setEditable(false);
     }
-
+ CourseDetailJPanel(JPanel container, Course course) {
+        initComponents();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
