@@ -4,7 +4,7 @@
  */
 package UI;
 
-import Customer.UserInterface.CustomerRegistration;
+import Customer.UserInterface.CustomerRegistrationJPanel;
 import DataBase.DB4OUtil;
 import Enterprise.Enterprise;
 import Network.Network;
@@ -265,7 +265,7 @@ public class MainLogin extends javax.swing.JFrame {
     private void RegButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegButtonActionPerformed
         // TODO add your handling code here:
         //this.frame.setSize(250, 460);
-        CustomerRegistration crp = new CustomerRegistration(this.system, this.container, this);
+        CustomerRegistrationJPanel crp = new CustomerRegistrationJPanel(this.system, this.container, this);
         this.container.add("CusRegistraionJPanel", crp);
         CardLayout layout = (CardLayout) this.container.getLayout();
         container.remove(this);

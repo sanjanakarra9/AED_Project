@@ -11,7 +11,7 @@ import javax.swing.JPanel;
  *
  * @author sanja
  */
-public class Cancel extends javax.swing.JPanel {
+public class CancelJPanel extends javax.swing.JPanel {
     
     private EcoSystem system;
     private JPanel container;
@@ -19,7 +19,7 @@ public class Cancel extends javax.swing.JPanel {
     /**
      * Creates new form Cancel
      */
-    public Cancel(EcoSystem system, JPanel container) {
+    public CancelJPanel(EcoSystem system, JPanel container) {
         this.system = system;
         this.container = container;
         initComponents();

@@ -8,12 +8,12 @@ package Customer.UserInterface;
  *
  * @author sanja
  */
-public class ReviewCourse extends javax.swing.JPanel {
+public class ReviewCourseJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form CourseReview
      */
-    public ReviewCourse() {
+    public ReviewCourseJPanel() {
         initComponents();
     }
 

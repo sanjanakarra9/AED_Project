@@ -12,12 +12,12 @@ import javax.swing.JOptionPane;
  *
  * @author sanja
  */
-public class CheckoutCourse extends javax.swing.JPanel {
+public class CheckoutCourseJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form CourseCheckout
      */
-    public CheckoutCourse() {
+    public CheckoutCourseJPanel() {
         initComponents();
     }
 

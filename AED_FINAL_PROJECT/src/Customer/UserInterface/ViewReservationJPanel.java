@@ -8,12 +8,12 @@ package Customer.UserInterface;
  *
  * @author sanja
  */
-public class ReserveCourse extends javax.swing.JPanel {
+public class ViewReservationJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form CourseBook
+     * Creates new form Reservation
      */
-    public ReserveCourse() {
+    public ViewReservationJPanel() {
         initComponents();
     }
 

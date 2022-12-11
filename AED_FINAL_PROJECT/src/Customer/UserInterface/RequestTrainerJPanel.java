@@ -8,12 +8,12 @@ package Customer.UserInterface;
  *
  * @author sanja
  */
-public class ViewOnlineOrder extends javax.swing.JPanel {
+public class RequestTrainerJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form OnlineOrderView
+     * Creates new form TrainerRequest
      */
-    public ViewOnlineOrder() {
+    public RequestTrainerJPanel() {
         initComponents();
     }
 

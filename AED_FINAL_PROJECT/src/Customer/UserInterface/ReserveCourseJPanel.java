@@ -8,12 +8,12 @@ package Customer.UserInterface;
  *
  * @author sanja
  */
-public class OrderItem extends javax.swing.JPanel {
+public class ReserveCourseJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form OrderItems
+     * Creates new form CourseBook
      */
-    public OrderItem() {
+    public ReserveCourseJPanel() {
         initComponents();
     }
 
