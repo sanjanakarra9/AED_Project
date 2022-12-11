@@ -8,6 +8,6 @@ package UserAccount;
  *
  * @author movvakodandram
  */
-public class AccountCustomerDirectory {
+public class CustAccntDirectory {
     
 }

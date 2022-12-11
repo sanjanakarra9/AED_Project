@@ -8,38 +8,39 @@ package Sale;
  *
  * @author movvakodandram
  */
-public class Sales {
-    private String productName;
-    private int productId;
-    private static int count=0;
-    private double cost;
+public class OnlineSales {
+    private String itemname;
+    private int itemId;
+    private static int count = 0;
+    private double price;
     
-    public Sales(String productName, double cost){
-      this.productName=productName;
-      this.cost=cost;
-      productId=count;
-      count++;
+    public OnlineSales(String itemname, double price){
+        this.itemname = itemname;
+        this.price = price;
+        itemId = count;
+        count++;
+        
     }
     
     @Override
     public String toString(){
-        return this.productName;
+        return this.itemname;
     }
 
-    public String getProductName() {
-        return productName;
+    public String getItemname() {
+        return itemname;
     }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
+    public void setItemname(String itemname) {
+        this.itemname = itemname;
     }
 
-    public int getProductId() {
-        return productId;
+    public int getItemId() {
+        return itemId;
     }
 
-    public void setProductId(int productId) {
-        this.productId = productId;
+    public void setItemId(int itemId) {
+        this.itemId = itemId;
     }
 
     public static int getCount() {
@@ -47,16 +48,18 @@ public class Sales {
     }
 
     public static void setCount(int count) {
-        Sales.count = count;
+        OnlineSales.count = count;
     }
 
-    public double getCost() {
-        return cost;
+    public double getPrice() {
+        return price;
     }
 
-    public void setCost(double cost) {
-        this.cost = cost;
+    public void setPrice(double price) {
+        this.price = price;
     }
+    
+    
     
     
 }

@@ -4,16 +4,18 @@
  */
 package WorkQueue;
 
+import ClassAppointment.ClassAppointment;
+
 /**
  *
  * @author Sonur
  */
-public class ApntRequest  extends workRequest{
-     private Appointment appointment;
+public class ApntRequest  extends WorkRequest{
+     private ClassAppointment appointment;
     
    
     
-    public ApntRequest(Appointments appointment){
+    public ApntRequest(ClassAppointment appointment){
         this.appointment = appointment;
         
     }
@@ -22,11 +24,11 @@ public class ApntRequest  extends workRequest{
         return this.appointment.toString();
     }
 
-    public Appointments getAppointment() {
+    public ClassAppointment getAppointment() {
         return appointment;
     }
 
-    public void setAppointment(Appointments appointment) {
+    public void setAppointment(ClassAppointment appointment) {
         this.appointment = appointment;
     }
 }

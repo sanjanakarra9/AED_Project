@@ -10,14 +10,13 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author movvakodandram
+ * @author Sonur
  */
-public class SystemAdminRole extends Role{
+public class GymTrainerRole extends Role{
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, Organization organization, Enterprise enterprise) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
     
 }
