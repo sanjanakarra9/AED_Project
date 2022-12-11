@@ -35,8 +35,8 @@ public class SendMail {
         properties.put("mail.smtp.port", "587");
         properties.put("mail.smtp.ssl.trust", "*");
         
-        String senderEmail = "infirmarymanagementsys@gmail.com";
-        String senderPassword = "gussbqcpnwlzxixe";
+        String senderEmail = "aedgymmanagement@gmail.com";
+        String senderPassword = "hdkvnkpsmcxexhhi";
         
         Session session = Session.getInstance(properties, new Authenticator(){
             @Override
