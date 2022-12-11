@@ -16,7 +16,7 @@ public class ClassAppointment {
     private String session;
     private Date date;
     
-    public Appointment(Date date, String session){
+    public ClassAppointment(Date date, String session){
         classRoom = null;
         this.date = date;
         this.session = session;
