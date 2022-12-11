@@ -3,19 +3,31 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package SalesManager.UI;
+<<<<<<< Updated upstream
 import javax.swing.JOptionPane;
+=======
+import Enterprise.OnlineSalesEnterprise;
+import Sale.OnlineSales;
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+>>>>>>> Stashed changes
 
 /**
  *
  * @author movvakodandram
  */
 public class AddItemJPanel extends javax.swing.JPanel {
-
+    private JPanel container;
+    private OnlineSalesEnterprise salesenterprise;
     /**
      * Creates new form AddItemJPanel
      */
-    public AddItemJPanel() {
+    public AddItemJPanel(JPanel container, OnlineSalesEnterprise salesenterprise) {
         initComponents();
+        this.container = container;
+        this.salesenterprise = salesenterprise;
     }
 
     /**
@@ -133,7 +145,7 @@ public class AddItemJPanel extends javax.swing.JPanel {
                 return;
             }
             OnlineSales item = new OnlineSales(nameTxt.getText(), Double.parseDouble(priceTxt.getText()));
-            salesenterprise.getOnlineSalesDirectory().getOnlineSalesList().add(item);
+            salesenterprise.getOnlineSalesDirectory().getSalesList().add(item);
             nameTxt.setText("");
             priceTxt.setText("");
             JOptionPane.showMessageDialog(null, "Add successfully");
