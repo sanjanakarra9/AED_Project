@@ -4,11 +4,13 @@
  */
 package Enterprise;
 
+import Organization.Organization;
+
 /**
  *
  * @author Sonur
  */
-public class Enterprise extends Organization{
+public abstract class Enterprise extends Organization{
     
     private typeOfEnterprise typeOfEnterprise;
     private OrganizationsDirectory organizationDirectory;
