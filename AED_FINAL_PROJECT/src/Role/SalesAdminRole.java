@@ -8,6 +8,6 @@ package Role;
  *
  * @author movvakodandram
  */
-public class RoleSalesOrganisation {
+public class SalesAdminRole {
     
 }

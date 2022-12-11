@@ -4,22 +4,22 @@
  */
 package WorkQueue;
 
-import UserAccount.AccountUser;
+import UserAccount.UserAcnt;
 import java.util.Date;
 
 /**
  *
  * @author Sonur
  */
-public class workRequest {
+public class WorkRequest {
     private String message;
-    private AccountUser send;
-    private AccountUser receive;
+    private UserAcnt send;
+    private UserAcnt receive;
     private String status;
     private Date reqDate;
     private Date resDate;
     
-    public workRequest(){
+    public WorkRequest(){
         reqDate= new Date();
     }
 
@@ -31,19 +31,19 @@ public class workRequest {
         this.message = message;
     }
 
-    public AccountUser getSend() {
+    public UserAcnt getSend() {
         return send;
     }
 
-    public void setSend(AccountUser send) {
+    public void setSend(UserAcnt send) {
         this.send = send;
     }
 
-    public AccountUser getReceive() {
+    public UserAcnt getReceive() {
         return receive;
     }
 
-    public void setReceive(AccountUser receive) {
+    public void setReceive(UserAcnt receive) {
         this.receive = receive;
     }
 

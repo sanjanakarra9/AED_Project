@@ -4,6 +4,7 @@
  */
 package WorkQueue;
 
+import Sale.OnlineSales;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,7 +12,7 @@ import java.util.Map;
  *
  * @author Sonur
  */
-public class SalesRequest  extends workRequest{
+public class SalesRequest  extends WorkRequest{
      private HashMap<OnlineSales, Integer> itemOrder;
     
      @Override
@@ -36,7 +37,7 @@ public class SalesRequest  extends workRequest{
         return price;
     }
 
-    public OnlineSalesRequest(){
+    public SalesRequest(){
         itemOrder = new HashMap();
     }
 

@@ -10,9 +10,9 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author movvakodandram
+ * @author Sonur
  */
-public class AdminRole extends Role{
+public class GymTrainerRole extends Role{
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, Organization organization, Enterprise enterprise) {

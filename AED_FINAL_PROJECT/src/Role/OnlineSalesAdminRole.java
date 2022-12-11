@@ -12,7 +12,7 @@ import javax.swing.JPanel;
  *
  * @author movvakodandram
  */
-public class AdminRole extends Role{
+public class OnlineSalesAdminRole extends Role{
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, Organization organization, Enterprise enterprise) {

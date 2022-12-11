@@ -10,18 +10,18 @@ import java.util.ArrayList;
  *
  * @author movvakodandram
  */
-public class SalesDirectory {
+public class OnlineSalesDirectory {
  
-    private ArrayList<Sales> SalesList;
-    public SalesDirectory(){
+    private ArrayList<OnlineSales> SalesList;
+    public OnlineSalesDirectory(){
         this.SalesList=new ArrayList();
     }
 
-    public ArrayList<Sales> getSalesList() {
+    public ArrayList<OnlineSales> getSalesList() {
         return SalesList;
     }
 
-    public void setSalesList(ArrayList<Sales> SalesList) {
+    public void setSalesList(ArrayList<OnlineSales> SalesList) {
         this.SalesList = SalesList;
     }
 

@@ -12,11 +12,12 @@ import javax.swing.JPanel;
  *
  * @author movvakodandram
  */
-public class AdminRole extends Role{
+public class SystemAdminRole extends Role{
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, Organization organization, Enterprise enterprise) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+    
     
 }
