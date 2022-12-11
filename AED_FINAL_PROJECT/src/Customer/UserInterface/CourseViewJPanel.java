@@ -5,22 +5,50 @@
 package Customer.UserInterface;
 
 import Course.Course;
+import Enterprise.FitnessEnterprise;
+import UserAccount.UserAcnt;
+import WorkQueue.CourseQueue;
+import WorkQueue.CourseRequest;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author sanja
  */
 public class CourseViewJPanel extends javax.swing.JPanel {
+    
+    private JPanel container;
+    private UserAcnt account;
+    private FitnessEnterprise fitenterprise;
 
     /**
      * Creates new form CourseView
      */
-    public CourseViewJPanel() {
+    public CourseViewJPanel(JPanel container, UserAcnt account, FitnessEnterprise fitenterprise) {
         initComponents();
+        this.container = container;
+        this.account = account;
+        this.fitenterprise = fitenterprise;
+         populateRequest();
     }
 
+    public void populateRequest() {
+        CourseQueue courseQueue = account.getCourseQueue();
+        DefaultTableModel model = (DefaultTableModel) myCourseJTable.getModel();
+
+        model.setRowCount(0);
+        for (CourseRequest courseRequest : courseQueue.getCourseRequestList()) {
+            Object[] row = new Object[3];
+            row[0] = courseRequest;
+            row[1] = courseRequest.getReceive();
+            row[2] = courseRequest.getStatus();
+            model.addRow(row);
+
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -158,10 +186,10 @@ public class CourseViewJPanel extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, "This status cannot be changed");
             } else {
                 courseRequest.setStatus("Renewed");
-                for (Course course2 : fitenterprise.getCourseDirectory().getCourseList()) {
+                for (Course course2 : fitenterprise.getCourseDirectory().getListOfCourses()) {
                     if (courseRequest.getCourse().equals(course2)) {
-                        int remainSeats = course2.getRemainSeats();
-                        course2.setRemainSeats(remainSeats - 1);
+                        int remainSeats = course2.getVacantSeats();
+                        course2.setVacantSeats(remainSeats - 1);
                     }
                 }
 

@@ -8,7 +8,10 @@ import Course.Course;
 import Course.CourseDirectory;
 import Enterprise.FitnessEnterprise;
 import UserAccount.UserAcnt;
+import WorkQueue.CourseRequest;
 import java.awt.CardLayout;
+import java.awt.Component;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -191,7 +194,7 @@ public class CheckoutCourseJPanel extends javax.swing.JPanel {
                 CourseRequest courseRequest = new CourseRequest();
                 courseRequest.setSender(account);
                 courseRequest.setStatus("Pending");
-                courseRequest.setCourse(myCourse.getCourseList().get(i));
+                courseRequest.setCourse(myCourse.getListOfCourses().get(i));
 
                 fitenterprise.getCourseQueue().getCourseRequestList().add(courseRequest);
                 account.getCourseQueue().getCourseRequestList().add(courseRequest);
