@@ -2,23 +2,25 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Organization;
+package Role;
 
-import Role.Role;
-import java.util.ArrayList;
+import Enterprise.Enterprise;
+import Organization.Organization;
+import javax.swing.JPanel;
 
 /**
  *
- * @author sanja
+ * @author movvakodandram
  */
-public class TrainerOrg extends Organization{
+public class FitnessManagerRole extends Role{
 
-    public TrainerOrg() {
-        super(Organization.Type.Trainer.getValue());
+    public FitnessManagerRole() {
     }
 
     @Override
-    public ArrayList<Role> getSupportedRole() {
+    public JPanel createWorkArea(JPanel userProcessContainer, Organization organization, Enterprise enterprise) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
+   
 }
