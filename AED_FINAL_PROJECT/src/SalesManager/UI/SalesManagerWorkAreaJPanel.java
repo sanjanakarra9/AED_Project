@@ -34,8 +34,10 @@ public class SalesManagerWorkAreaJPanel extends javax.swing.JPanel {
         manageOrdersButton = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(0, 0, 0));
+
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel2.setForeground(new java.awt.Color(204, 204, 0));
         jLabel2.setText("Please manage your item business");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
