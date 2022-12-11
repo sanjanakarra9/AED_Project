@@ -4,13 +4,28 @@
  */
 package Model;
 
+import ClassAppointment.ClassAppointment;
+import ClassAppointment.ClassRoom;
+import Course.Course;
 import Enterprise.FitnessEnterprise;
 import Network.Network;
 import Enterprise.Enterprise;
+import Enterprise.OnlineSalesEnterprise;
+import Organization.Organization;
 import Person.Person;
+import Role.AdminRole;
+import Role.AnalysisAdminRole;
+import Role.CustomerRole;
 import Role.FitnessManagerRole;
+import Role.GymTrainerRole;
+import Role.OnlineSalesAdminRole;
+import Role.SalesAdminRole;
 import Role.SystemAdminRole;
+import Sale.OnlineSales;
 import UserAccount.UserAcnt;
+import WorkQueue.ApntRequest;
+import WorkQueue.CourseRequest;
+import WorkQueue.SalesRequest;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -57,22 +72,22 @@ public class ConfigureASystem {
 //        Person admin2 = onlinesalesEnterprise.getPersonDirectory().createPerson("salesadmin");
 //        onlinesalesEnterprise.getUserAccountDirectory().createUserAccount("salesadmin", "salesadmin", admin2, new OnlineSalesRole());
         
-        ArrayList<Course> courseList = fitEnterprise.getCourseDirectory().getCourseList();
+        ArrayList<Course> courseList = fitEnterprise.getCourseDirectory().getListOfCourses();
         takeCourse(courseList);//zhushihuilai
         
         //organization 6->Admin
         Organization AdminOrganization=fitEnterprise.getOrganizationDirectory().createOrganization(Organization.Type.Admin);
         Person adminmanager = AdminOrganization.getPersonDirectory().createPerson("Admin");
-        UserAccount admin = AdminOrganization.getUserAccountDirectory().createUserAccount("admin", "admin", adminmanager, new AdminRole());
+        UserAcnt admin = AdminOrganization.getUserAccountDirectory().createUserAccount("admin", "admin", adminmanager, new AdminRole());
         
         //organization 3->fitnessclub organization
         Organization fitOrganization = fitEnterprise.getOrganizationDirectory().createOrganization(Organization.Type.FitnessClubManager);
         Person fitnessclubManager1 = fitOrganization.getPersonDirectory().createPerson("Jessy Manager");
-        UserAccount ua11 = fitOrganization.getUserAccountDirectory().createUserAccount("manager1", "manager1", fitnessclubManager1, new FitnessClubManagerRole());
+        UserAcnt ua11 = fitOrganization.getUserAccountDirectory().createUserAccount("manager1", "manager1", fitnessclubManager1, new FitnessManagerRole());
         //organization 4->analysis organization
         Organization anaOrganization = fitEnterprise.getOrganizationDirectory().createOrganization(Organization.Type.Analysis);
         Person fitnessclubAnalyst1 = fitOrganization.getPersonDirectory().createPerson("Xianling Zhao");
-        UserAccount ua66 = fitOrganization.getUserAccountDirectory().createUserAccount("analysis", "analysis", fitnessclubAnalyst1, new AnalysisRole());
+        UserAcnt ua66 = fitOrganization.getUserAccountDirectory().createUserAccount("analysis", "analysis", fitnessclubAnalyst1, new AnalysisAdminRole());
 //        Person fitnessclubManager2 = fitOrganization.getPersonDirectory().createPerson("Tom Manager");
 //        UserAccount ua12 = fitOrganization.getUserAccountDirectory().createUserAccount("manager2", "manager2", fitnessclubManager2, new FitnessClubManagerRole());
 //        
@@ -82,22 +97,22 @@ public class ConfigureASystem {
 //Organization 1 ->customer
         Organization cusOrganization = fitEnterprise.getOrganizationDirectory().createOrganization(Organization.Type.Customer);
         Person cus1 = cusOrganization.getPersonDirectory().createPerson("Lily Customer");
-        UserAccount ua1 = cusOrganization.getUserAccountDirectory().createUserAccount("cus1", "cus1", cus1, new CustomerRole());
+        UserAcnt ua1 = cusOrganization.getUserAccountDirectory().createUserAccount("cus1", "cus1", cus1, new CustomerRole());
         
         Person cus2 = cusOrganization.getPersonDirectory().createPerson("John Customer");
-        UserAccount ua2 = cusOrganization.getUserAccountDirectory().createUserAccount("cus2", "cus2", cus2, new CustomerRole());
+        UserAcnt ua2 = cusOrganization.getUserAccountDirectory().createUserAccount("cus2", "cus2", cus2, new CustomerRole());
         
         Person cus3 = cusOrganization.getPersonDirectory().createPerson("Bob Customer");
-        UserAccount ua3 = cusOrganization.getUserAccountDirectory().createUserAccount("cus3", "cus3", cus3, new CustomerRole());
+        UserAcnt ua3 = cusOrganization.getUserAccountDirectory().createUserAccount("cus3", "cus3", cus3, new CustomerRole());
         
         Person cus4 = cusOrganization.getPersonDirectory().createPerson("Bill Customer");
-        UserAccount ua33 = cusOrganization.getUserAccountDirectory().createUserAccount("cus4", "cus4", cus4, new CustomerRole());
+        UserAcnt ua33 = cusOrganization.getUserAccountDirectory().createUserAccount("cus4", "cus4", cus4, new CustomerRole());
         
         Person cus5 = cusOrganization.getPersonDirectory().createPerson("Kevin Customer");
-        UserAccount ua44 = cusOrganization.getUserAccountDirectory().createUserAccount("cus5", "cus5", cus5, new CustomerRole());
+        UserAcnt ua44 = cusOrganization.getUserAccountDirectory().createUserAccount("cus5", "cus5", cus5, new CustomerRole());
         
         Person cus6 = cusOrganization.getPersonDirectory().createPerson("Nina Customer");
-        UserAccount ua55 = cusOrganization.getUserAccountDirectory().createUserAccount("cus6", "cus6", cus6, new CustomerRole());
+        UserAcnt ua55 = cusOrganization.getUserAccountDirectory().createUserAccount("cus6", "cus6", cus6, new CustomerRole());
         
         Person cus7 = cusOrganization.getPersonDirectory().createPerson("Rachel Customer");
         cusOrganization.getUserAccountDirectory().createUserAccount("cus7", "cus7", cus7, new CustomerRole());
@@ -105,38 +120,42 @@ public class ConfigureASystem {
         //organization2 ->trainer
         Organization trainerOrganization = fitEnterprise.getOrganizationDirectory().createOrganization(Organization.Type.Trainer);
         Person trainer1 = trainerOrganization.getPersonDirectory().createPerson("Jessica Trainer");
-        UserAccount ua4 = trainerOrganization.getUserAccountDirectory().createUserAccount("trainer1", "trainer1", trainer1, new TrainerRole());
+        UserAcnt ua4 = trainerOrganization.getUserAccountDirectory().createUserAccount("trainer1", "trainer1", trainer1, new GymTrainerRole());
         
         Person trainer2 = trainerOrganization.getPersonDirectory().createPerson("Will Trainer");
-        UserAccount ua5 = trainerOrganization.getUserAccountDirectory().createUserAccount("trainer2", "trainer2", trainer2, new TrainerRole());
+        UserAcnt ua5 = trainerOrganization.getUserAccountDirectory().createUserAccount("trainer2", "trainer2", trainer2, new GymTrainerRole());
         
         Person trainer3 = trainerOrganization.getPersonDirectory().createPerson("Dalton Trainer");
-        UserAccount ua6 = trainerOrganization.getUserAccountDirectory().createUserAccount("trainer3", "trainer3", trainer3, new TrainerRole());
+        UserAcnt ua6 = trainerOrganization.getUserAccountDirectory().createUserAccount("trainer3", "trainer3", trainer3, new GymTrainerRole());
         
         Person trainer4 = trainerOrganization.getPersonDirectory().createPerson("Sichen Trainer");
-        UserAccount ua61 = trainerOrganization.getUserAccountDirectory().createUserAccount("trainer4", "trainer4", trainer4, new TrainerRole());
+        UserAcnt ua61 = trainerOrganization.getUserAccountDirectory().createUserAccount("trainer4", "trainer4", trainer4, new GymTrainerRole());
         
         //doctor admin role
        // Person dctradmin = HealthservicesOrganization.getPersonDirectory().createPerson("Sonu doctoradmin");
         //UserAccount ua62 = HealthservicesOrganization.getUserAccountDirectory().createUserAccount("dctradmin", "dctradmin", hospitaladmin, new Healthservicesadminrole());
         
-        ArrayList<OnlineSales> salesitemList = onlinesalesEnterprise.getOnlineSalesDirectory().getOnlineSalesList();
+        ArrayList<OnlineSales> salesitemList = onlinesalesEnterprise.getOnlineSalesDirectory().getSalesList();
         
         readSalesItemList(salesitemList);
         //organization 5 ->sales organization
         Organization salesOrganization = onlinesalesEnterprise.getOrganizationDirectory().createOrganization(Organization.Type.OnlineSales);
         Person sales1 = salesOrganization.getPersonDirectory().createPerson("Urban Sales");
-        UserAccount ua7 = salesOrganization.getUserAccountDirectory().createUserAccount("sales1", "sales1", sales1, new OnlineSalesRole());
+        UserAcnt ua7 = salesOrganization.getUserAccountDirectory().createUserAccount("sales1", "sales1", sales1, new OnlineSalesAdminRole());
         
         Person sales2 = salesOrganization.getPersonDirectory().createPerson("Dorena Sales");
-        UserAccount ua8 = salesOrganization.getUserAccountDirectory().createUserAccount("sales2", "sales2", sales2, new OnlineSalesRole());
+        UserAcnt ua8 = salesOrganization.getUserAccountDirectory().createUserAccount("sales2", "sales2", sales2, new OnlineSalesAdminRole());
         
-        Person sales3 = salesOrganization.getPersonDirectory().createPerson("Geri Sales");
-        UserAccount ua9 = salesOrganization.getUserAccountDirectory().createUserAccount("sales3", "sales3", sales3, new SalesOrgRole());
+        //anothersales
+        
+        
+//        Person sales3 = salesOrganization.getPersonDirectory().createPerson("Geri Sales");
+//        UserAcnt ua9 = salesOrganization.getUserAccountDirectory().createUserAccount("sales3", "sales3", sales3, new SalesAdminRole());
+//        
         takeCourseRequest(fitEnterprise);
         readOnlineSalesRequest(fitEnterprise, onlinesalesEnterprise);
         readAppointmentRequest(fitEnterprise);
-        //quanbuzhushihuilai
+       
     
     }
     
@@ -152,9 +171,9 @@ public class ConfigureASystem {
                 while (line != null) {
                     String[] courseData = line.split(",");
                     Course course = new Course(courseData[0]);
-                    course.setRemainSeats(Integer.parseInt(courseData[1]));
+                    course.setVacantSeats(Integer.parseInt(courseData[1]));
                     courseList.add(course);
-                    course.setDifficulties(courseData[2]);
+                    course.setChallengesfaced(courseData[2]);
                     line = br.readLine();
                 }
             }catch (IOException ex) {
@@ -167,7 +186,7 @@ public class ConfigureASystem {
     }
     
     
-    public static void takeCourseRequest(FitnessClubEnterprise fitEnterprise) {
+    public static void takeCourseRequest(FitnessEnterprise fitEnterprise) {
        File f=new File("CourseRequest.csv");
         try {
             InputStreamReader reader = new InputStreamReader(new FileInputStream(f));
@@ -180,7 +199,7 @@ public class ConfigureASystem {
                     String[] courseRequestData = line.split(",");
                     String courseName = courseRequestData[0];
                     Course c = null;
-                    for(Course course : fitEnterprise.getCourseDirectory().getCourseList())
+                    for(Course course : fitEnterprise.getCourseDirectory().getListOfCourses())
                         if(course.getCourseName().equals(courseName)){
                             c = course;
                             break;
@@ -189,28 +208,28 @@ public class ConfigureASystem {
                     courseRequest.setCourse(c);
 //                    ArrayList<Course> courseList = new ArrayList();
 //                    courseList.add(c);
-                    UserAccount cus = null;
+                    UserAcnt cus = null;
                     for(Organization organization : fitEnterprise.getOrganizationDirectory().getOrganizationList())
-                        for(UserAccount ua : organization.getUserAccountDirectory().getUserAccountList())
+                        for(UserAcnt ua : organization.getUserAccountDirectory().getUserAccountList())
                             if(ua.getUsername().equals(courseRequestData[1])){
                                 cus = ua;
                                 break;
                             }
                     
-                    UserAccount manager = null;
+                    UserAcnt manager = null;
                     for(Organization organization : fitEnterprise.getOrganizationDirectory().getOrganizationList())
-                        for(UserAccount ua : organization.getUserAccountDirectory().getUserAccountList())
+                        for(UserAcnt ua : organization.getUserAccountDirectory().getUserAccountList())
                             if(ua.getUsername().equals(courseRequestData[2])){
                                 manager = ua;
                                 break;
                             }            
                     
                     //CourseRequest courseRequest = new CourseRequest();
-                    courseRequest.setSender(cus);
-                    courseRequest.setReceiver(manager);
+                    courseRequest.setSend(cus);
+                    courseRequest.setReceive(manager);
                     courseRequest.setStatus(courseRequestData[3]);
                     
-                    fitEnterprise.getCourseQueue().getCourseRequestList().add(courseRequest);
+                    fitEnterprise.getQueueofCourses().getCourseRequestList().add(courseRequest);
                     cus.getCourseQueue().getCourseRequestList().add(courseRequest);
                     line = br.readLine();
                 }
@@ -224,7 +243,7 @@ public class ConfigureASystem {
     }
     
 
-    public static void readAppointmentRequest(FitnessClubEnterprise fitEnterprise) {
+    public static void readAppointmentRequest(FitnessEnterprise fitEnterprise) {
        File f = new File("AppointmentRequest.csv");
        try{
            InputStreamReader reader = new InputStreamReader(new FileInputStream(f));
@@ -248,24 +267,24 @@ public class ConfigureASystem {
                         Logger.getLogger(ConfigureASystem.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     
-                    UserAccount cus = null;
+                    UserAcnt cus = null;
                     for(Organization organization : fitEnterprise.getOrganizationDirectory().getOrganizationList())
-                        for(UserAccount ua : organization.getUserAccountDirectory().getUserAccountList())
+                        for(UserAcnt ua : organization.getUserAccountDirectory().getUserAccountList())
                             if(ua.getUsername().equals(appointmentRequestData[3])){
                                 cus = ua;
                                 break;
                             }
-                    UserAccount trainer = null;
+                    UserAcnt trainer = null;
                     for(Organization organization : fitEnterprise.getOrganizationDirectory().getOrganizationList())
-                        for(UserAccount ua : organization.getUserAccountDirectory().getUserAccountList())
+                        for(UserAcnt ua : organization.getUserAccountDirectory().getUserAccountList())
                             if(ua.getUsername().equals(appointmentRequestData[4])){
                                 trainer = ua;
                                 break;
                             }          
                     
-                    Appointment appointment = new Appointment(date, session);
-                    AppointmentRequest appointmentRequest = new AppointmentRequest(appointment);
-                    appointmentRequest.setSender(cus);
+                    ClassAppointment appointment = new ClassAppointment(date, session);
+                    ApntRequest appointmentRequest = new ApntRequest(appointment);
+                    appointmentRequest.setSend(cus);
                     if(!appointmentRequestData[0].equals("")){
                         roomNumber = Integer.parseInt(appointmentRequestData[0]);
                         for(ClassRoom classRoom : fitEnterprise.getClassRoomDirectory().getClassRoomList()){
@@ -277,13 +296,13 @@ public class ConfigureASystem {
                         }
                     }
                     
-                    appointmentRequest.setReceiver(trainer);
+                    appointmentRequest.setReceive(trainer);
                     appointmentRequest.setStatus(appointmentRequestData[5]);
-                    fitEnterprise.getAppointmentQueue().getAppointmentRequestList().add(appointmentRequest);
-                    cus.getAppointmentQueue().getAppointmentRequestList().add(appointmentRequest);
+                    fitEnterprise.getQueueofAppointments().getAppointmentRequestList().add(appointmentRequest);
+                    cus.getApntQueue().getAppointmentRequestList().add(appointmentRequest);
                     
                     if(appointmentRequest.getStatus().equals("Cancelled"))
-                        fitEnterprise.getAppointmentQueue().getAppointmentRequestList().remove(appointmentRequest);
+                        fitEnterprise.getQueueofAppointments().getAppointmentRequestList().remove(appointmentRequest);
                     
                     line = br.readLine();
                 }
@@ -299,7 +318,7 @@ public class ConfigureASystem {
     
         
 
-    public static void readOnlineSalesRequest(FitnessClubEnterprise fitEnterprise, OnlineSalesEnterprise onlinesalesEnterprise) {
+    public static void readOnlineSalesRequest(FitnessEnterprise fitEnterprise, OnlineSalesEnterprise onlinesalesEnterprise) {
         File f=new File("OnlineSalesRequest.csv");
         try {
             InputStreamReader reader = new InputStreamReader(new FileInputStream(f));
@@ -312,36 +331,36 @@ public class ConfigureASystem {
                     String[] itemRequestData = line.split(",");
                     String itemName = itemRequestData[0];
                     OnlineSales s = null;
-                    for(OnlineSales onlinesales : onlinesalesEnterprise.getOnlineSalesDirectory().getOnlineSalesList())
+                    for(OnlineSales onlinesales : onlinesalesEnterprise.getOnlineSalesDirectory().getSalesList())
                         if(onlinesales.getItemname().equals(itemName)){
                             s = onlinesales;
                             break;
                         }
                     HashMap<OnlineSales, Integer> cart = new HashMap();
                     cart.put(s, Integer.parseInt(itemRequestData[1]));
-                    UserAccount cus = null;
+                    UserAcnt cus = null;
                     for(Organization organization : fitEnterprise.getOrganizationDirectory().getOrganizationList())
-                        for(UserAccount ua : organization.getUserAccountDirectory().getUserAccountList())
+                        for(UserAcnt ua : organization.getUserAccountDirectory().getUserAccountList())
                             if(ua.getUsername().equals(itemRequestData[2])){
                                 cus = ua;
                                 break;
                             }
                     
-                    UserAccount salesManager= null;
+                    UserAcnt salesManager= null;
                     for(Organization organization : onlinesalesEnterprise.getOrganizationDirectory().getOrganizationList())
-                        for(UserAccount ua : organization.getUserAccountDirectory().getUserAccountList())
+                        for(UserAcnt ua : organization.getUserAccountDirectory().getUserAccountList())
                             if(ua.getUsername().equals(itemRequestData[3])){
                                 salesManager = ua;
                                 break;
                             }            
                     
-                    OnlineSalesRequest onlinesalesRequest = new OnlineSalesRequest();
-                    onlinesalesRequest.setSender(cus);
+                    SalesRequest onlinesalesRequest = new SalesRequest();
+                    onlinesalesRequest.setSend(cus);
                     onlinesalesRequest.setItemOrder(cart);
-                    onlinesalesRequest.setReceiver(salesManager);
+                    onlinesalesRequest.setReceive(salesManager);
                     onlinesalesRequest.setStatus(itemRequestData[4]);
                     onlinesalesEnterprise.getOnlineSalesQueue().getOnlinesalesRequestList().add(onlinesalesRequest);
-                    cus.getOnlineSalesQueue().getOnlinesalesRequestList().add(onlinesalesRequest);
+                    cus.getSalesQueue().getOnlinesalesRequestList().add(onlinesalesRequest);
             
                     line = br.readLine();
                 }
