@@ -1,5 +1,7 @@
 package WorkQueue;
 
+import java.util.ArrayList;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -12,6 +14,14 @@ package WorkQueue;
  * @author Sonur
  */
 public class WorkQueue {
-    
+     private ArrayList<workRequest> workRequestList;
+
+    public WorkQueue() {
+        workRequestList = new ArrayList();
+    }
+
+    public ArrayList<workRequest> getWorkRequestList() {
+        return workRequestList;
+    }
 
 }

@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author Sonur
  */
-public class RequestInfo {
+public class workRequest {
     private String message;
     private AccountUser send;
     private AccountUser receive;
@@ -19,7 +19,7 @@ public class RequestInfo {
     private Date reqDate;
     private Date resDate;
     
-    public RequestInfo(){
+    public workRequest(){
         reqDate= new Date();
     }
 

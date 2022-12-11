@@ -10,19 +10,21 @@ import java.util.ArrayList;
  *
  * @author Sonur
  */
-public class ReviewRequestForCourse {
+public class CourseReview {
     
-    private ArrayList<RequestForcourses> classReviewRequestList;
+    private ArrayList<CourseRequest> classReviewRequestList;
     
-    public ReviewRequestForCourse(CourseReview RequestForcourses){
+    public CourseReview(CourseReview RequestForcourses){
         this.classReviewRequestList = new ArrayList();
     }
 
-    public ArrayList<RequestForcourses> getClassReviewRequestList() {
+    public ArrayList<CourseRequest> getClassReviewRequestList() {
         return classReviewRequestList;
     }
 
-    public void setClassReviewRequestList(ArrayList<CourseReviewRequest> classReviewRequestList) {
+    public void setClassReviewRequestList(ArrayList<CourseRequest> classReviewRequestList) {
         this.classReviewRequestList = classReviewRequestList;
     }
+
+   
 }

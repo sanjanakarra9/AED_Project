@@ -8,11 +8,12 @@ package WorkQueue;
  *
  * @author Sonur
  */
-public class AppointmentRequest {
+public class ApntRequest  extends workRequest{
+     private Appointment appointment;
     
-    private Appointments appointment;
+   
     
-    public AppointmentRequest(Appointments appointment){
+    public ApntRequest(Appointments appointment){
         this.appointment = appointment;
         
     }

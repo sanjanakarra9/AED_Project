@@ -10,11 +10,11 @@ import java.util.ArrayList;
  *
  * @author Sonur
  */
-public class QueueOfCourses {
+public class CourseQueue {
     
      private ArrayList<CourseRequest> courseRequestList;
     
-    public QueueOfCourses(){
+    public CourseQueue(){
         this.courseRequestList = new ArrayList();
     }
 
