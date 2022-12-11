@@ -4,13 +4,20 @@
  */
 package Role;
 
+import Enterprise.Enterprise;
+import Organization.Organization;
+import javax.swing.JPanel;
+
 /**
  *
  * @author movvakodandram
  */
-public class CustomerRole {
+public class CustomerRole extends Role{
 
-    public CustomerRole() {
+   
+    @Override
+    public JPanel createWorkArea(JPanel userProcessContainer, Organization organization, Enterprise enterprise) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }
