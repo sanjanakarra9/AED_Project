@@ -12,6 +12,8 @@ import Role.AdminRole;
 import UserAccount.UserAcnt;
 import java.awt.CardLayout;
 import java.awt.Component;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -66,6 +68,14 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         }
     }
      
+private boolean passwordPatternCorrect(){
+        Pattern p = Pattern.compile("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$");
+//                "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[$*#&])[A-Za-z\\d$*#&]{6,}$]"
+        Matcher m = p.matcher(passwordJPasswordField.getText());
+        boolean b = m.matches();
+        
+        return b;
+    }
      private void populateEnterpriseComboBox(Network network){
         enterpriseJComboBox.removeAllItems();
         
@@ -293,6 +303,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Password must follow the format");
             return;
         }
+        
 
         Enterprise enterprise = (Enterprise) enterpriseJComboBox.getSelectedItem();
 

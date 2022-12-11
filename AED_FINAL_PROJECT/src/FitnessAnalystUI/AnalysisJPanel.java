@@ -10,7 +10,12 @@ import Course.Course;
 import Enterprise.FitnessEnterprise;
 import Enterprise.OnlineSalesEnterprise;
 import Organization.Organization;
+import Sale.OnlineSales;
+import UserAccount.UserAcnt;
+import WorkQueue.ApntRequest;
 import WorkQueue.CourseRequest;
+import WorkQueue.SalesQueue;
+import WorkQueue.SalesRequest;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Window;
@@ -221,23 +226,23 @@ public class AnalysisJPanel extends javax.swing.JPanel {
 
         for (Organization organization : fitenterprise.getOrganizationDirectory().getOrganizationList()) {
             if (organization.getName().equals("Trainer Organization")) {
-                for (UserAccount ua : organization.getUserAccountDirectory().getUserAccountList()) {
+                for (UserAcnt ua : organization.getUserAccountDirectory().getUserAccountList()) {
                     trainerRank.put(ua.getPerson().getName(), 0);
                 }
             }
         }
         
-        for (AppointmentRequest appRequest : fitenterprise.getAppointmentQueue().getAppointmentRequestList()) {
+        for (ApntRequest appRequest : fitenterprise.getQueueofAppointments().getAppointmentRequestList()) {
             int count = 0;
             //if(appRequest==null)System.out.println("111111111111111");
             //if(appRequest.getReceiver()==null)System.out.println("22222222222222222");
             //if(appRequest.getReceiver().getPerson()==null)System.out.println("33333");
             //if(appRequest.getReceiver().getPerson().getName()==null)System.out.println("4444444444");
-            if (trainerRank.containsKey(appRequest.getSender().getPerson().getName())) {
-                count = trainerRank.get(appRequest.getSender().getPerson().getName());
+            if (trainerRank.containsKey(appRequest.getSend().getPerson().getName())) {
+                count = trainerRank.get(appRequest.getSend().getPerson().getName());
             }
             count++;
-            trainerRank.put(appRequest.getSender().getPerson().getName(), count);
+            trainerRank.put(appRequest.getSend().getPerson().getName(), count);
         }
         System.out.println(trainerRank);
         
@@ -272,16 +277,16 @@ public class AnalysisJPanel extends javax.swing.JPanel {
     private void popItemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_popItemButtonActionPerformed
         // TODO add your handling code here:
         HashMap<String, Integer> itemRank = new HashMap();
-        OnlineSalesQueue osq = new OnlineSalesQueue();
+        SalesQueue osq = new SalesQueue();
 
         for (Organization organization : fitenterprise.getOrganizationDirectory().getOrganizationList()) 
             
             if (organization.getName().equals("Customer Organization")) 
-                for (UserAccount us : organization.getUserAccountDirectory().getUserAccountList()) 
-                    for (OnlineSalesRequest salesRequest : us.getOnlineSalesQueue().getOnlinesalesRequestList()) 
+                for (UserAcnt us : organization.getUserAccountDirectory().getUserAccountList()) 
+                    for (SalesRequest salesRequest : us.getSalesQueue().getOnlinesalesRequestList()) 
                         osq.getOnlinesalesRequestList().add(salesRequest);
 
-        for (OnlineSalesRequest salesRequest : osq.getOnlinesalesRequestList()) 
+        for (SalesRequest salesRequest : osq.getOnlinesalesRequestList()) 
             for (OnlineSales item : salesRequest.getItemOrder().keySet()){
                 int count = 0;
                 if (itemRank.containsKey(item.getItemname())) 
