@@ -6,6 +6,7 @@ package Customer.UserInterface;
 
 import Enterprise.FitnessEnterprise;
 import UserAccount.UserAcnt;
+import WorkQueue.ApntRequest;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -23,7 +24,7 @@ public class ViewReservationJPanel extends javax.swing.JPanel {
     /**
      * Creates new form Reservation
      */
-    public ViewReservationJPanel(JPanel container, UserAccount account, FitnessClubEnterprise fitenterprise) {
+    public ViewReservationJPanel(JPanel container, UserAcnt account, FitnessEnterprise fitenterprise) {
         initComponents();
         this.container = container;
         this.account = account;
@@ -34,10 +35,10 @@ public class ViewReservationJPanel extends javax.swing.JPanel {
     private void populateRequest() {
         DefaultTableModel model = (DefaultTableModel) requestJTable.getModel();
         model.setRowCount(0);
-        for (AppointmentRequest appointmentRequest : account.getAppointmentQueue().getAppointmentRequestList()) {
+        for (ApntRequest appointmentRequest : account.getApntQueue().getAppointmentRequestList()) {
             Object[] row = new Object[4];
             row[0] = appointmentRequest;
-            row[1] = appointmentRequest.getReceiver();
+            row[1] = appointmentRequest.getReceive();
             row[2] = appointmentRequest.getAppointment().getClassRoom();
             row[3] = appointmentRequest.getStatus();
             model.addRow(row);
@@ -168,7 +169,7 @@ public class ViewReservationJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         int selectedRow = requestJTable.getSelectedRow();
         if (selectedRow >= 0) {
-            AppointmentRequest appointmentRequest = (AppointmentRequest) requestJTable.getValueAt(selectedRow, 0);
+            ApntRequest appointmentRequest = (ApntRequest) requestJTable.getValueAt(selectedRow, 0);
             if (appointmentRequest.getStatus().equals("Cancelled")) {
                 JOptionPane.showMessageDialog(null, "It's already cancelled");
             } else {
@@ -177,7 +178,7 @@ public class ViewReservationJPanel extends javax.swing.JPanel {
                 if (selectionResult == JOptionPane.YES_OPTION) {
                     appointmentRequest.setStatus("Cancelled");
                 }
-                fitenterprise.getAppointmentQueue().getAppointmentRequestList().remove(appointmentRequest);
+                fitenterprise.getQueueofAppointments().getAppointmentRequestList().remove(appointmentRequest);
             }
         } else {
             JOptionPane.showMessageDialog(null, "Please select a Row!!");
