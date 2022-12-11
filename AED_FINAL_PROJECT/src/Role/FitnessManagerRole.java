@@ -8,9 +8,10 @@ package Role;
  *
  * @author movvakodandram
  */
-public class RoleAnalyst {
+public class FitnessManagerRole {
 
-    public RoleAnalyst() {
+    public FitnessManagerRole() {
     }
-    
+
+   
 }
