@@ -123,7 +123,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 
         jSplitPane.setLeftComponent(jPanel1);
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
         btnManageNetwork.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         btnManageNetwork.setForeground(new java.awt.Color(215, 145, 54));
@@ -153,6 +153,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         });
 
         lblSelectedNode.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        lblSelectedNode.setForeground(new java.awt.Color(204, 204, 0));
         lblSelectedNode.setText("System Administrator Work Area");
 
         jSeparator1.setForeground(new java.awt.Color(204, 204, 204));

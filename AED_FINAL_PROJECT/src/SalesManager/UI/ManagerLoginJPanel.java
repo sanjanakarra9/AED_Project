@@ -48,12 +48,14 @@ public class ManagerLoginJPanel extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         organizationCbx = new javax.swing.JComboBox();
 
+        setBackground(new java.awt.Color(0, 0, 0));
+
         jTabbedPane3.setBackground(new java.awt.Color(255, 255, 255));
         jTabbedPane3.setForeground(new java.awt.Color(215, 145, 54));
         jTabbedPane3.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
         jTabbedPane3.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
         OrTbl.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         OrTbl.setModel(new javax.swing.table.DefaultTableModel(
@@ -90,7 +92,7 @@ public class ManagerLoginJPanel extends javax.swing.JPanel {
         });
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel1.setForeground(new java.awt.Color(204, 204, 0));
         jLabel1.setText("Name:");
 
         deBtn.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
@@ -140,7 +142,7 @@ public class ManagerLoginJPanel extends javax.swing.JPanel {
 
         jTabbedPane3.addTab("Manage Organization", jPanel1);
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
         userNameTxt.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "User Name", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 1, 14), new java.awt.Color(102, 102, 102))); // NOI18N
 
@@ -180,6 +182,8 @@ public class ManagerLoginJPanel extends javax.swing.JPanel {
         uTable.setSelectionBackground(new java.awt.Color(215, 145, 54));
         jScrollPane2.setViewportView(uTable);
 
+        AddBtn.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        AddBtn.setForeground(new java.awt.Color(255, 204, 0));
         AddBtn.setText("Add");
         AddBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -187,6 +191,8 @@ public class ManagerLoginJPanel extends javax.swing.JPanel {
             }
         });
 
+        deleteBtn.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        deleteBtn.setForeground(new java.awt.Color(255, 204, 0));
         deleteBtn.setText("Delete");
         deleteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -218,7 +224,7 @@ public class ManagerLoginJPanel extends javax.swing.JPanel {
                         .addComponent(organizationCbx, javax.swing.GroupLayout.Alignment.LEADING, 0, 220, Short.MAX_VALUE)
                         .addComponent(passTxt, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(CPassTxt, javax.swing.GroupLayout.Alignment.LEADING)))
-                .addGap(129, 129, 129)
+                .addGap(160, 160, 160)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(deleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
