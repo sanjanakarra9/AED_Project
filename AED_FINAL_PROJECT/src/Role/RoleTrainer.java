@@ -9,5 +9,12 @@ package Role;
  * @author movvakodandram
  */
 public class RoleTrainer {
+
+    public RoleTrainer() {
+    }
+
+    
+
+    
     
 }
