@@ -107,6 +107,8 @@ private boolean passwordPatternCorrect(){
         nameJTextField = new javax.swing.JTextField();
         passwordJPasswordField = new javax.swing.JPasswordField();
 
+        setBackground(new java.awt.Color(0, 0, 0));
+
         enterpriseJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -131,6 +133,7 @@ private boolean passwordPatternCorrect(){
         enterpriseJTable.setSelectionBackground(new java.awt.Color(215, 145, 54));
         jScrollPane1.setViewportView(enterpriseJTable);
 
+        jLabel1.setForeground(new java.awt.Color(204, 204, 0));
         jLabel1.setText("Network");
 
         networkJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -140,6 +143,7 @@ private boolean passwordPatternCorrect(){
             }
         });
 
+        jLabel3.setForeground(new java.awt.Color(204, 204, 0));
         jLabel3.setText("Enterprise");
 
         enterpriseJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -158,6 +162,9 @@ private boolean passwordPatternCorrect(){
             }
         });
 
+        backJButton.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        backJButton.setForeground(new java.awt.Color(255, 153, 0));
+        backJButton.setText("BACK");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
@@ -218,7 +225,7 @@ private boolean passwordPatternCorrect(){
                         .addGap(66, 66, 66)
                         .addComponent(deleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(404, 404, 404)
+                        .addGap(403, 403, 403)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
