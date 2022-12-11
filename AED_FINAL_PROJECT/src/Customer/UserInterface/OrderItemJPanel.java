@@ -5,23 +5,79 @@
 package Customer.UserInterface;
 
 import static Enterprise.Enterprise.EnterpriseType.OnlineSales;
+import Enterprise.OnlineSalesEnterprise;
 import static Organization.Organization.Type.OnlineSales;
+import Sale.OnlineSales;
+import UserAccount.UserAcnt;
+import WorkQueue.SalesRequest;
 import java.awt.CardLayout;
+import java.util.HashMap;
+import java.util.Map;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author sanja
  */
 public class OrderItemJPanel extends javax.swing.JPanel {
+    private JPanel container;
+    private UserAcnt account;
+    //private Network network;
+    private SalesRequest onlinesalesRequest;
+    private HashMap<OnlineSales, Integer> cart;
+    private OnlineSalesEnterprise salesEnterprise;
 
     /**
      * Creates new form OrderItems
      */
-    public OrderItemJPanel() {
+    public OrderItemJPanel(JPanel container, UserAcnt account, HashMap<OnlineSales, Integer> cart, 
+            OnlineSalesEnterprise onlineSalesEnterprise) {
         initComponents();
+        this.container = container;
+        this.account = account;
+        
+        this.cart = cart;
+        this.salesEnterprise = onlineSalesEnterprise;
+        
+        quantityComboBox.removeAll();
+        
+        for(int i = 1; i < 11; i++){
+            quantityComboBox.addItem(i);
     }
-
+        populateItem();
+        populateCart();
+    }
+    
+    public void populateItem() {
+        DefaultTableModel model = (DefaultTableModel) itemMenuJTable.getModel();
+        model.setRowCount(0);
+        for(OnlineSales item : salesEnterprise.getOnlineSalesDirectory().getSalesList()){
+            Object[] row = new Object[2];
+            row[0] = item;
+            row[1] = item.getPrice();
+            model.addRow(row);
+        }
+        
+    }
+    
+    public void populateCart() {
+        DefaultTableModel model = (DefaultTableModel) cartJTable.getModel();
+        model.setRowCount(0);
+        double amount = 0;
+        for(OnlineSales item : cart.keySet()){
+            Object[] row = new Object[4];
+            row[0] = item;
+            row[1] = item.getPrice();
+            row[2] = cart.get(item);
+            row[3] = item.getPrice() * cart.get(item);
+            amount += item.getPrice() * cart.get(item);
+            model.addRow(row);
+            
+        }
+        priceLabel.setText("Total:" + amount);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -284,8 +340,8 @@ public class OrderItemJPanel extends javax.swing.JPanel {
         if(model.getRowCount() == 0)
         JOptionPane.showMessageDialog(null, "No item choiced yet!");
         else{
-            onlinesalesRequest = new OnlineSalesRequest();
-            onlinesalesRequest.setSender(account);
+            onlinesalesRequest = new SalesRequest();
+            onlinesalesRequest.setSend(account);
             onlinesalesRequest.setStatus("Paid");
             onlinesalesRequest.setItemOrder(cart);
 
@@ -298,7 +354,7 @@ public class OrderItemJPanel extends javax.swing.JPanel {
             cart.clear();
 
             salesEnterprise.getOnlineSalesQueue().getOnlinesalesRequestList().add(onlinesalesRequest);
-            account.getOnlineSalesQueue().getOnlinesalesRequestList().add(onlinesalesRequest);
+            account.getSalesQueue().getOnlinesalesRequestList().add(onlinesalesRequest);
 
             JOptionPane.showMessageDialog(null, "Your order has been submitted!!");
             populateCart();
