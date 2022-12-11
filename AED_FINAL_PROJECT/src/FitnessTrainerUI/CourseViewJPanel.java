@@ -37,7 +37,7 @@ public class CourseViewJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) viewCourseJTable.getModel();
         
         model.setRowCount(0);
-        for(Course course : fitenterprise.getCourseDirectory().getCourseList()){
+        for(Course course : fitenterprise.getCourseDirectory().getListOfCourses()){
             Object[] row = new Object[2];
             row[0] = course.getCourseId();
             row[1] = course;
@@ -194,7 +194,7 @@ public class CourseViewJPanel extends javax.swing.JPanel {
             int selectionResult = JOptionPane.showConfirmDialog(null, "Are you sure to delete?","Warning",selectionButton);
             if(selectionResult == JOptionPane.YES_OPTION){
                 Course course = (Course)viewCourseJTable.getValueAt(selectedRow, 1);
-                fitenterprise.getCourseDirectory().getCourseList().remove(course);
+                fitenterprise.getCourseDirectory().getListOfCourses().remove(course);
                 populateCourse();
             }
         }else{

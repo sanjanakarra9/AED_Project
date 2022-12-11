@@ -5,6 +5,7 @@
 package FitnessTrainerUI;
 
 import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 
 /**
  *

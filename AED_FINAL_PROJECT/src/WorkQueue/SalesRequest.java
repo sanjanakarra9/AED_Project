@@ -12,7 +12,7 @@ import java.util.Map;
  *
  * @author Sonur
  */
-public class SalesRequest  extends WorkRequest{
+public class SalesRequest  extends workRequest{
      private HashMap<OnlineSales, Integer> itemOrder;
     
      @Override

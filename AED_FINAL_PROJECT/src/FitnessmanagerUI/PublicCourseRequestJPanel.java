@@ -5,8 +5,10 @@
  */
 package FitnessmanagerUI;
 
+import Course.Course;
 import Enterprise.FitnessEnterprise;
 import UserAccount.UserAcnt;
+import WorkQueue.CourseQueue;
 import WorkQueue.CourseRequest;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
@@ -35,15 +37,15 @@ public class PublicCourseRequestJPanel extends javax.swing.JPanel {
     }
 
     private void populateRequest() {
-        CourseQueue courseQueue = fitenterprise.getCourseQueue();
+        CourseQueue courseQueue = fitenterprise.getQueueofCourses();
         DefaultTableModel model = (DefaultTableModel) requestJTable.getModel();
 
         model.setRowCount(0);
         for (CourseRequest courseRequest : courseQueue.getCourseRequestList()) {
             Object[] row = new Object[4];
-            row[0] = courseRequest.getSender();
+            row[0] = courseRequest.getSend();
             row[1] = courseRequest;
-            row[2] = courseRequest.getReceiver();
+            row[2] = courseRequest.getReceive();
             row[3] = courseRequest.getStatus();
             model.addRow(row);
 
@@ -172,12 +174,12 @@ public class PublicCourseRequestJPanel extends javax.swing.JPanel {
             } else {
                 courseRequest.setStatus("Accept");
                 JOptionPane.showMessageDialog(null, "Accept Successfully");
-                courseRequest.setReceiver(account);
+                courseRequest.setReceive(account);
                 Course course1 = courseRequest.getCourse(); 
-                    for (Course course2 : fitenterprise.getCourseDirectory().getCourseList()) {
+                    for (Course course2 : fitenterprise.getCourseDirectory().getListOfCourses()) {
                         if (course1 == course2) {
-                            int remainSeats = course2.getRemainSeats();
-                            course2.setRemainSeats(remainSeats - 1);
+                            int remainSeats = course2.getVacantSeats();
+                            course2.setVacantSeats(remainSeats - 1);
                         }
                     }
                 
@@ -198,7 +200,7 @@ public class PublicCourseRequestJPanel extends javax.swing.JPanel {
             } else {
                 courseRequest.setStatus("Cancel");
                 JOptionPane.showMessageDialog(null, "Cancel Successfully");
-                courseRequest.setReceiver(account);
+                courseRequest.setReceive(account);
                 populateRequest();
             }
         } else {

@@ -11,6 +11,8 @@ import Enterprise.FitnessEnterprise;
 import Network.Network;
 import Organization.Organization;
 import Person.Person;
+import Role.AnalysisAdminRole;
+import Role.GymTrainerRole;
 import UserAccount.UserAcnt;
 import java.awt.CardLayout;
 import java.awt.Component;
@@ -377,10 +379,10 @@ public class AddEmployeeJPanel extends javax.swing.JPanel {
             fitenterprise.getEmployeeDirectory().getEmployeeList().add(employee);
            
             if(JobTitleCbo.getSelectedItem().equals("Analyst")){
-            UserAcnt ua = fitorganization.getUserAccountDirectory().createUserAccount(accountTxt.getText(), CPassField.getText(),analyst1, new AnalysisRole());
+            UserAcnt ua = fitorganization.getUserAccountDirectory().createUserAccount(accountTxt.getText(), CPassField.getText(),analyst1, new AnalysisAdminRole());
             }
             else{
-            UserAcnt ua = fitenterprise.getUserAccountDirectory().createTrainerAcount(accountTxt.getText(), CPassField.getText(), new TrainerRole());
+            UserAcnt ua = fitenterprise.getUserAccountDirectory().createTrainerAcount(accountTxt.getText(), CPassField.getText(), new GymTrainerRole());
             }
             nameTxt.setText("");
             phoneNumberTxt.setText("");

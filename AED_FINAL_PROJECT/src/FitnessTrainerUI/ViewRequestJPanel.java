@@ -6,8 +6,10 @@
 package FitnessTrainerUI;
 
 
+import ClassAppointment.ClassRoom;
 import Enterprise.FitnessEnterprise;
 import UserAccount.UserAcnt;
+import WorkQueue.ApntRequest;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -36,11 +38,11 @@ public class ViewRequestJPanel extends javax.swing.JPanel {
        DefaultTableModel model = (DefaultTableModel) requestJTable.getModel();
         
         model.setRowCount(0);
-        for(AppointmentRequest appRequest : fitenterprise.getAppointmentQueue().getAppointmentRequestList()){
-            if(appRequest.getReceiver() == null || appRequest.getReceiver() == account){
+        for(ApntRequest appRequest : fitenterprise.getQueueofAppointments().getAppointmentRequestList()){
+            if(appRequest.getReceive() == null || appRequest.getReceive() == account){
                Object[] row = new Object[4];
                 row[0] = appRequest;
-                row[1] = appRequest.getSender();
+                row[1] = appRequest.getSend();
                 row[2] = appRequest.getAppointment().getClassRoom();
                 row[3] = appRequest.getStatus();
                 model.addRow(row); 
@@ -53,17 +55,17 @@ public class ViewRequestJPanel extends javax.swing.JPanel {
             cboClassRoom.addItem(classRoom);
         }
     }
-    public boolean checkRoom(AppointmentRequest request, ClassRoom classRoom){
+    public boolean checkRoom(ApntRequest request, ClassRoom classRoom){
         boolean avilable = false;
-        for(AppointmentRequest appointmentRequest : fitenterprise.getAppointmentQueue().getAppointmentRequestList())
+        for(ApntRequest appointmentRequest : fitenterprise.getQueueofAppointments().getAppointmentRequestList())
             if(appointmentRequest.getStatus().equals("Accept") && appointmentRequest.getAppointment().getClassRoom() == classRoom && request.getAppointment().getDate().equals(appointmentRequest.getAppointment().getDate()) && request.getAppointment().getSession().equals(appointmentRequest.getAppointment().getSession()))
                 avilable = true;
         return avilable;
     }
     
-    public boolean checkSchedule(AppointmentRequest request){
+    public boolean checkSchedule(ApntRequest request){
         boolean avilable = false;
-        for(AppointmentRequest appointmentRequest : account.getAppointmentQueue().getAppointmentRequestList())
+        for(ApntRequest appointmentRequest : account.getApntQueue().getAppointmentRequestList())
             if(appointmentRequest.getStatus().equals("Accept") && request.getAppointment().getDate().equals(appointmentRequest.getAppointment().getDate()) && request.getAppointment().getSession().equals(appointmentRequest.getAppointment().getSession()))
                 avilable = true;
         return avilable;
@@ -200,7 +202,7 @@ public class ViewRequestJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         int selectedRow = requestJTable.getSelectedRow();
         if(selectedRow >= 0){
-            AppointmentRequest appRequest = (AppointmentRequest)requestJTable.getValueAt(selectedRow, 0);
+            ApntRequest appRequest = (ApntRequest)requestJTable.getValueAt(selectedRow, 0);
             if(!appRequest.getStatus().equals("Pending")){
                 JOptionPane.showMessageDialog(null, "You cannot change it.");
             }
@@ -211,7 +213,7 @@ public class ViewRequestJPanel extends javax.swing.JPanel {
                         appRequest.setStatus("Accept");
                          JOptionPane.showMessageDialog(null, "Accept Successful");
                         appRequest.getAppointment().setClassRoom(classRoom);
-                        appRequest.setReceiver(account);
+                        appRequest.setReceive(account);
                         populateRequest();
                     }
                     else{
@@ -232,14 +234,14 @@ public class ViewRequestJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         int selectedRow = requestJTable.getSelectedRow();
         if(selectedRow >= 0){
-            AppointmentRequest appointmentRequest = (AppointmentRequest)requestJTable.getValueAt(selectedRow, 0);
+            ApntRequest appointmentRequest = (ApntRequest)requestJTable.getValueAt(selectedRow, 0);
             if(!appointmentRequest.getStatus().equals("Pending")){
                 JOptionPane.showMessageDialog(null, "You cannot change it.");
             }
             else{
                 appointmentRequest.setStatus("Decline");
                 JOptionPane.showMessageDialog(null, "Decline Successfully");
-                appointmentRequest.setReceiver(account);
+                appointmentRequest.setReceive(account);
                 populateRequest();
             }
         }

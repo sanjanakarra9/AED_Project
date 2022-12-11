@@ -174,11 +174,11 @@ public class AnalysisJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
      HashMap<String, Integer> courseRank = new HashMap();
 
-        for (Course course : fitenterprise.getCourseDirectory().getCourseList()) {
+        for (Course course : fitenterprise.getCourseDirectory().getListOfCourses()) {
             courseRank.put(course.getCourseName(), 0);
         }
 
-        for (CourseRequest courseRequest : fitenterprise.getCourseQueue().getCourseRequestList()) {
+        for (CourseRequest courseRequest : fitenterprise.getQueueofCourses().getCourseRequestList()) {
             Course course = courseRequest.getCourse();
             int count = 0;
             if (courseRank.containsKey(course.getCourseName())) {

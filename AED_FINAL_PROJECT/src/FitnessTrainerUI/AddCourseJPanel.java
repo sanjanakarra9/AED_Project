@@ -181,7 +181,7 @@ public class AddCourseJPanel extends javax.swing.JPanel {
                 }
 
                 Course course  = new Course(nameTxt.getText());
-                fitenterprise.getCourseDirectory().getCourseList().add(course);
+                fitenterprise.getCourseDirectory().getListOfCourses().add(course);
                 nameTxt.setText("");
                 storageTxt.setText("");
                 JOptionPane.showMessageDialog(null, "Add successfully");

@@ -10,7 +10,7 @@ import Course.Course;
  *
  * @author Sonur
  */
-public class CourseRequest {
+public class CourseRequest extends workRequest{
      private Course course;
     private String result;
 
