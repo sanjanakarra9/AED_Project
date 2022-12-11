@@ -4,16 +4,20 @@
  */
 package Customer.UserInterface;
 
+import ClassAppointment.ClassAppointment;
 import Enterprise.FitnessEnterprise;
 import UserAccount.UserAcnt;
+import WorkQueue.ApntRequest;
 import java.awt.CardLayout;
 import java.lang.System.Logger;
 import java.lang.System.Logger.Level;
 import java.text.DateFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+//import java.util.logging.Logger;
 
 /**
  *
@@ -29,8 +33,24 @@ public class RequestTrainerJPanel extends javax.swing.JPanel {
     /**
      * Creates new form TrainerRequest
      */
-    public RequestTrainerJPanel() {
+    public RequestTrainerJPanel(JPanel container, UserAcnt account, FitnessEnterprise fitenterprise) {
         initComponents();
+        this.container = container;
+        this.account = account;
+        this.fitenterprise = fitenterprise;
+        df = new SimpleDateFormat("yyyy-MM-dd");
+        populateComboBox();
+    }
+    
+    public void populateComboBox() {
+        dateComboBox.removeAll();
+        for(Date date : fitenterprise.getAppointmentTime().getDateList()){
+            dateComboBox.addItem(df.format(date));
+        }
+        sessionComboBox.removeAll();
+        for(String session : fitenterprise.getAppointmentTime().getSessionList()){
+            sessionComboBox.addItem(session);
+        }
     }
 
     /**
@@ -205,22 +225,22 @@ public class RequestTrainerJPanel extends javax.swing.JPanel {
         try {
             date = df.parse(dateString);
         } catch (ParseException ex) {
-            Logger.getLogger(RequestTrainerJPanel.class.getName()).log(Level.SEVERE, null, ex);
+           // Logger.getLogger(RequestTrainerJPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
         String session = (String) sessionComboBox.getSelectedItem();
-        for(AppointmentRequest appointmentRequest : account.getAppointmentQueue().getAppointmentRequestList()){
+        for(ApntRequest appointmentRequest : account.getApntQueue().getAppointmentRequestList()){
             if((appointmentRequest.getStatus().equals("Accept") || appointmentRequest.getStatus().equals("Pending")) && appointmentRequest.getAppointment().getDate().equals(date) && appointmentRequest.getAppointment().getSession().equals(session)){
                 JOptionPane.showMessageDialog(null, "You already have appointment at that time");
                 return;
             }
         }
         JOptionPane.showMessageDialog(null, "Successfully");
-        Appointment appointment = new Appointment(date, session);
-        AppointmentRequest appointmentRequest = new AppointmentRequest(appointment);
-        appointmentRequest.setSender(account);
+        ClassAppointment appointment = new ClassAppointment(date, session);
+        ApntRequest appointmentRequest = new ApntRequest(appointment);
+        appointmentRequest.setSend(account);
         appointmentRequest.setStatus("Pending");
-        account.getAppointmentQueue().getAppointmentRequestList().add(appointmentRequest);
-        fitenterprise.getAppointmentQueue().getAppointmentRequestList().add(appointmentRequest);
+        account.getApntQueue().getAppointmentRequestList().add(appointmentRequest);
+        fitenterprise.getQueueofAppointments().getAppointmentRequestList().add(appointmentRequest);
     }//GEN-LAST:event_BtnReserveActionPerformed
 
     private void viewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewBtnActionPerformed

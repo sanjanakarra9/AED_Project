@@ -4,19 +4,31 @@
  */
 package Customer.UserInterface;
 
+import Course.Course;
 import java.awt.CardLayout;
+import javax.swing.JPanel;
 
 /**
  *
  * @author sanja
  */
 public class CourseDetailJPanel extends javax.swing.JPanel {
+    private Course course;
+    private JPanel container;
 
     /**
      * Creates new form CourseInfo
      */
-    public CourseDetailJPanel() {
+    public CourseDetailJPanel(JPanel container, Course course) {
         initComponents();
+        this.course = course;
+        this.container = container;
+        coursenameTxt.setText(course.getCourseName());
+        IdTxt.setText(String.valueOf(course.getCourseId()));
+        remainseatsTxt.setText(String.valueOf(course.getVacantSeats()));
+        coursenameTxt.setEditable(false);
+        IdTxt.setEditable(false);
+        remainseatsTxt.setEditable(false);
     }
 
     /**

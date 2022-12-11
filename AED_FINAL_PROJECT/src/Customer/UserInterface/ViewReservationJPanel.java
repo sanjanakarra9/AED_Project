@@ -9,6 +9,7 @@ import UserAccount.UserAcnt;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -22,10 +23,26 @@ public class ViewReservationJPanel extends javax.swing.JPanel {
     /**
      * Creates new form Reservation
      */
-    public ViewReservationJPanel() {
+    public ViewReservationJPanel(JPanel container, UserAccount account, FitnessClubEnterprise fitenterprise) {
         initComponents();
+        this.container = container;
+        this.account = account;
+        this.fitenterprise = fitenterprise;
+        populateRequest();
     }
 
+    private void populateRequest() {
+        DefaultTableModel model = (DefaultTableModel) requestJTable.getModel();
+        model.setRowCount(0);
+        for (AppointmentRequest appointmentRequest : account.getAppointmentQueue().getAppointmentRequestList()) {
+            Object[] row = new Object[4];
+            row[0] = appointmentRequest;
+            row[1] = appointmentRequest.getReceiver();
+            row[2] = appointmentRequest.getAppointment().getClassRoom();
+            row[3] = appointmentRequest.getStatus();
+            model.addRow(row);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

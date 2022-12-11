@@ -8,9 +8,11 @@ import Course.Course;
 import Course.CourseDirectory;
 import Enterprise.FitnessEnterprise;
 import UserAccount.UserAcnt;
+import WorkQueue.CourseRequest;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -26,10 +28,61 @@ public class ReserveCourseJPanel extends javax.swing.JPanel {
     /**
      * Creates new form CourseBook
      */
-    public ReserveCourseJPanel() {
+    public ReserveCourseJPanel(JPanel container, UserAcnt account, CourseDirectory myCourse, FitnessEnterprise fitenterprise) {
         initComponents();
+        this.container = container;
+        this.account = account;
+        this.myCourse = myCourse;
+        this.fitenterprise = fitenterprise;
+        initComponents();
+        populateCourse();
     }
 
+    public void populateCourse(){
+        DefaultTableModel model = (DefaultTableModel) viewCourseJTable.getModel();
+        
+        model.setRowCount(0);
+        for (Course course : fitenterprise.getCourseDirectory().getListOfCourses()) {
+                Object[] row = new Object[3];
+                row[0] = course;
+                row[1] = course.getVacantSeats();
+                row[2] = course.getChallengesfaced();
+                model.addRow(row);
+        }
+        
+        for(int i = model.getRowCount() - 1; i >= 0; i--){
+            if(myCourse.getListOfCourses().contains((Course)viewCourseJTable.getValueAt(i, 0))){
+                model.removeRow(i);
+            }
+        }
+         for(int i = model.getRowCount() - 1; i >= 0; i--){
+            for(CourseRequest courseRequest : account.getCourseQueue().getCourseRequestList())
+                if(courseRequest.getStatus().equals("Accept") || courseRequest.getStatus().equals("Sent"))
+                    if(courseRequest.getCourse().getCourseName()
+                            .equals(((Course)viewCourseJTable.getValueAt(i, 0)).getCourseName()))
+                        model.removeRow(i);
+        }
+    }
+    
+     public void populateCouse(String name){
+        DefaultTableModel model = (DefaultTableModel) viewCourseJTable.getModel();
+        model.setRowCount(0);
+        for (Course course : fitenterprise.getCourseDirectory().getListOfCourses()) {
+            if(course.getCourseName().equals(name)){
+                Object[] row = new Object[3];
+                row[0] = course;
+                row[1] = course.getVacantSeats();
+                row[2] = course.getChallengesfaced();
+                model.addRow(row);
+            }
+        }
+        
+        for(int i = model.getRowCount() - 1; i >= 0; i--){
+            if(myCourse.getListOfCourses().contains((Course)viewCourseJTable.getValueAt(i, 0))){
+                model.removeRow(i);
+            }
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -248,15 +301,15 @@ public class ReserveCourseJPanel extends javax.swing.JPanel {
         int selectedRow = viewCourseJTable.getSelectedRow();
         if(selectedRow >= 0){
             Course course = (Course)viewCourseJTable.getValueAt(selectedRow, 0);
-            if(myCourse.getCourseList().contains(course)){
+            if(myCourse.getListOfCourses().contains(course)){
                 JOptionPane.showMessageDialog(null, "It's already in your cart!");
             }
             else{
-                if(course.getRemainSeats() == 0){
+                if(course.getVacantSeats() == 0){
                     JOptionPane.showMessageDialog(null, "This class is out of stock");
                 }
                 else{
-                    myCourse.getCourseList().add(course);
+                    myCourse.getListOfCourses().add(course);
                     JOptionPane.showMessageDialog(null, "Add Successfully");
                     DefaultTableModel model = (DefaultTableModel) viewCourseJTable.getModel();
                     populateCourse();
