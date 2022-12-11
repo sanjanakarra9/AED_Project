@@ -4,6 +4,14 @@
  */
 package SystemAdminWorkArea.UI;
 
+import Model.EcoSystem;
+import Network.Network;
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author movvakodandram
@@ -13,9 +21,27 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageNetworkJPanel
      */
-    public ManageNetworkJPanel() {
+    private JPanel userProcessContainer;
+    private EcoSystem system;
+    public ManageNetworkJPanel(JPanel userProcessContainer, EcoSystem system) {
         initComponents();
+
+        this.userProcessContainer = userProcessContainer;
+        this.system = system;
+
+        populateNetworkTable();
     }
+    private void populateNetworkTable() {
+        DefaultTableModel model = (DefaultTableModel) networkJTable.getModel();
+
+        model.setRowCount(0);
+        for (Network network : system.getNetworkList()) {
+            Object[] row = new Object[1];
+            row[0] = network;
+            model.addRow(row);
+        }
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -33,6 +59,8 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         nameJTextField = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         deleteBtn = new javax.swing.JButton();
+
+        setBackground(new java.awt.Color(0, 0, 0));
 
         networkJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -83,6 +111,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         nameJTextField.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Name", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 1, 13), new java.awt.Color(102, 102, 102))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(204, 204, 0));
         jLabel2.setText("Manage Network");
 
         deleteBtn.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
@@ -103,7 +132,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
                 .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1039, 1039, 1039))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(551, 551, 551)
+                .addGap(545, 545, 545)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

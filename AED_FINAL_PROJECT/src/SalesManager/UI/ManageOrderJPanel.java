@@ -32,6 +32,8 @@ public class ManageOrderJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         BackBtn = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(0, 0, 0));
+
         orderJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -63,6 +65,7 @@ public class ManageOrderJPanel extends javax.swing.JPanel {
         });
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 204, 0));
         jLabel1.setText("Please view all orders");
 
         BackBtn.addActionListener(new java.awt.event.ActionListener() {
