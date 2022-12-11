@@ -9,5 +9,8 @@ package Role;
  * @author movvakodandram
  */
 public class RoleAnalyst {
+
+    public RoleAnalyst() {
+    }
     
 }

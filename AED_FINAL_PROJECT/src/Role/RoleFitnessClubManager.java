@@ -9,5 +9,9 @@ package Role;
  * @author movvakodandram
  */
 public class RoleFitnessClubManager {
-    
+
+    public RoleFitnessClubManager() {
+    }
+
+   
 }
