@@ -26,6 +26,19 @@ public class EnterpriseDirectory {
     public EnterpriseDirectory(){
         listofenterprises=new ArrayList<Enterprise>();
     }
+        public Enterprise createAndAddEnterprise(String name,Enterprise.EnterpriseType type){
+        Enterprise enterprise=null;
+        if(type==Enterprise.EnterpriseType.FitnessClub){
+            enterprise=new FitnessEnterprise(name);
+            listofenterprises.add(enterprise);
+        }
+        
+        if(type==Enterprise.EnterpriseType.OnlineSales){
+            enterprise=new OnlineSalesEnterprise(name);
+            listofenterprises.add(enterprise);
+        }
+        return enterprise;
+    }
     
    
 }

@@ -14,13 +14,17 @@ import java.util.ArrayList;
  * @author Sonur
  */
 public class WorkQueue {
-     private ArrayList<WorkRequest> workRequestList;
+     private ArrayList<workRequest> workRequestList;
 
     public WorkQueue() {
         workRequestList = new ArrayList();
     }
 
-    public ArrayList<WorkRequest> getWorkRequestList() {
+    public void setWorkRequestList(ArrayList<workRequest> workRequestList) {
+        this.workRequestList = workRequestList;
+    }
+
+    public ArrayList<workRequest> getWorkRequestList() {
         return workRequestList;
     }
 
