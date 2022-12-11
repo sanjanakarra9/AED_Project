@@ -3,16 +3,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package SalesManager.UI;
-<<<<<<< Updated upstream
+
 import javax.swing.JOptionPane;
-=======
+
 import Enterprise.OnlineSalesEnterprise;
 import Sale.OnlineSales;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
->>>>>>> Stashed changes
+
 
 /**
  *
