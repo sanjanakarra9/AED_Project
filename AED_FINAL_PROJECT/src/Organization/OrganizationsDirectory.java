@@ -34,7 +34,7 @@ public class OrganizationsDirectory {
             organizationList.add(organization);
         }
         else if (type.getValue().equals(Type.FitnessClubManager.getValue())){
-            organization  = new FitnessClubManagerOrg();
+            organization  = new FitnessManagerOrg();
             organizationList.add(organization);
         }
         else if(type.getValue().equals(Type.OnlineSales.getValue())){
