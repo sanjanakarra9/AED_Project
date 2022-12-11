@@ -13,11 +13,7 @@ import Organization.OrganizationsDirectory;
  */
 public abstract class Enterprise extends Organization{
     
-    public Enterprise(String name) {
-        super(name);
-    }
-    
-     private EnterpriseType enterpriseType;
+    private EnterpriseType enterpriseType;
     private OrganizationsDirectory organizationDirectory;
 
     public OrganizationsDirectory getOrganizationDirectory() {
@@ -25,6 +21,7 @@ public abstract class Enterprise extends Organization{
     }
     
     public enum EnterpriseType{
+        //Hospital("Hospital");
         FitnessClub("FitnessClub"),
         OnlineSales("OnlineSales");
         
@@ -55,8 +52,4 @@ public abstract class Enterprise extends Organization{
         this.enterpriseType=type;
         organizationDirectory=new OrganizationsDirectory();
     }
-    
-   
-
-   
 }

@@ -10,7 +10,7 @@ import ClassAppointment.ClassAppointment;
  *
  * @author Sonur
  */
-public class ApntRequest  extends WorkRequest{
+public class ApntRequest  extends workRequest{
      private ClassAppointment appointment;
     
    
