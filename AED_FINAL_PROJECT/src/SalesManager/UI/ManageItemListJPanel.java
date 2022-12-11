@@ -33,6 +33,8 @@ public class ManageItemListJPanel extends javax.swing.JPanel {
         ItemListJTable = new javax.swing.JTable();
         addBtn = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(0, 0, 0));
+
         deleteBtn.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         deleteBtn.setForeground(new java.awt.Color(215, 145, 54));
         deleteBtn.setText("Delete");
@@ -49,6 +51,7 @@ public class ManageItemListJPanel extends javax.swing.JPanel {
         });
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 204, 0));
         jLabel1.setText("Please manage your Item List");
 
         ItemListJTable.setModel(new javax.swing.table.DefaultTableModel(
