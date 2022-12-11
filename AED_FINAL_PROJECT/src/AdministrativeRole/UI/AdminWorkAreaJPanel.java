@@ -4,6 +4,7 @@
  */
 package AdministrativeRole.UI;
 
+import Model.EcoSystem;
 import java.awt.CardLayout;
 
 /**
@@ -15,6 +16,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
     /**
      * Creates new form AdminWorkAreaJPanel
      */
+    private EcoSystem system;
     public AdminWorkAreaJPanel() {
         initComponents();
     }
