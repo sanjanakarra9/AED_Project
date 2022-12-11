@@ -5,23 +5,22 @@
 package Organization;
 
 import Role.Role;
-import Role.AdminRole;
+import Role.FitnessManagerRole;
 import java.util.ArrayList;
 
 /**
  *
  * @author sanja
  */
-public class AdminOrg extends Organization{
-    
-    public AdminOrg() {
-        super(Type.Admin.getValue());
+public class FitnessManagerOrg extends Organization{
+    public FitnessManagerOrg() {
+        super(Organization.Type.FitnessClubManager.getValue());
     }
-    
+
     @Override
-    public ArrayList<Role> getSupportedRole() {
+   public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
-        roles.add(new AdminRole());
+        roles.add(new FitnessManagerRole());
         return roles;
     }
     
