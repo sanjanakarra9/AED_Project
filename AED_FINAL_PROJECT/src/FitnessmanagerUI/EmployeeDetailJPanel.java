@@ -51,7 +51,6 @@ public class EmployeeDetailJPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         evaluationTxt = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        backTxt = new javax.swing.JButton();
         saveBtn = new javax.swing.JButton();
         updateBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -60,6 +59,7 @@ public class EmployeeDetailJPanel extends javax.swing.JPanel {
         courseTxt = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jobTitleTxt = new javax.swing.JTextField();
+        backjButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -81,13 +81,6 @@ public class EmployeeDetailJPanel extends javax.swing.JPanel {
 
         jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         jLabel5.setText("Employee Detail");
-
-        backTxt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Business/返回.png"))); // NOI18N
-        backTxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backTxtActionPerformed(evt);
-            }
-        });
 
         saveBtn.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         saveBtn.setForeground(new java.awt.Color(215, 145, 54));
@@ -136,6 +129,12 @@ public class EmployeeDetailJPanel extends javax.swing.JPanel {
             }
         });
 
+        backjButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backjButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -171,8 +170,8 @@ public class EmployeeDetailJPanel extends javax.swing.JPanel {
                                     .addComponent(nameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(idTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(379, 379, 379)
-                        .addComponent(backTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(275, 275, 275)
+                        .addComponent(backjButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(610, 610, 610))
         );
         layout.setVerticalGroup(
@@ -204,9 +203,9 @@ public class EmployeeDetailJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(updateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(saveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(6, 6, 6)
-                .addComponent(backTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(301, 301, 301))
+                .addGap(46, 46, 46)
+                .addComponent(backjButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -217,13 +216,6 @@ public class EmployeeDetailJPanel extends javax.swing.JPanel {
     private void evaluationTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_evaluationTxtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_evaluationTxtActionPerformed
-
-    private void backTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backTxtActionPerformed
-        // TODO add your handling code here:
-        container.remove(this);
-        CardLayout layout = (CardLayout) container.getLayout();
-        layout.previous(container);
-    }//GEN-LAST:event_backTxtActionPerformed
 
     private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed
         // TODO add your handling code here:
@@ -281,9 +273,16 @@ public class EmployeeDetailJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_updateBtnItemStateChanged
 
+    private void backjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backjButtonActionPerformed
+        // TODO add your handling code here:
+        container.remove(this);
+        CardLayout layout = (CardLayout) container.getLayout();
+        layout.previous(container);
+    }//GEN-LAST:event_backjButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton backTxt;
+    private javax.swing.JButton backjButton;
     private javax.swing.JTextField courseTxt;
     private javax.swing.JTextField evaluationTxt;
     private javax.swing.JTextField idTxt;
