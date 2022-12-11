@@ -66,7 +66,6 @@ public class AddEmployeeJPanel extends javax.swing.JPanel {
         PassField = new javax.swing.JPasswordField();
         jLabel5 = new javax.swing.JLabel();
         nameTxt = new javax.swing.JTextField();
-        backTxt = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         courseCbx = new javax.swing.JComboBox<>();
         accountTxt = new javax.swing.JTextField();
@@ -83,6 +82,7 @@ public class AddEmployeeJPanel extends javax.swing.JPanel {
         addressTxt = new javax.swing.JTextField();
         submitButton = new javax.swing.JButton();
         CPassField = new javax.swing.JPasswordField();
+        backjButton = new javax.swing.JButton();
 
         jLabel8.setText("jLabel8");
 
@@ -97,13 +97,6 @@ public class AddEmployeeJPanel extends javax.swing.JPanel {
         nameTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nameTxtActionPerformed(evt);
-            }
-        });
-
-        backTxt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Business/返回.png"))); // NOI18N
-        backTxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backTxtActionPerformed(evt);
             }
         });
 
@@ -239,6 +232,12 @@ public class AddEmployeeJPanel extends javax.swing.JPanel {
 
         CPassField.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Confirm Password", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 1, 14), new java.awt.Color(102, 102, 102))); // NOI18N
 
+        backjButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backjButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -261,8 +260,8 @@ public class AddEmployeeJPanel extends javax.swing.JPanel {
                                     .addComponent(PassField)
                                     .addComponent(CPassField, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(321, 321, 321)
-                        .addComponent(backTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(188, 188, 188)
+                        .addComponent(backjButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(189, 189, 189)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -288,26 +287,15 @@ public class AddEmployeeJPanel extends javax.swing.JPanel {
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(courseCbx, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(backTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(263, 263, 263))
+                .addGap(31, 31, 31)
+                .addComponent(backjButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void nameTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTxtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nameTxtActionPerformed
-
-    private void backTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backTxtActionPerformed
-        // TODO add your handling code here:
-        container.remove(this);
-        CardLayout layout = (CardLayout) container.getLayout();
-        Component[] componentArray = container.getComponents();
-        Component component = componentArray[componentArray.length - 1];
-        EmployeeViewJPanel employeeViewJPanel = (EmployeeViewJPanel) component;
-        employeeViewJPanel.populateEmployee();
-        layout.previous(container);
-    }//GEN-LAST:event_backTxtActionPerformed
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         // TODO add your handling code here:
@@ -462,6 +450,17 @@ public class AddEmployeeJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_JobTitleCboItemStateChanged
 
+    private void backjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backjButtonActionPerformed
+        // TODO add your handling code here:
+        container.remove(this);
+        CardLayout layout = (CardLayout) container.getLayout();
+        Component[] componentArray = container.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        EmployeeViewJPanel employeeViewJPanel = (EmployeeViewJPanel) component;
+        employeeViewJPanel.populateEmployee();
+        layout.previous(container);
+    }//GEN-LAST:event_backjButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPasswordField CPassField;
@@ -469,7 +468,7 @@ public class AddEmployeeJPanel extends javax.swing.JPanel {
     private javax.swing.JPasswordField PassField;
     private javax.swing.JTextField accountTxt;
     private javax.swing.JTextField addressTxt;
-    private javax.swing.JButton backTxt;
+    private javax.swing.JButton backjButton;
     private javax.swing.JComboBox<String> courseCbx;
     private javax.swing.JTextField emailTxt;
     private javax.swing.JTextField idTxt;
