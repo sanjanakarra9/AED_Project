@@ -7,6 +7,7 @@ package Customer.UserInterface;
 import Customer.Customer;
 import Enterprise.Enterprise;
 import Model.EcoSystem;
+import Model.SendMail;
 import Network.Network;
 import Organization.Organization;
 import Role.CustomerRole;
@@ -389,6 +390,7 @@ public class CustomerRegistrationJPanel extends javax.swing.JPanel {
         Customer customer = new Customer(firstNameTxt.getText(), lastNameTxt.getText(),
             emailTxt.getText(), phoneTxt.getText());
         this.network = (Network) NetworkCMB.getSelectedItem();
+        SendMail.sendMail(emailTxt.getText(),"Hello" + customer.getFirstName());
         UserAcnt ua = network.getUserAccountDirectory().createUserAccount(userNameTxt.getText(), CPassField.getText(), customer, new CustomerRole());
 
         //DB4OUtil.getInstance().storeSystem(system);
