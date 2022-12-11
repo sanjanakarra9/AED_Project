@@ -66,9 +66,9 @@ public class EmployeeViewJPanel extends javax.swing.JPanel {
         viewEmployeeJTable = new javax.swing.JTable();
         viewDetailsjButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        deleteEmployeeButton = new javax.swing.JButton();
         backjButton = new javax.swing.JButton();
         addButton = new javax.swing.JButton();
-        deleteEmployeeButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -104,7 +104,15 @@ public class EmployeeViewJPanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         jLabel1.setText("Employees Information");
 
-        backjButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Business/返回.png"))); // NOI18N
+        deleteEmployeeButton.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        deleteEmployeeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/close.png"))); // NOI18N
+        deleteEmployeeButton.setText("Delete");
+        deleteEmployeeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteEmployeeButtonActionPerformed(evt);
+            }
+        });
+
         backjButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backjButtonActionPerformed(evt);
@@ -112,20 +120,11 @@ public class EmployeeViewJPanel extends javax.swing.JPanel {
         });
 
         addButton.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        addButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Business/添加.png"))); // NOI18N
+        addButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-plus-math-50.png"))); // NOI18N
         addButton.setText("Add");
         addButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addButtonActionPerformed(evt);
-            }
-        });
-
-        deleteEmployeeButton.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        deleteEmployeeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Business/删除 (1).png"))); // NOI18N
-        deleteEmployeeButton.setText("Delete");
-        deleteEmployeeButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deleteEmployeeButtonActionPerformed(evt);
             }
         });
 
@@ -141,11 +140,11 @@ public class EmployeeViewJPanel extends javax.swing.JPanel {
                             .addComponent(jLabel1)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 631, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(384, 384, 384)
+                        .addGap(266, 266, 266)
                         .addComponent(backjButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(106, 106, 106)
-                        .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50)
+                        .addGap(114, 114, 114)
+                        .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(87, 87, 87)
                         .addComponent(deleteEmployeeButton)
                         .addGap(42, 42, 42)
                         .addComponent(viewDetailsjButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -160,16 +159,16 @@ public class EmployeeViewJPanel extends javax.swing.JPanel {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
+                        .addGap(41, 41, 41)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(deleteEmployeeButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(viewDetailsjButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(360, 360, 360))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
+                            .addComponent(viewDetailsjButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(1010, 1010, 1010))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(backjButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(343, 343, 343))))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -188,21 +187,6 @@ public class EmployeeViewJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_viewDetailsjButton1ActionPerformed
 
-    private void backjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backjButtonActionPerformed
-        // TODO add your handling code here:
-        container.remove(this);
-        CardLayout layout = (CardLayout) container.getLayout();
-        layout.previous(container);
-    }//GEN-LAST:event_backjButtonActionPerformed
-
-    private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
-        // TODO add your handling code here:
-        AddEmployeeJPanel addEmployeeJPanel = new AddEmployeeJPanel(container, fitenterprise, network);
-        container.add("addEmployeeJPanel", addEmployeeJPanel);
-        CardLayout layout = (CardLayout) container.getLayout();
-        layout.next(container);
-    }//GEN-LAST:event_addButtonActionPerformed
-
     private void deleteEmployeeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteEmployeeButtonActionPerformed
         // TODO add your handling code here:
         int selectedRow = viewEmployeeJTable.getSelectedRow();
@@ -218,6 +202,21 @@ public class EmployeeViewJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please select a Row!!");
         }
     }//GEN-LAST:event_deleteEmployeeButtonActionPerformed
+
+    private void backjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backjButtonActionPerformed
+        // TODO add your handling code here:
+        container.remove(this);
+        CardLayout layout = (CardLayout) container.getLayout();
+        layout.previous(container);
+    }//GEN-LAST:event_backjButtonActionPerformed
+
+    private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
+        // TODO add your handling code here:
+        AddEmployeeJPanel addEmployeeJPanel = new AddEmployeeJPanel(container, fitenterprise, network);
+        container.add("addEmployeeJPanel", addEmployeeJPanel);
+        CardLayout layout = (CardLayout) container.getLayout();
+        layout.next(container);
+    }//GEN-LAST:event_addButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

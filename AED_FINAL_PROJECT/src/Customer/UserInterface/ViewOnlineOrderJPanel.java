@@ -5,8 +5,10 @@
 package Customer.UserInterface;
 
 import UserAccount.UserAcnt;
+import WorkQueue.SalesRequest;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -20,8 +22,24 @@ public class ViewOnlineOrderJPanel extends javax.swing.JPanel {
     /**
      * Creates new form OnlineOrderView
      */
-    public ViewOnlineOrderJPanel() {
+    public ViewOnlineOrderJPanel(JPanel container, UserAcnt account) {
         initComponents();
+        this.container = container;
+        this.account = account;
+        populateOrders();
+    }
+    
+    public void populateOrders() {
+        DefaultTableModel model = (DefaultTableModel) orderJTable.getModel();
+        model.setRowCount(0);
+        for(SalesRequest salesRequest : account.getSalesQueue().getOnlinesalesRequestList()){
+            Object[] row = new Object[4];
+            row[0] = salesRequest;
+            row[1] = salesRequest.getTotalPrice();
+            row[2] = salesRequest.getReceive();
+            row[3] = salesRequest.getStatus();
+            model.addRow(row);
+        }
     }
 
     /**

@@ -25,8 +25,15 @@ public class ReviewCourseJPanel extends javax.swing.JPanel {
     /**
      * Creates new form CourseReview
      */
-    public ReviewCourseJPanel() {
+    public ReviewCourseJPanel(JPanel container, UserAcnt account, Course course, FitnessEnterprise fitenterprise) {
         initComponents();
+        this.container = container;
+        this.account = account;
+        this.course = course;
+        this.fitenterprise = fitenterprise;
+        this.cnameTxt.setText(course.getCourseName());
+        
+        this.cnameTxt.setEditable(false);
     }
 
     /**

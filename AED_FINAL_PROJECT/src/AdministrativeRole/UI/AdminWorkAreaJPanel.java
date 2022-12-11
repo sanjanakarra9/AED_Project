@@ -4,7 +4,10 @@
  */
 package AdministrativeRole.UI;
 
+import Enterprise.Enterprise;
+import Model.EcoSystem;
 import java.awt.CardLayout;
+import javax.swing.JPanel;
 
 /**
  *
@@ -15,10 +18,17 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
     /**
      * Creates new form AdminWorkAreaJPanel
      */
-    public AdminWorkAreaJPanel() {
+    private EcoSystem system;
+     JPanel userProcessContainer;
+    Enterprise enterprise;
+     public AdminWorkAreaJPanel(JPanel userProcessContainer, Enterprise enterprise) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.enterprise = enterprise;
+        valueLabel.setText(enterprise.getName());
     }
-
+    
+  
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

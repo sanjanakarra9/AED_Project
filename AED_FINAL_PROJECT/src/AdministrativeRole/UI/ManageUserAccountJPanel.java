@@ -4,11 +4,16 @@
  */
 package AdministrativeRole.UI;
 
+import Enterprise.Enterprise;
+import Model.EcoSystem;
 import Organization.Organization;
 import Person.Person;
 import Role.Role;
+import UserAccount.UserAcnt;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -19,9 +24,57 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageUserAccountJPanel
      */
-    public ManageUserAccountJPanel() {
+      private JPanel container;
+    private Enterprise enterprise;
+    private EcoSystem ecoSystem;
+    
+    public ManageUserAccountJPanel(JPanel container, Enterprise enterprise) {
         initComponents();
+        this.enterprise = enterprise;
+        this.container = container;
+
+        popOrganizationComboBox();
+        popData();
     }
+    public void popOrganizationComboBox() {
+        organizationJComboBox.removeAllItems();
+
+        for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
+            organizationJComboBox.addItem(organization);
+        }
+    }
+    
+    public void populateUserComboBox(Organization organization){
+        userJComboBox.removeAllItems();
+        
+        for (Person person : organization.getPersonDirectory().getPersonList()){
+            userJComboBox.addItem(person);
+        }
+    }
+    
+    private void populateRoleComboBox(Organization organization){
+        roleJComboBox.removeAllItems();
+        for (Role role : organization.getSupportedRole()){
+            roleJComboBox.addItem(role);
+        }
+    }
+
+    public void popData() {
+
+        DefaultTableModel model = (DefaultTableModel) userJTable.getModel();
+
+        model.setRowCount(0);
+
+        for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
+            for (UserAcnt ua : organization.getUserAccountDirectory().getUserAccountList()) {
+                Object row[] = new Object[2];
+                row[0] = ua;
+                row[1] = ua.getRole();
+                ((DefaultTableModel) userJTable.getModel()).addRow(row);
+            }
+        }
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.

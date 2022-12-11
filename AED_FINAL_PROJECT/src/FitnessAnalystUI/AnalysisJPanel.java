@@ -10,7 +10,12 @@ import Course.Course;
 import Enterprise.FitnessEnterprise;
 import Enterprise.OnlineSalesEnterprise;
 import Organization.Organization;
+import Sale.OnlineSales;
+import UserAccount.UserAcnt;
+import WorkQueue.ApntRequest;
 import WorkQueue.CourseRequest;
+import WorkQueue.SalesQueue;
+import WorkQueue.SalesRequest;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Window;
@@ -62,18 +67,14 @@ public class AnalysisJPanel extends javax.swing.JPanel {
         popTrainerButton = new javax.swing.JButton();
         popItemButton = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
         popCourseButton.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-<<<<<<< Updated upstream
-        popCourseButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Business/健身 (1).png"))); // NOI18N
-=======
         popCourseButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ImageExcersie.png"))); // NOI18N
->>>>>>> Stashed changes
         popCourseButton.setText("top 5 popular Course");
         popCourseButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,11 +83,7 @@ public class AnalysisJPanel extends javax.swing.JPanel {
         });
 
         popTrainerButton.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-<<<<<<< Updated upstream
-        popTrainerButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Business/健身房.png"))); // NOI18N
-=======
-        popTrainerButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/popularitem.png"))); // NOI18N
->>>>>>> Stashed changes
+        popTrainerButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-return-24.png"))); // NOI18N
         popTrainerButton.setText("top 5 active Customer");
         popTrainerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,7 +102,7 @@ public class AnalysisJPanel extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ImageExcersie.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ImageExcersie.png"))); // NOI18N
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
@@ -121,22 +118,23 @@ public class AnalysisJPanel extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(191, 191, 191))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(127, 127, 127)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4))
-                .addGap(149, 149, 149))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(92, 92, 92)
+                        .addComponent(jLabel2))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(127, 127, 127)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4))))
+                .addContainerGap(149, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(112, 112, 112)
-                .addComponent(jLabel1)
-                .addGap(64, 64, 64)
+                .addGap(35, 35, 35)
+                .addComponent(jLabel2)
+                .addGap(173, 173, 173)
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel4)
@@ -149,10 +147,11 @@ public class AnalysisJPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(345, 345, 345)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(popTrainerButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(popItemButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(393, 393, 393)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(popTrainerButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
+                        .addComponent(popItemButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(popCourseButton, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(306, 306, 306))
         );
@@ -160,11 +159,11 @@ public class AnalysisJPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(166, 166, 166)
+                .addGap(160, 160, 160)
                 .addComponent(popCourseButton, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
+                .addGap(42, 42, 42)
                 .addComponent(popTrainerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
+                .addGap(44, 44, 44)
                 .addComponent(popItemButton, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(159, 159, 159))
         );
@@ -172,7 +171,7 @@ public class AnalysisJPanel extends javax.swing.JPanel {
 
     private void popCourseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_popCourseButtonActionPerformed
         // TODO add your handling code here:
-     HashMap<String, Integer> courseRank = new HashMap();
+        HashMap<String, Integer> courseRank = new HashMap();
 
         for (Course course : fitenterprise.getCourseDirectory().getListOfCourses()) {
             courseRank.put(course.getCourseName(), 0);
@@ -206,20 +205,11 @@ public class AnalysisJPanel extends javax.swing.JPanel {
         JFreeChart chart = ChartFactory.createBarChart("Course selected", "Course Name", "Number", dataset, PlotOrientation.VERTICAL, false, true, false);
         CategoryPlot p = chart.getCategoryPlot();
         BarRenderer renderer = (BarRenderer) p.getRenderer();
-<<<<<<< Updated upstream
-        renderer.setSeriesPaint(0, new Color(215,145,54));
-=======
         renderer.setSeriesPaint(0, new Color(0,153,153));
->>>>>>> Stashed changes
         p.setRangeGridlinePaint(Color.black);
         ChartFrame chartFrame = new ChartFrame("Most popular courses", chart);
         chartFrame.setVisible(true);
         chartFrame.setSize(800, 600);
-<<<<<<< Updated upstream
-        chart.getTitle().setPaint(new Color(215,145,54));
-=======
-        chart.getTitle().setPaint(new Color(0,102,102));
->>>>>>> Stashed changes
     }//GEN-LAST:event_popCourseButtonActionPerformed
 
     private void popTrainerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_popTrainerButtonActionPerformed
@@ -229,23 +219,23 @@ public class AnalysisJPanel extends javax.swing.JPanel {
 
         for (Organization organization : fitenterprise.getOrganizationDirectory().getOrganizationList()) {
             if (organization.getName().equals("Trainer Organization")) {
-                for (UserAccount ua : organization.getUserAccountDirectory().getUserAccountList()) {
+                for (UserAcnt ua : organization.getUserAccountDirectory().getUserAccountList()) {
                     trainerRank.put(ua.getPerson().getName(), 0);
                 }
             }
         }
         
-        for (AppointmentRequest appRequest : fitenterprise.getAppointmentQueue().getAppointmentRequestList()) {
+        for (ApntRequest appRequest : fitenterprise.getQueueofAppointments().getAppointmentRequestList()) {
             int count = 0;
             //if(appRequest==null)System.out.println("111111111111111");
             //if(appRequest.getReceiver()==null)System.out.println("22222222222222222");
             //if(appRequest.getReceiver().getPerson()==null)System.out.println("33333");
             //if(appRequest.getReceiver().getPerson().getName()==null)System.out.println("4444444444");
-            if (trainerRank.containsKey(appRequest.getSender().getPerson().getName())) {
-                count = trainerRank.get(appRequest.getSender().getPerson().getName());
+            if (trainerRank.containsKey(appRequest.getSend().getPerson().getName())) {
+                count = trainerRank.get(appRequest.getSend().getPerson().getName());
             }
             count++;
-            trainerRank.put(appRequest.getSender().getPerson().getName(), count);
+            trainerRank.put(appRequest.getSend().getPerson().getName(), count);
         }
         System.out.println(trainerRank);
         
@@ -280,16 +270,16 @@ public class AnalysisJPanel extends javax.swing.JPanel {
     private void popItemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_popItemButtonActionPerformed
         // TODO add your handling code here:
         HashMap<String, Integer> itemRank = new HashMap();
-        OnlineSalesQueue osq = new OnlineSalesQueue();
+        SalesQueue osq = new SalesQueue();
 
         for (Organization organization : fitenterprise.getOrganizationDirectory().getOrganizationList()) 
             
             if (organization.getName().equals("Customer Organization")) 
-                for (UserAccount us : organization.getUserAccountDirectory().getUserAccountList()) 
-                    for (OnlineSalesRequest salesRequest : us.getOnlineSalesQueue().getOnlinesalesRequestList()) 
+                for (UserAcnt us : organization.getUserAccountDirectory().getUserAccountList()) 
+                    for (SalesRequest salesRequest : us.getSalesQueue().getOnlinesalesRequestList()) 
                         osq.getOnlinesalesRequestList().add(salesRequest);
 
-        for (OnlineSalesRequest salesRequest : osq.getOnlinesalesRequestList()) 
+        for (SalesRequest salesRequest : osq.getOnlinesalesRequestList()) 
             for (OnlineSales item : salesRequest.getItemOrder().keySet()){
                 int count = 0;
                 if (itemRank.containsKey(item.getItemname())) 
@@ -325,7 +315,7 @@ public class AnalysisJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;

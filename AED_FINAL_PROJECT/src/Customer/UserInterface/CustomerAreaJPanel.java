@@ -4,20 +4,44 @@
  */
 package Customer.UserInterface;
 
+import Course.CourseDirectory;
 import Enterprise.Enterprise;
+import Enterprise.FitnessEnterprise;
+import Enterprise.OnlineSalesEnterprise;
+import Model.EcoSystem;
+import Network.Network;
+import Organization.CustomerOrg;
+import Sale.OnlineSales;
+import UserAccount.UserAcnt;
 import java.awt.CardLayout;
+import java.util.HashMap;
+import javax.swing.JPanel;
 
 /**
  *
  * @author sanja
  */
 public class CustomerAreaJPanel extends javax.swing.JPanel {
+    
+    private JPanel container;
+    private UserAcnt account;
+    private Network network;
+    private CourseDirectory myCourse;
+    private EcoSystem ecoSystem;
+    private HashMap<OnlineSales, Integer> cart;
 
     /**
      * Creates new form CustomerMain
      */
-    public CustomerAreaJPanel() {
+    public CustomerAreaJPanel(JPanel container, UserAcnt account, CustomerOrg organization,
+            Enterprise enterprise, Network network, EcoSystem ecoSystem) {
         initComponents();
+        this.container = container;
+        this.account = account;
+        this.ecoSystem = ecoSystem;
+        this.network = network;
+        myCourse = new CourseDirectory();
+        this.cart = new HashMap();
     }
 
     /**
@@ -251,8 +275,8 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
     private void btnRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestActionPerformed
         // TODO add your handling code here:
         for(Enterprise ent : network.getEnterpriseDirectory().getEnterpriseList()){
-            if(ent instanceof FitnessClubEnterprise){
-                RequestTrainerJPanel makeRequestJPanel = new RequestTrainerJPanel(container, account, (FitnessClubEnterprise) ent);
+            if(ent instanceof FitnessEnterprise){
+                RequestTrainerJPanel makeRequestJPanel = new RequestTrainerJPanel(container, account, (FitnessEnterprise) ent);
                 container.add("makeRequestJPanel", makeRequestJPanel);
                 CardLayout layout = (CardLayout) container.getLayout();
                 layout.next(container);
@@ -263,8 +287,8 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
     private void btnReserveCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReserveCourseActionPerformed
         // TODO add your handling code here:
         for(Enterprise ent : network.getEnterpriseDirectory().getEnterpriseList()){
-            if(ent instanceof FitnessClubEnterprise){
-                ReserveCourseJPanel reverseClassJPanel = new ReserveCourseJPanel(container, account, myCourse, (FitnessClubEnterprise) ent);
+            if(ent instanceof FitnessEnterprise){
+                ReserveCourseJPanel reverseClassJPanel = new ReserveCourseJPanel(container, account, myCourse, (FitnessEnterprise) ent);
                 container.add("reverseClassJPanel", reverseClassJPanel);
                 CardLayout layout = (CardLayout) container.getLayout();
                 layout.next(container);
@@ -275,8 +299,8 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
     private void btnCheckHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckHistoryActionPerformed
         // TODO add your handling code here:
         for(Enterprise ent : network.getEnterpriseDirectory().getEnterpriseList()){
-            if(ent instanceof FitnessClubEnterprise){
-                CourseViewJPanel courseHistoryViewJPanel = new CourseViewJPanel(container, account, (FitnessClubEnterprise) ent);
+            if(ent instanceof FitnessEnterprise){
+                CourseViewJPanel courseHistoryViewJPanel = new CourseViewJPanel(container, account, (FitnessEnterprise) ent);
                 container.add("courseHistoryViewJPanel", courseHistoryViewJPanel);
                 CardLayout layout = (CardLayout) container.getLayout();
                 layout.next(container);

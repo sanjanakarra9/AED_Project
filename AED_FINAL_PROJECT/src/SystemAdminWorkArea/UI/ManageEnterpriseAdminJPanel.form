@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<<<<<<< Updated upstream
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
-=======
 <Form version="1.5" maxVersion="1.8" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <Properties>
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
       <Color blue="ff" green="ff" red="ff" type="rgb"/>
     </Property>
   </Properties>
->>>>>>> Stashed changes
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -90,8 +86,8 @@
               </Group>
               <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="submitJButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="deleteBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="submitJButton" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
+                  <Component id="deleteBtn" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="backJButton" min="-2" pref="50" max="-2" attributes="0"/>
@@ -197,7 +193,7 @@
           <Color blue="36" green="91" red="d7" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Business/&#x6dfb;&#x52a0;.png"/>
+          <Image iconType="3" name="/Images/plusymbol.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Submit"/>
       </Properties>
@@ -206,14 +202,11 @@
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="backJButton">
-<<<<<<< Updated upstream
-=======
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Business/&#x8fd4;&#x56de;.png"/>
+          <Image iconType="3" name="/Images/icons8-return-24.png"/>
         </Property>
       </Properties>
->>>>>>> Stashed changes
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backJButtonActionPerformed"/>
       </Events>
@@ -227,7 +220,7 @@
           <Color blue="36" green="91" red="d7" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Business/&#x5220;&#x9664; (1).png"/>
+          <Image iconType="3" name="/Images/close.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Delete"/>
       </Properties>

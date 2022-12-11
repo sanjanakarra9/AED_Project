@@ -4,8 +4,12 @@
  */
 package AdministrativeRole.UI;
 
+import Organization.Organization;
 import Organization.Organization.Type;
+import Organization.OrganizationsDirectory;
 import java.awt.CardLayout;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -13,13 +17,41 @@ import java.awt.CardLayout;
  */
 public class ManageOrganizationJPanel extends javax.swing.JPanel {
 
+    private OrganizationsDirectory directory;
+    private JPanel userProcessContainer;
     /**
      * Creates new form ManageOrganizationJPanel
      */
-    public ManageOrganizationJPanel() {
+    public ManageOrganizationJPanel(JPanel userProcessContainer,OrganizationsDirectory directory) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.directory = directory;
+        
+        populateTable();
+        populateCombo();
+    }
+    
+    private void populateCombo(){
+        organizationJComboBox.removeAllItems();
+        for (Type type : Organization.Type.values()){
+            if (!type.getValue().equals(Type.Admin.getValue()))
+                organizationJComboBox.addItem(type);
+        }
     }
 
+    private void populateTable(){
+        DefaultTableModel model = (DefaultTableModel) organizationJTable.getModel();
+        
+        model.setRowCount(0);
+        
+        for (Organization organization : directory.getOrganizationList()){
+            Object[] row = new Object[2];
+            row[0] = organization.getOrganizationID();
+            row[1] = organization.getName();
+            
+            model.addRow(row);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
