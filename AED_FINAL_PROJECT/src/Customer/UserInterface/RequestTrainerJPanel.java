@@ -9,8 +9,8 @@ import Enterprise.FitnessEnterprise;
 import UserAccount.UserAcnt;
 import WorkQueue.ApntRequest;
 import java.awt.CardLayout;
-import java.lang.System.Logger;
-import java.lang.System.Logger.Level;
+//import java.lang.System.Logger;
+//import java.lang.System.Logger.Level;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -18,6 +18,8 @@ import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 //import java.util.logging.Logger;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -225,7 +227,7 @@ public class RequestTrainerJPanel extends javax.swing.JPanel {
         try {
             date = df.parse(dateString);
         } catch (ParseException ex) {
-           // Logger.getLogger(RequestTrainerJPanel.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RequestTrainerJPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
         String session = (String) sessionComboBox.getSelectedItem();
         for(ApntRequest appointmentRequest : account.getApntQueue().getAppointmentRequestList()){

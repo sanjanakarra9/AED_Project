@@ -98,5 +98,10 @@ public class UserAcnt {
         this.courseQueue = courseQueue;
     }
     
+    @Override
+    public String toString() {
+        return username;
+    }
+    
     
 }

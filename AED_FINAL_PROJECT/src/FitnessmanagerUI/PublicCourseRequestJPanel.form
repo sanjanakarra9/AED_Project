@@ -22,22 +22,16 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="336" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="356" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="309" max="-2" attributes="0"/>
-                              <Component id="acceptBtn" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                              <Component id="cancelBtn" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jScrollPane1" alignment="0" min="-2" pref="523" max="-2" attributes="0"/>
-                      </Group>
+                      <EmptySpace min="-2" pref="309" max="-2" attributes="0"/>
+                      <Component id="acceptBtn" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="cancelBtn" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="backBtn" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
+                  <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" alignment="0" min="-2" pref="523" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="571" max="-2" attributes="0"/>
           </Group>
@@ -55,9 +49,7 @@
                   <Component id="acceptBtn" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
                   <Component id="cancelBtn" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-              <Component id="backBtn" min="-2" pref="50" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="326" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="411" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -70,16 +62,6 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Please check the request message:"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="backBtn">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Business/&#x8fd4;&#x56de;.png"/>
-        </Property>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backBtnActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="acceptBtn">
       <Properties>

@@ -49,7 +49,7 @@ public class ConfigureASystem {
     
      public static EcoSystem configure(){
          
-                 EcoSystem system = EcoSystem.getInstance();
+        EcoSystem system = EcoSystem.getInstance();
         
         Person person = system.getPersonDirectory().createPerson("sysadmin");
         UserAcnt ua = system.getUserAccountDirectory().createUserAccount("sysadmin", "sysadmin", person, new SystemAdminRole());
@@ -73,7 +73,7 @@ public class ConfigureASystem {
 //        onlinesalesEnterprise.getUserAccountDirectory().createUserAccount("salesadmin", "salesadmin", admin2, new OnlineSalesRole());
         
         ArrayList<Course> courseList = fitEnterprise.getCourseDirectory().getListOfCourses();
-        takeCourse(courseList);//zhushihuilai
+        takeCourse(courseList);
         
         //organization 6->Admin
         Organization AdminOrganization=fitEnterprise.getOrganizationDirectory().createOrganization(Organization.Type.Admin);

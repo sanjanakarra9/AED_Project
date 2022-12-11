@@ -63,7 +63,6 @@ public class AnalysisJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        popCourseButton = new javax.swing.JButton();
         popTrainerButton = new javax.swing.JButton();
         popItemButton = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
@@ -74,17 +73,8 @@ public class AnalysisJPanel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        popCourseButton.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        popCourseButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Business/健身 (1).png"))); // NOI18N
-        popCourseButton.setText("top 5 popular Course");
-        popCourseButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                popCourseButtonActionPerformed(evt);
-            }
-        });
-
         popTrainerButton.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        popTrainerButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Business/健身房.png"))); // NOI18N
+        popTrainerButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-return-24.png"))); // NOI18N
         popTrainerButton.setText("top 5 active Customer");
         popTrainerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -156,68 +146,21 @@ public class AnalysisJPanel extends javax.swing.JPanel {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(393, 393, 393)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(popTrainerButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(popItemButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(popCourseButton, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(popTrainerButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
+                    .addComponent(popItemButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(306, 306, 306))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(166, 166, 166)
-                .addComponent(popCourseButton, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
+                .addGap(297, 297, 297)
                 .addComponent(popTrainerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
                 .addComponent(popItemButton, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(159, 159, 159))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void popCourseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_popCourseButtonActionPerformed
-        // TODO add your handling code here:
-     HashMap<String, Integer> courseRank = new HashMap();
-
-        for (Course course : fitenterprise.getCourseDirectory().getListOfCourses()) {
-            courseRank.put(course.getCourseName(), 0);
-        }
-
-        for (CourseRequest courseRequest : fitenterprise.getQueueofCourses().getCourseRequestList()) {
-            Course course = courseRequest.getCourse();
-            int count = 0;
-            if (courseRank.containsKey(course.getCourseName())) {
-                count = courseRank.get(course.getCourseName());
-                count++;
-                courseRank.put(course.getCourseName(), count);
-
-            }
-        }
-
-        ArrayList<Map.Entry<String, Integer>> rankList = new ArrayList(courseRank.entrySet());
-
-        Collections.sort(rankList, new Comparator<Map.Entry<String, Integer>>() {
-
-            @Override
-            public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
-                return -o1.getValue() + o2.getValue();
-            }
-        });
-
-        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-        for (int i = 0; i < 5; i++) {
-            dataset.setValue(rankList.get(i).getValue(), "a", rankList.get(i).getKey());
-        }
-        JFreeChart chart = ChartFactory.createBarChart("Course selected", "Course Name", "Number", dataset, PlotOrientation.VERTICAL, false, true, false);
-        CategoryPlot p = chart.getCategoryPlot();
-        BarRenderer renderer = (BarRenderer) p.getRenderer();
-        renderer.setSeriesPaint(0, new Color(215,145,54));
-        p.setRangeGridlinePaint(Color.black);
-        ChartFrame chartFrame = new ChartFrame("Most popular courses", chart);
-        chartFrame.setVisible(true);
-        chartFrame.setSize(800, 600);
-        chart.getTitle().setPaint(new Color(215,145,54));
-    }//GEN-LAST:event_popCourseButtonActionPerformed
 
     private void popTrainerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_popTrainerButtonActionPerformed
         // TODO add your handling code here:
@@ -327,7 +270,6 @@ public class AnalysisJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton popCourseButton;
     private javax.swing.JButton popItemButton;
     private javax.swing.JButton popTrainerButton;
     // End of variables declaration//GEN-END:variables
