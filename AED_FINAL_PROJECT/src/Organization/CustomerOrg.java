@@ -4,6 +4,8 @@
  */
 package Organization;
 
+import Role.Role;
+import Role.CustomerRole;
 import java.util.ArrayList;
 
 /**
