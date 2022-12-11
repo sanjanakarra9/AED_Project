@@ -4,17 +4,37 @@
  */
 package SalesManager.UI;
 
+import Enterprise.OnlineSalesEnterprise;
+import Model.EcoSystem;
+import Network.Network;
+import Organization.SalesOrg;
+import UserAccount.UserAcnt;
+import java.awt.CardLayout;
+import javax.swing.JPanel;
+
 /**
  *
  * @author movvakodandram
  */
 public class SalesManagerWorkAreaJPanel extends javax.swing.JPanel {
-
+  private JPanel container;
+    private UserAcnt account;
+    private SalesOrg salesorganization;
+    private OnlineSalesEnterprise salesenterprise;
+    private Network network;
+    private EcoSystem ecoSystem;
     /**
      * Creates new form SalesManagerWorkAreaJPanel
      */
-    public SalesManagerWorkAreaJPanel() {
+    public SalesManagerWorkAreaJPanel(JPanel container, UserAcnt account, 
+            SalesOrg salesorganization, OnlineSalesEnterprise salesenterprise, Network network, EcoSystem business) {
         initComponents();
+         this.container = container;
+        this.account = account;
+        this.salesorganization = salesorganization;
+        this.salesenterprise = salesenterprise;
+        this.network = network;
+        this.ecoSystem = ecoSystem;
     }
 
     /**

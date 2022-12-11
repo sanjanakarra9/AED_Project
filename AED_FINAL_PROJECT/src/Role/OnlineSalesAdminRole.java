@@ -5,7 +5,12 @@
 package Role;
 
 import Enterprise.Enterprise;
+import Enterprise.OnlineSalesEnterprise;
+import Model.EcoSystem;
+import Network.Network;
 import Organization.Organization;
+import SalesManager.UI.ManagerLoginJPanel;
+import UserAccount.UserAcnt;
 import javax.swing.JPanel;
 
 /**
@@ -15,8 +20,10 @@ import javax.swing.JPanel;
 public class OnlineSalesAdminRole extends Role{
 
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, Organization organization, Enterprise enterprise) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAcnt account, Organization organization, Enterprise enterprise, Network network, EcoSystem business) {
+        return new ManagerLoginJPanel(userProcessContainer, (OnlineSalesEnterprise) enterprise);
     }
+    
+   
     
 }
