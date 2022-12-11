@@ -4,7 +4,7 @@
  */
 package UI;
 
-import Customer.UI.CustomerRegistration;
+import Customer.UserInterface.CustomerRegistration;
 import DataBase.DB4OUtil;
 import Enterprise.Enterprise;
 import Network.Network;

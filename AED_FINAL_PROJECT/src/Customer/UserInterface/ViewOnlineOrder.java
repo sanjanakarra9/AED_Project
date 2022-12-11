@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package Customer.UI;
+package Customer.UserInterface;
 
 /**
  *
  * @author sanja
  */
-public class OrderItems extends javax.swing.JPanel {
+public class ViewOnlineOrder extends javax.swing.JPanel {
 
     /**
-     * Creates new form OrderItems
+     * Creates new form OnlineOrderView
      */
-    public OrderItems() {
+    public ViewOnlineOrder() {
         initComponents();
     }
 

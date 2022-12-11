@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package Customer.UI;
+package Customer.UserInterface;
 
 /**
  *
  * @author sanja
  */
-public class CourseBook extends javax.swing.JPanel {
+public class ViewReservation extends javax.swing.JPanel {
 
     /**
-     * Creates new form CourseBook
+     * Creates new form Reservation
      */
-    public CourseBook() {
+    public ViewReservation() {
         initComponents();
     }
 
