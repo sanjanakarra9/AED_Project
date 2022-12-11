@@ -4,11 +4,13 @@
  */
 package WorkQueue;
 
+import Course.Course;
+
 /**
  *
  * @author Sonur
  */
-public class RequestForcourses {
+public class CourseRequest {
      private Course course;
     private String result;
 
