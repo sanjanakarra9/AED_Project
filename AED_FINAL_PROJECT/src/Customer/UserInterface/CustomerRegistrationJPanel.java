@@ -6,9 +6,17 @@ package Customer.UserInterface;
 
 import Customer.Customer;
 import Enterprise.Enterprise;
+import Model.EcoSystem;
 import Network.Network;
 import Organization.Organization;
+import Role.CustomerRole;
+import UI.MainLogin;
+import UserAccount.UserAcnt;
+import java.awt.CardLayout;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
@@ -19,8 +27,21 @@ public class CustomerRegistrationJPanel extends javax.swing.JPanel {
     /**
      * Creates new form CustomerRegistration
      */
-    public CustomerRegistrationJPanel() {
+       private JPanel crpJPanel;
+    private String username;
+    private String password;
+    private EcoSystem system;
+    private Network network;
+    private MainLogin frame;
+    public CustomerRegistrationJPanel(EcoSystem system, JPanel crpJPanel, MainLogin frame) {
         initComponents();
+        this.system = system;
+        this.crpJPanel = crpJPanel;
+        this.frame = frame;
+        NetworkCMB.removeAllItems();
+        for (Network network : system.getNetworkList()) {
+            NetworkCMB.addItem(network);
+        }
     }
 
     /**
@@ -318,7 +339,7 @@ public class CustomerRegistrationJPanel extends javax.swing.JPanel {
         username = userNameTxt.getText();
         password = CPassField.getText();
 
-        UserAccount userAccount = system.getUserAccountDirectory().authenticateUser(username, password);
+        UserAcnt userAccount = system.getUserAccountDirectory().authenticateUser(username, password);
 
         if (userAccount == null) {
             for (Network network : system.getNetworkList()) {
@@ -368,7 +389,7 @@ public class CustomerRegistrationJPanel extends javax.swing.JPanel {
         Customer customer = new Customer(firstNameTxt.getText(), lastNameTxt.getText(),
             emailTxt.getText(), phoneTxt.getText());
         this.network = (Network) NetworkCMB.getSelectedItem();
-        UserAccount ua = network.getUserAccountDirectory().createUserAccount(userNameTxt.getText(), CPassField.getText(), customer, new CustomerRole());
+        UserAcnt ua = network.getUserAccountDirectory().createUserAccount(userNameTxt.getText(), CPassField.getText(), customer, new CustomerRole());
 
         //DB4OUtil.getInstance().storeSystem(system);
         JOptionPane.showMessageDialog(null, "Create Account Successfully");
@@ -407,7 +428,32 @@ public class CustomerRegistrationJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_NetworkCMBActionPerformed
 
+  private Boolean checkEmailPattern(){
+        String validName = "^[A-Z0-9a-z]+\\w*@[A-Z0-9a-z]+(\\.[A-Z0-9a-z]+)*$";
+        Pattern p = Pattern.compile(validName);
+        Matcher m = p.matcher(emailTxt.getText());
+        boolean b = m.matches();
+        
+        return b;
+    }
 
+private boolean passwordPatternCorrect(){
+        Pattern p = Pattern.compile("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$");
+//                "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[$*#&])[A-Za-z\\d$*#&]{6,}$]"
+        Matcher m = p.matcher(PassField.getText());
+        boolean b = m.matches();
+        
+        return b;
+    }
+private boolean phonePattern(){
+        Pattern p = Pattern.compile("^(\\+?1)?[2-9]\\d{2}[2-9](?!11)\\d{6}$");
+                //"^(\\+?1)?[2-9]\\d{2}[2-9](?!11)\\d{6}$"
+        Matcher m = p.matcher(phoneTxt.getText());
+        boolean b = m.matches();
+        
+        return b;
+    }
+        
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPasswordField CPassField;
     private javax.swing.JComboBox NetworkCMB;

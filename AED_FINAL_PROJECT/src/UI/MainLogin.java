@@ -7,6 +7,7 @@ package UI;
 import Customer.UserInterface.CustomerRegistrationJPanel;
 import DataBase.DB4OUtil;
 import Enterprise.Enterprise;
+import Model.EcoSystem;
 import Network.Network;
 import Organization.Organization;
 import UserAccount.UserAcnt;
@@ -24,6 +25,9 @@ public class MainLogin extends javax.swing.JFrame {
     /**
      * Creates new form MainLogin
      */
+    private EcoSystem system;
+    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
+    
     public MainLogin() {
         initComponents();
     }
@@ -259,7 +263,7 @@ public class MainLogin extends javax.swing.JFrame {
         container.add("blank", blankJP);
         CardLayout crdLyt = (CardLayout) container.getLayout();
         crdLyt.next(container);
-        DB4OUtil.storeSystem(system);
+        dB4OUtil.storeSystem(system);
     }//GEN-LAST:event_logoutJButtonActionPerformed
 
     private void RegButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegButtonActionPerformed
@@ -276,6 +280,15 @@ public class MainLogin extends javax.swing.JFrame {
         logoutJButton.setEnabled(false);
     }//GEN-LAST:event_RegButtonActionPerformed
 
+      public void setActivate() {
+        logoutJButton.setEnabled(false);
+        userNameJTextField.setEnabled(true);
+        passwordField.setEnabled(true);
+        loginJButton.setEnabled(true);
+
+        userNameJTextField.setText("");
+        passwordField.setText("");
+    }
     /**
      * @param args the command line arguments
      */
@@ -309,6 +322,7 @@ public class MainLogin extends javax.swing.JFrame {
                 new MainLogin().setVisible(true);
             }
         });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

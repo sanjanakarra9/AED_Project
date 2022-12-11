@@ -5,6 +5,7 @@
 package Network;
 
 import Enterprise.EnterpriseDirectory;
+import UserAccount.UserAcntDirectory;
 
 /**
  *
@@ -13,7 +14,16 @@ import Enterprise.EnterpriseDirectory;
 public class Network {
       private String name;
     private EnterpriseDirectory enterpriseDirectory;
-    
+     private UserAcntDirectory userAccountDirectory;
+
+    public UserAcntDirectory getUserAccountDirectory() {
+        return userAccountDirectory;
+    }
+
+    public void setUserAccountDirectory(UserAcntDirectory userAccountDirectory) {
+        this.userAccountDirectory = userAccountDirectory;
+    }
+     
     public Network(){
         enterpriseDirectory=new EnterpriseDirectory();
     }
