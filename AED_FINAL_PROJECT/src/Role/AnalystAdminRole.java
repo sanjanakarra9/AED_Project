@@ -8,10 +8,9 @@ package Role;
  *
  * @author movvakodandram
  */
-public class RoleFitnessClubManager {
+public class AnalystAdminRole {
 
-    public RoleFitnessClubManager() {
+    public AnalystAdminRole() {
     }
-
-   
+    
 }

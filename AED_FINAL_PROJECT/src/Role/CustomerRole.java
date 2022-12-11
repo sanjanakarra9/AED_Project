@@ -8,9 +8,9 @@ package Role;
  *
  * @author movvakodandram
  */
-public class RoleAdministrator {
+public class CustomerRole {
 
-    public RoleAdministrator() {
+    public CustomerRole() {
     }
     
 }
