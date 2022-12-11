@@ -18,12 +18,12 @@ import javax.swing.JPanel;
  */
 public class AdminRole extends Role{
 
-  
-
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAcnt account, Organization organization, Enterprise enterprise, Network network, EcoSystem business) {
-        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        return new AdminWorkAreaJPanel(userProcessContainer, enterprise)
+        return new AdminWorkAreaJPanel(userProcessContainer, enterprise);
     }
+
+
+  
     
 }
