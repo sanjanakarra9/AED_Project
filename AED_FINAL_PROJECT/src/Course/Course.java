@@ -22,9 +22,12 @@ public class Course {
         courseId = count;
         count++;
     }
+<<<<<<< HEAD
          public Course() {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+=======
+>>>>>>> 9cefb76dabc54f1a87df917f425ccb593c70ec6e
 
     public String getCourseName() {
         return courseName;

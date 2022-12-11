@@ -7,7 +7,10 @@ package UI;
 import Customer.UserInterface.CustomerRegistrationJPanel;
 import DataBase.DB4OUtil;
 import Enterprise.Enterprise;
+<<<<<<< HEAD
 import Model.ConfigureASystem;
+=======
+>>>>>>> 9cefb76dabc54f1a87df917f425ccb593c70ec6e
 import Model.EcoSystem;
 import Network.Network;
 import Organization.Organization;
@@ -31,8 +34,11 @@ public class MainLogin extends javax.swing.JFrame {
     
     public MainLogin() {
         initComponents();
+<<<<<<< HEAD
         system=ConfigureASystem.configure();
         this.setSize(1450,830);
+=======
+>>>>>>> 9cefb76dabc54f1a87df917f425ccb593c70ec6e
     }
 
     /**
