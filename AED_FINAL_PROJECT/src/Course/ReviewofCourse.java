@@ -8,18 +8,19 @@ package Course;
  *
  * @author Sonur
  */
-public class Course {
+public class ReviewofCourse {
     
     private String courseName;
+    private String gymtrainerName;
     private int courseId;
-    private String challengesfaced; 
-    private static int count = 0; 
-    private int vacantSeats;
-      
-       public Course(String coursename){
+    private int reviewId;
+    private static int count = 0;
+    
+    
+     public ReviewofCourse(String coursename, String gymtrainerName, int reviewId){
         this.courseName = coursename;
-        this.challengesfaced = challengesfaced;
-        courseId = count;
+        this.gymtrainerName = gymtrainerName;
+        reviewId = count;
         count++;
     }
 
@@ -31,6 +32,14 @@ public class Course {
         this.courseName = courseName;
     }
 
+    public String getGymtrainerName() {
+        return gymtrainerName;
+    }
+
+    public void setGymtrainerName(String gymtrainerName) {
+        this.gymtrainerName = gymtrainerName;
+    }
+
     public int getCourseId() {
         return courseId;
     }
@@ -39,12 +48,12 @@ public class Course {
         this.courseId = courseId;
     }
 
-    public String getChallengesfaced() {
-        return challengesfaced;
+    public int getReviewId() {
+        return reviewId;
     }
 
-    public void setChallengesfaced(String challengesfaced) {
-        this.challengesfaced = challengesfaced;
+    public void setReviewId(int reviewId) {
+        this.reviewId = reviewId;
     }
 
     public static int getCount() {
@@ -52,20 +61,7 @@ public class Course {
     }
 
     public static void setCount(int count) {
-        Course.count = count;
-    }
-
-    public int getVacantSeats() {
-        return vacantSeats;
-    }
-
-    public void setVacantSeats(int vacantSeats) {
-        this.vacantSeats = vacantSeats;
-    }
-       
-    @Override
-    public String toString(){
-        return this.courseName;
+        ReviewofCourse.count = count;
     }
     
 }

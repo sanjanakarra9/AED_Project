@@ -2,15 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Role;
+package Person;
 
 /**
  *
- * @author movvakodandram
+ * @author sanja
  */
-public class RoleAnalyst {
-
-    public RoleAnalyst() {
-    }
+public class Trainer {
     
 }
