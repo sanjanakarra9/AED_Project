@@ -4,19 +4,45 @@
  */
 package SalesManager.UI;
 
+import Enterprise.OnlineSalesEnterprise;
+import static Organization.Organization.Type.OnlineSales;
+import Sale.OnlineSales;
+import UserAccount.UserAcnt;
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author movvakodandram
  */
 public class ManageItemListJPanel extends javax.swing.JPanel {
-
+    private JPanel container;
+    private UserAcnt account;
+    private OnlineSalesEnterprise salesenterprise;
     /**
      * Creates new form ManageItemListJPanel
      */
-    public ManageItemListJPanel() {
+    public ManageItemListJPanel(JPanel container, UserAcnt account, OnlineSalesEnterprise salesenterprise) {
         initComponents();
+        this.container = container;
+        this.account = account;
+        this.salesenterprise = salesenterprise;
+        populateList();
     }
 
+      public void populateList() {
+        DefaultTableModel model = (DefaultTableModel) ItemListJTable.getModel();
+        
+        model.setRowCount(0);
+        for(OnlineSales item : salesenterprise.getOnlineSalesDirectory().getSalesList()){
+            Object[] row = new Object[2];
+            row[0] = item;
+            row[1] = item.getPrice();
+            model.addRow(row);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -124,7 +150,7 @@ public class ManageItemListJPanel extends javax.swing.JPanel {
             int selectionResult = JOptionPane.showConfirmDialog(null, "Are you sure to delete?","Warning",selectionButton);
             if(selectionResult == JOptionPane.YES_OPTION){
                 OnlineSales item = (OnlineSales)ItemListJTable.getValueAt(selectedRow, 0);
-                salesenterprise.getOnlineSalesDirectory().getOnlineSalesList().remove(item);
+                salesenterprise.getOnlineSalesDirectory().getSalesList().remove(item);
                 populateList();
             }
         }else{
