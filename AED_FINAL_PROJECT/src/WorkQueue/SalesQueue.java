@@ -12,6 +12,11 @@ import java.util.ArrayList;
  */
 public class SalesQueue {
     private ArrayList<SalesRequest> onlinesalesRequestList;
+     
+    public SalesQueue(){
+        this.onlinesalesRequestList = new ArrayList();
+    }
+
 
     public ArrayList<SalesRequest> getOnlinesalesRequestList() {
         return onlinesalesRequestList;

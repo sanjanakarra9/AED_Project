@@ -97,11 +97,11 @@ public class UserAcnt {
     public void setCourseQueue(CourseQueue courseQueue) {
         this.courseQueue = courseQueue;
     }
-     @Override
+    
+    @Override
     public String toString() {
         return username;
     }
-
     
     
 }

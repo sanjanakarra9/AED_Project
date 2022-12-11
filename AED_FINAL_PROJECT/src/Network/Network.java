@@ -15,6 +15,12 @@ public class Network {
       private String name;
     private EnterpriseDirectory enterpriseDirectory;
      private UserAcntDirectory userAccountDirectory;
+     
+     public Network(){
+        enterpriseDirectory=new EnterpriseDirectory();
+        userAccountDirectory = new UserAcntDirectory();
+    }
+    
 
     public UserAcntDirectory getUserAccountDirectory() {
         return userAccountDirectory;
@@ -23,10 +29,12 @@ public class Network {
     public void setUserAccountDirectory(UserAcntDirectory userAccountDirectory) {
         this.userAccountDirectory = userAccountDirectory;
     }
-     
-    public Network(){
-        enterpriseDirectory=new EnterpriseDirectory();
+
+    public void setEnterpriseDirectory(EnterpriseDirectory enterpriseDirectory) {
+        this.enterpriseDirectory = enterpriseDirectory;
     }
+     
+  
     
     public String getName() {
         return name;

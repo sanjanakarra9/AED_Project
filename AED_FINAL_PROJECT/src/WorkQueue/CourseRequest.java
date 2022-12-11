@@ -29,5 +29,13 @@ public class CourseRequest extends workRequest{
     public void setResult(String result) {
         this.result = result;
     }
+     @Override
+    public String toString(){
+        
+        return course.getCourseName();
+    }
     
+    public CourseRequest(){
+        course = new Course();
+    }
 }

@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author Sonur
  */
-public class workRequest {
+public abstract class workRequest {
     private String message;
     private UserAcnt send;
     private UserAcnt receive;

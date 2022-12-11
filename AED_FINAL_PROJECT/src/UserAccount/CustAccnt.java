@@ -8,6 +8,6 @@ package UserAccount;
  *
  * @author movvakodandram
  */
-public class CustAccnt {
+public class CustAccnt extends UserAcnt {
     
 }
