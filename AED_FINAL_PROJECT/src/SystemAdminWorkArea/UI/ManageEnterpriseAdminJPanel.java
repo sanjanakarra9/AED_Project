@@ -4,19 +4,76 @@
  */
 package SystemAdminWorkArea.UI;
 
+import Enterprise.Enterprise;
+import Model.EcoSystem;
+import Network.Network;
+import Person.Person;
+import Role.AdminRole;
+import UserAccount.UserAcnt;
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author movvakodandram
  */
 public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
+    
+    private JPanel userProcessContainer;
+    private EcoSystem system;
+
 
     /**
      * Creates new form ManageEnterpriseAdminJPanel
      */
-    public ManageEnterpriseAdminJPanel() {
+    public ManageEnterpriseAdminJPanel(JPanel userProcessContainer, EcoSystem system) {
         initComponents();
+        
+        this.userProcessContainer = userProcessContainer;
+        this.system = system;
+
+        populateTable();
+        populateNetworkComboBox();
     }
 
+    
+    private void populateTable() {
+        DefaultTableModel model = (DefaultTableModel) enterpriseJTable.getModel();
+
+        model.setRowCount(0);
+        for (Network network : system.getNetworkList()) {
+            for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
+                for (UserAcnt userAccount : enterprise.getUserAccountDirectory().getUserAccountList()) {
+                    Object[] row = new Object[3];
+                    row[0] = enterprise;
+                    row[1] = network.getName();
+                    row[2] = userAccount;
+
+                    model.addRow(row);
+                }
+            }
+        }
+    }
+    
+     private void populateNetworkComboBox(){
+        networkJComboBox.removeAllItems();
+        
+        for (Network network : system.getNetworkList()){
+            networkJComboBox.addItem(network);
+        }
+    }
+     
+     private void populateEnterpriseComboBox(Network network){
+        enterpriseJComboBox.removeAllItems();
+        
+        for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()){
+            enterpriseJComboBox.addItem(enterprise);
+        }
+        
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -189,7 +246,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(61, 61, 61)
+                .addGap(325, 325, 325)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(submitJButton)
                     .addComponent(deleteBtn))
@@ -239,7 +296,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         //Employee employee = enterprise.getEmployeeDirectory().createEmployee(name);
         Person person = enterprise.getPersonDirectory().createPerson(name);
 
-        UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, person, new AdminRole());
+        UserAcnt account = enterprise.getUserAccountDirectory().createUserAccount(username, password, person, new AdminRole());
         populateTable();
 
     }//GEN-LAST:event_submitJButtonActionPerformed
@@ -263,7 +320,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
             int selectionButton = JOptionPane.YES_NO_OPTION;
             int selectionResult = JOptionPane.showConfirmDialog(null, "Are you sure to delete?", "Warning", selectionButton);
             if(selectionResult == JOptionPane.YES_OPTION){
-                UserAccount userAccount = (UserAccount)enterpriseJTable.getValueAt(selectedRow, 2);
+                UserAcnt userAccount = (UserAcnt)enterpriseJTable.getValueAt(selectedRow, 2);
                 enterprise.getUserAccountDirectory().getUserAccountList().remove(userAccount);
                 populateTable();
             }
