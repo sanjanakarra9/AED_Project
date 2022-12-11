@@ -5,6 +5,7 @@
 package Enterprise;
 
 import Organization.Organization;
+import Organization.OrganizationsDirectory;
 
 /**
  *
@@ -12,22 +13,24 @@ import Organization.Organization;
  */
 public abstract class Enterprise extends Organization{
     
-    private typeOfEnterprise typeOfEnterprise;
-    private OrganizationsDirectory organizationDirectory;
-
-    public OrganizationsDirectory getOrganizationsDirectory() {
-        return organizationsDirectory;
+    public Enterprise(String name) {
+        super(name);
     }
     
-     public enum EnterpriseType{
-        //Hospital("Hospital");
+     private EnterpriseType enterpriseType;
+    private OrganizationsDirectory organizationDirectory;
+
+    public OrganizationsDirectory getOrganizationDirectory() {
+        return organizationDirectory;
+    }
+    
+    public enum EnterpriseType{
         FitnessClub("FitnessClub"),
-        OnlineSales("OnlineSales"),
-        HealthEnterprise("Health Services");
+        OnlineSales("OnlineSales");
         
         private String value;
         
-        private typeOfEnterprise(String value){
+        private EnterpriseType(String value){
             this.value=value;
         }
         public String getValue() {
@@ -38,10 +41,22 @@ public abstract class Enterprise extends Organization{
         return value;
     }
     }
-     
-     public EnterpriseType typeOfEnterprise() {
+
+    public EnterpriseType getEnterpriseType() {
         return enterpriseType;
     }
+
+    public void setEnterpriseType(EnterpriseType enterpriseType) {
+        this.enterpriseType = enterpriseType;
+    }
+    
+    public Enterprise(String name,EnterpriseType type){
+        super(name);
+        this.enterpriseType=type;
+        organizationDirectory=new OrganizationsDirectory();
+    }
+    
+   
 
    
 }

@@ -8,7 +8,7 @@ package Course;
  *
  * @author Sonur
  */
-public class ReviewofCourse {
+public class CourseReview {
     
     private String courseName;
     private String gymtrainerName;
@@ -17,7 +17,7 @@ public class ReviewofCourse {
     private static int count = 0;
     
     
-     public ReviewofCourse(String coursename, String gymtrainerName, int reviewId){
+     public CourseReview(String coursename, String gymtrainerName, int reviewId){
         this.courseName = coursename;
         this.gymtrainerName = gymtrainerName;
         reviewId = count;
@@ -61,7 +61,7 @@ public class ReviewofCourse {
     }
 
     public static void setCount(int count) {
-        ReviewofCourse.count = count;
+        CourseReview.count = count;
     }
     
 }
