@@ -5,7 +5,7 @@
 package Organization;
 
 import Role.Role;
-import Role.AnalystAdminRole;
+import Role.AnalysisAdminRole;
 import java.util.ArrayList;
 
 /**
@@ -21,7 +21,7 @@ public class AnalysisOrg extends Organization{
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
-        roles.add(new AnalystAdminRole());
+        roles.add(new AnalysisAdminRole());
         return roles;
     }
     

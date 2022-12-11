@@ -12,8 +12,8 @@ import java.util.ArrayList;
  *
  * @author sanja
  */
-public class FitnessClubManagerOrg extends Organization{
-    public FitnessClubManagerOrg() {
+public class FitnessManagerOrg extends Organization{
+    public FitnessManagerOrg() {
         super(Organization.Type.FitnessClubManager.getValue());
     }
 

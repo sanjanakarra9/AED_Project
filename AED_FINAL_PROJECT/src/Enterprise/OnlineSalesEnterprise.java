@@ -8,6 +8,6 @@ package Enterprise;
  *
  * @author Sonur
  */
-public class OnlineEntp {
+public class OnlineSalesEnterprise {
     
 }
