@@ -192,15 +192,15 @@ public class CheckoutCourseJPanel extends javax.swing.JPanel {
         else{
             for (int i = 0; i < n; i ++) {
                 CourseRequest courseRequest = new CourseRequest();
-                courseRequest.setSender(account);
+                courseRequest.setSend(account);
                 courseRequest.setStatus("Pending");
                 courseRequest.setCourse(myCourse.getListOfCourses().get(i));
 
-                fitenterprise.getCourseQueue().getCourseRequestList().add(courseRequest);
+                fitenterprise.getQueueofCourses().getCourseRequestList().add(courseRequest);
                 account.getCourseQueue().getCourseRequestList().add(courseRequest);
 
             }
-            myCourse.setCourseList(new ArrayList<Course> ());
+            myCourse.setListOfCourses(new ArrayList<Course> ());
             myCourse = new CourseDirectory();
             JOptionPane.showMessageDialog(null, "The course you chosed has been submitted!!");
             populateCourse();
@@ -213,7 +213,7 @@ public class CheckoutCourseJPanel extends javax.swing.JPanel {
         int selectedRow = viewCourseJTable.getSelectedRow();
         if(selectedRow >= 0){
             Course course = (Course)viewCourseJTable.getValueAt(selectedRow, 1);
-            myCourse.getCourseList().remove(course);
+            myCourse.getListOfCourses().remove(course);
             populateCourse();
         }
         else{
