@@ -10,20 +10,20 @@ import java.util.ArrayList;
  *
  * @author Sonur
  */
-public class AppointmentInfo {
+public class ApntQueue {
     
-    private ArrayList<AppointmentRequest> appointmentRequestList;
+    private ArrayList<ApntRequest> appointmentRequestList;
     
-    public AppointmentInfo(){
+    public ApntQueue(){
         this.appointmentRequestList = new ArrayList();
         
     }
 
-    public ArrayList<AppointmentRequest> getAppointmentRequestList() {
+    public ArrayList<ApntRequest> getAppointmentRequestList() {
         return appointmentRequestList;
     }
 
-    public void setAppointmentRequestList(ArrayList<AppointmentRequest> appointmentRequestList) {
+    public void setAppointmentRequestList(ArrayList<ApntRequest> appointmentRequestList) {
         this.appointmentRequestList = appointmentRequestList;
     }
     

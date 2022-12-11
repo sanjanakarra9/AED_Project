@@ -10,14 +10,14 @@ import java.util.ArrayList;
  *
  * @author Sonur
  */
-public class QueueForOnlineSales {
-    private ArrayList<OnlineSalesRequest> onlinesalesRequestList;
+public class SalesQueue {
+    private ArrayList<SalesRequest> onlinesalesRequestList;
 
-    public ArrayList<OnlineSalesRequest> getOnlinesalesRequestList() {
+    public ArrayList<SalesRequest> getOnlinesalesRequestList() {
         return onlinesalesRequestList;
     }
 
-    public void setOnlinesalesRequestList(ArrayList<OnlineSalesRequest> onlinesalesRequestList) {
+    public void setOnlinesalesRequestList(ArrayList<SalesRequest> onlinesalesRequestList) {
         this.onlinesalesRequestList = onlinesalesRequestList;
     }
     
