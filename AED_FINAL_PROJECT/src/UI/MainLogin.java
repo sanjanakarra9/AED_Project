@@ -8,6 +8,7 @@ import Customer.UserInterface.CustomerRegistrationJPanel;
 import DataBase.DB4OUtil;
 import Enterprise.Enterprise;
 import Model.EcoSystem;
+import Model.ConfigureASystem;
 import Network.Network;
 import Organization.Organization;
 import UserAccount.UserAcnt;
@@ -30,6 +31,8 @@ public class MainLogin extends javax.swing.JFrame {
     
     public MainLogin() {
         initComponents();
+        system=ConfigureASystem.configure();
+        this.setSize(1450,830);
     }
 
     /**

@@ -4,10 +4,19 @@
  */
 package UserAccount;
 
+import Customer.Customer;
+import java.util.ArrayList;
+
 /**
  *
  * @author movvakodandram
  */
-public class CustAccntDirectory {
+public class CustAccntDirectory extends UserAcntDirectory{
+    private ArrayList<Customer> cusList;
     
+    public CustAccntDirectory()
+            
+    {
+            this.cusList=new ArrayList();
+}
 }

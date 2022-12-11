@@ -4,6 +4,8 @@
  */
 package ClassAppointment;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -20,6 +22,13 @@ public class ClassAppointment {
         classRoom = null;
         this.date = date;
         this.session = session;
+    }
+@Override
+    public String toString(){
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        String s = df.format(date);
+        s = s + " " + session;
+        return s;
     }
 
     public ClassRoom getClassRoom() {
