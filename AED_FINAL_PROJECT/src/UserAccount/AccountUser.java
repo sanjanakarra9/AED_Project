@@ -4,6 +4,11 @@
  */
 package UserAccount;
 
+<<<<<<< Updated upstream
+=======
+import InfoPackages.InfoQueue;
+
+>>>>>>> Stashed changes
 /**
  *
  * @author movvakodandram
