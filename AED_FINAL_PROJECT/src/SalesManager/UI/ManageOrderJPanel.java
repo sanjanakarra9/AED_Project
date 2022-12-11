@@ -4,19 +4,47 @@
  */
 package SalesManager.UI;
 
+import Enterprise.OnlineSalesEnterprise;
+import UserAccount.UserAcnt;
+import WorkQueue.SalesRequest;
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author movvakodandram
  */
 public class ManageOrderJPanel extends javax.swing.JPanel {
 
+    private JPanel container;
+    private UserAcnt account;
+    private OnlineSalesEnterprise salesenterprise;
     /**
      * Creates new form ManageOrderJPanel
      */
-    public ManageOrderJPanel() {
+    public ManageOrderJPanel(JPanel container, UserAcnt account, OnlineSalesEnterprise salesenterprise) {
         initComponents();
+        this.container = container;
+        this.account = account;
+        this.salesenterprise = salesenterprise;
+        populateOrders();
     }
 
+       public void populateOrders() {
+        DefaultTableModel model = (DefaultTableModel) orderJTable.getModel();
+        model.setRowCount(0);
+        for (SalesRequest itemRequest : salesenterprise.getOnlineSalesQueue().getOnlinesalesRequestList()) {
+            Object[] row = new Object[5];
+            row[0] = itemRequest.getSend();
+            row[1] = itemRequest;
+            row[2] = itemRequest.getQuantity();
+            row[3] = itemRequest.getTotalPrice();
+            row[4] = itemRequest.getStatus();
+            model.addRow(row);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -111,11 +139,11 @@ public class ManageOrderJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         int selectedRow = orderJTable.getSelectedRow();
         if (selectedRow >= 0) {
-            OnlineSalesRequest itemRequest = (OnlineSalesRequest) orderJTable.getValueAt(selectedRow, 1);
+            SalesRequest itemRequest = (SalesRequest) orderJTable.getValueAt(selectedRow, 1);
             if (itemRequest.getStatus().equals("Paid")) {
                 itemRequest.setStatus("Complete");
                 JOptionPane.showMessageDialog(null, "Completed Successful!!");
-                itemRequest.setReceiver(account);
+                itemRequest.setReceive(account);
                 populateOrders();
             } else {
                 JOptionPane.showMessageDialog(null, "It has been Completed!!");
