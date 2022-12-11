@@ -86,8 +86,8 @@
               </Group>
               <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="submitJButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="deleteBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="submitJButton" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
+                  <Component id="deleteBtn" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="backJButton" min="-2" pref="50" max="-2" attributes="0"/>
@@ -193,7 +193,7 @@
           <Color blue="36" green="91" red="d7" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Business/&#x6dfb;&#x52a0;.png"/>
+
         </Property>
         <Property name="text" type="java.lang.String" value="Submit"/>
       </Properties>
@@ -204,7 +204,7 @@
     <Component class="javax.swing.JButton" name="backJButton">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Business/&#x8fd4;&#x56de;.png"/>
+
         </Property>
       </Properties>
       <Events>
@@ -220,7 +220,7 @@
           <Color blue="36" green="91" red="d7" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Business/&#x5220;&#x9664; (1).png"/>
+
         </Property>
         <Property name="text" type="java.lang.String" value="Delete"/>
       </Properties>

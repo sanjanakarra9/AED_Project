@@ -50,8 +50,8 @@
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="321" max="-2" attributes="0"/>
-                      <Component id="backTxt" min="-2" pref="80" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="188" max="-2" attributes="0"/>
+                      <Component id="backjButton" min="-2" pref="80" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="189" max="-2" attributes="0"/>
@@ -81,9 +81,9 @@
               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="courseCbx" min="-2" pref="40" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+              <Component id="backjButton" min="-2" pref="50" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="backTxt" min="-2" pref="50" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="263" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -122,16 +122,6 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nameTxtActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="backTxt">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Business/&#x8fd4;&#x56de;.png"/>
-        </Property>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backTxtActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
@@ -357,6 +347,11 @@
           </Border>
         </Property>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="backjButton">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backjButtonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
