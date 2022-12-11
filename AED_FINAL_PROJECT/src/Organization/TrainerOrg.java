@@ -5,7 +5,6 @@
 package Organization;
 
 import Role.Role;
-import Role.RoleTrainer;
 import java.util.ArrayList;
 
 /**
@@ -15,13 +14,11 @@ import java.util.ArrayList;
 public class TrainerOrg extends Organization{
 
     public TrainerOrg() {
-        
-         super(Organization.Type.Trainer.getValue());
+        super(Organization.Type.Trainer.getValue());
     }
+
     @Override
     public ArrayList<Role> getSupportedRole() {
-        ArrayList<Role> roles = new ArrayList();
-        roles.add(new RoleTrainer());
-        return roles;
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

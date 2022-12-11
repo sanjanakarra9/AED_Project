@@ -8,6 +8,6 @@ package Person;
  *
  * @author sanja
  */
-public class FitnessClubManager {
+public class FitnessManager {
     
 }
