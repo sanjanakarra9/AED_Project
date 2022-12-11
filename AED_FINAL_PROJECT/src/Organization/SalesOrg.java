@@ -4,6 +4,8 @@
  */
 package Organization;
 
+import Role.OnlineSalesAdminRole;
+import Role.Role;
 import java.util.ArrayList;
 
 /**
@@ -19,7 +21,7 @@ public class SalesOrg extends Organization{
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
-        roles.add(new OnlineSalesRole());
+        roles.add(new OnlineSalesAdminRole());
         return roles;
     }
     

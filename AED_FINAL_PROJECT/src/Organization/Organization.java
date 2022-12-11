@@ -5,10 +5,10 @@
 package Organization;
 
 import Employee.EmployeeDirectory;
-import InfoPackages.WorkQueue;
 import Person.PersonDirectory;
 import Role.Role;
-import UserAccount.AccountUserDirectory;
+import UserAccount.UserAcntDirectory;
+import WorkQueue.WorkQueue;
 import java.util.ArrayList;
 
 /**
@@ -27,14 +27,7 @@ public abstract class Organization {
         this.name = name;
     }
 
-    public WorkQueue getWorkQueue() {
-        return workQueue;
-    }
-
-    public void setWorkQueue(WorkQueue workQueue) {
-        this.workQueue = workQueue;
-    }
-
+   
     public EmployeeDirectory getEmployeeDirectory() {
         return employeeDirectory;
     }
@@ -43,11 +36,11 @@ public abstract class Organization {
         this.employeeDirectory = employeeDirectory;
     }
 
-    public AccountUserDirectory getUserAccountDirectory() {
+    public UserAcntDirectory getUserAccountDirectory() {
         return userAccountDirectory;
     }
 
-    public void setUserAccountDirectory(AccountUserDirectory userAccountDirectory) {
+    public void setUserAccountDirectory(UserAcntDirectory userAccountDirectory) {
         this.userAccountDirectory = userAccountDirectory;
     }
 
@@ -84,7 +77,7 @@ public abstract class Organization {
     }
     private WorkQueue workQueue;
     private EmployeeDirectory employeeDirectory;
-    private AccountUserDirectory userAccountDirectory;
+    private UserAcntDirectory userAccountDirectory;
     private PersonDirectory personDirectory;
     private int organizationID;
     private OrganizationsDirectory organizationsDirectory;
@@ -113,7 +106,7 @@ public abstract class Organization {
         workQueue = new WorkQueue();
         employeeDirectory = new EmployeeDirectory();
         personDirectory = new PersonDirectory();
-        userAccountDirectory = new AccountUserDirectory();
+        userAccountDirectory = new UserAcntDirectory();
         organizationsDirectory = new OrganizationsDirectory();
         organizationID = counter;
         ++counter;
