@@ -43,31 +43,24 @@
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+          <Color blue="42" green="2d" red="2b" type="rgb"/>
         </Property>
       </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="177" max="-2" attributes="0"/>
+                  <Component id="backTxt" min="-2" pref="80" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="359" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="177" max="-2" attributes="0"/>
-                          <Component id="backTxt" min="-2" pref="80" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="399" max="-2" attributes="0"/>
-                          <Component id="jLabel5" min="-2" pref="112" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="616" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="IdTxt" alignment="0" min="-2" pref="194" max="-2" attributes="0"/>
-                              <Component id="coursenameTxt" alignment="0" min="-2" pref="194" max="-2" attributes="0"/>
-                              <Component id="remainseatsTxt" alignment="0" min="-2" pref="194" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <Component id="jLabel5" min="-2" pref="178" max="-2" attributes="0"/>
+                      <Component id="IdTxt" alignment="0" min="-2" pref="194" max="-2" attributes="0"/>
+                      <Component id="coursenameTxt" alignment="0" min="-2" pref="194" max="-2" attributes="0"/>
+                      <Component id="remainseatsTxt" alignment="0" min="-2" pref="194" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="588" max="-2" attributes="0"/>
+                  <EmptySpace pref="588" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -94,18 +87,35 @@
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Lucida Grande" size="14" style="1"/>
+              <Font name="Lucida Grande" size="24" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="47" green="61" red="ca" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Course Detail"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="backTxt">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="42" green="2d" red="2b" type="rgb"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/Images/icons8-back-arrow-48.png"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="null"/>
+            </Property>
+          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backTxtActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="coursenameTxt">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="e4" green="e9" red="f2" type="rgb"/>
+            </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                 <TitledBorder justification="1" title="Course Name">
@@ -121,6 +131,9 @@
         </Component>
         <Component class="javax.swing.JTextField" name="IdTxt">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="e4" green="e9" red="f2" type="rgb"/>
+            </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                 <TitledBorder title="Course ID">
@@ -136,6 +149,9 @@
         </Component>
         <Component class="javax.swing.JTextField" name="remainseatsTxt">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="e4" green="e9" red="f2" type="rgb"/>
+            </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                 <TitledBorder title="Available Seats">

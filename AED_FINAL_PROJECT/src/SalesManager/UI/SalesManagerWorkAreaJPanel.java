@@ -54,16 +54,17 @@ public class SalesManagerWorkAreaJPanel extends javax.swing.JPanel {
         manageOrdersButton = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(0, 0, 0));
+        setBackground(new java.awt.Color(43, 45, 66));
 
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(204, 204, 0));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Please manage your item business");
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(242, 233, 228));
 
+        manageListButton.setBackground(new java.awt.Color(202, 97, 71));
         manageListButton.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        manageListButton.setForeground(new java.awt.Color(215, 145, 54));
+        manageListButton.setForeground(new java.awt.Color(242, 233, 228));
         manageListButton.setText("Mange the Item List");
         manageListButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,10 +95,11 @@ public class SalesManagerWorkAreaJPanel extends javax.swing.JPanel {
                 .addGap(61, 61, 61))
         );
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(242, 233, 228));
 
+        manageOrdersButton.setBackground(new java.awt.Color(202, 97, 71));
         manageOrdersButton.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        manageOrdersButton.setForeground(new java.awt.Color(215, 145, 54));
+        manageOrdersButton.setForeground(new java.awt.Color(242, 233, 228));
         manageOrdersButton.setText("Manage the Orders");
         manageOrdersButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
