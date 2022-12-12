@@ -11,7 +11,7 @@ This repo is for info 5100 final project fall 2022 semester
 1. FitnessEnterprise
 2. OnlineSalesEnterprise.
 3. AnalysisEnterprise.
-4.CourseservicesEnterprise.
+4. CourseservicesEnterprise.
 
 ### Organizations:
 
@@ -26,7 +26,7 @@ This repo is for info 5100 final project fall 2022 semester
 
 1. Admin Role.
 2. Analysis Admin Role.
-3.Customer Role.
+3. Customer Role.
 4. Fitness manager Role.
 5. Gymtrainer Role.
 6. Onlinesales Admin Role.
