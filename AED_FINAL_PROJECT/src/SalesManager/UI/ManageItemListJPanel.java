@@ -59,27 +59,34 @@ public class ManageItemListJPanel extends javax.swing.JPanel {
         ItemListJTable = new javax.swing.JTable();
         addBtn = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(0, 0, 0));
+        setBackground(new java.awt.Color(43, 45, 66));
 
+        deleteBtn.setBackground(new java.awt.Color(202, 97, 71));
         deleteBtn.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        deleteBtn.setForeground(new java.awt.Color(215, 145, 54));
+        deleteBtn.setForeground(new java.awt.Color(242, 233, 228));
         deleteBtn.setText("Delete");
+        deleteBtn.setBorder(null);
         deleteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteBtnActionPerformed(evt);
             }
         });
 
+        Backbtn.setBackground(new java.awt.Color(43, 45, 66));
+        Backbtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-back-arrow-48.png"))); // NOI18N
+        Backbtn.setBorder(null);
         Backbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BackbtnActionPerformed(evt);
             }
         });
 
+        jLabel1.setBackground(new java.awt.Color(202, 97, 71));
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 204, 0));
+        jLabel1.setForeground(new java.awt.Color(242, 233, 228));
         jLabel1.setText("Please manage your Item List");
 
+        ItemListJTable.setBackground(new java.awt.Color(242, 233, 228));
         ItemListJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
@@ -96,9 +103,11 @@ public class ManageItemListJPanel extends javax.swing.JPanel {
         ItemListJTable.setSelectionBackground(new java.awt.Color(215, 145, 54));
         jScrollPane1.setViewportView(ItemListJTable);
 
+        addBtn.setBackground(new java.awt.Color(202, 97, 71));
         addBtn.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        addBtn.setForeground(new java.awt.Color(215, 145, 54));
+        addBtn.setForeground(new java.awt.Color(242, 233, 228));
         addBtn.setText("Add");
+        addBtn.setBorder(null);
         addBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addBtnActionPerformed(evt);
@@ -109,12 +118,8 @@ public class ManageItemListJPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(317, 317, 317)
-                .addComponent(Backbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1053, 1053, 1053))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(443, 443, 443)
+                .addContainerGap(443, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 634, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -124,11 +129,17 @@ public class ManageItemListJPanel extends javax.swing.JPanel {
                         .addGap(28, 28, 28)
                         .addComponent(deleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(373, 373, 373))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(Backbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(135, 135, 135)
+                .addGap(21, 21, 21)
+                .addComponent(Backbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -136,9 +147,7 @@ public class ManageItemListJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addBtn)
                     .addComponent(deleteBtn))
-                .addGap(33, 33, 33)
-                .addComponent(Backbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(305, 305, 305))
+                .addGap(388, 388, 388))
         );
     }// </editor-fold>//GEN-END:initComponents
 

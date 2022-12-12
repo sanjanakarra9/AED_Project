@@ -117,8 +117,9 @@ public class ManagerLoginJPanel extends javax.swing.JPanel {
         jTabbedPane3.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
         jTabbedPane3.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setBackground(new java.awt.Color(43, 45, 66));
 
+        OrTbl.setBackground(new java.awt.Color(242, 233, 228));
         OrTbl.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         OrTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -144,8 +145,9 @@ public class ManagerLoginJPanel extends javax.swing.JPanel {
         OrTbl.setSelectionBackground(new java.awt.Color(215, 145, 54));
         jScrollPane1.setViewportView(OrTbl);
 
+        addBtn.setBackground(new java.awt.Color(202, 97, 71));
         addBtn.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        addBtn.setForeground(new java.awt.Color(215, 145, 54));
+        addBtn.setForeground(new java.awt.Color(242, 233, 228));
         addBtn.setText("Add");
         addBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -154,11 +156,12 @@ public class ManagerLoginJPanel extends javax.swing.JPanel {
         });
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 204, 0));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Name:");
 
+        deBtn.setBackground(new java.awt.Color(202, 97, 71));
         deBtn.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        deBtn.setForeground(new java.awt.Color(215, 145, 54));
+        deBtn.setForeground(new java.awt.Color(242, 233, 228));
         deBtn.setText("Delete");
         deBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -204,7 +207,7 @@ public class ManagerLoginJPanel extends javax.swing.JPanel {
 
         jTabbedPane3.addTab("Manage Organization", jPanel1);
 
-        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel2.setBackground(new java.awt.Color(43, 45, 66));
 
         userNameTxt.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "User Name", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 1, 14), new java.awt.Color(102, 102, 102))); // NOI18N
 
@@ -223,6 +226,7 @@ public class ManagerLoginJPanel extends javax.swing.JPanel {
 
         emailTxt.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Email", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 1, 14), new java.awt.Color(102, 102, 102))); // NOI18N
 
+        uTable.setBackground(new java.awt.Color(242, 233, 228));
         uTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -244,8 +248,9 @@ public class ManagerLoginJPanel extends javax.swing.JPanel {
         uTable.setSelectionBackground(new java.awt.Color(215, 145, 54));
         jScrollPane2.setViewportView(uTable);
 
+        AddBtn.setBackground(new java.awt.Color(242, 233, 228));
         AddBtn.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        AddBtn.setForeground(new java.awt.Color(255, 204, 0));
+        AddBtn.setForeground(new java.awt.Color(202, 97, 71));
         AddBtn.setText("Add");
         AddBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -253,8 +258,9 @@ public class ManagerLoginJPanel extends javax.swing.JPanel {
             }
         });
 
+        deleteBtn.setBackground(new java.awt.Color(242, 233, 228));
         deleteBtn.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        deleteBtn.setForeground(new java.awt.Color(255, 204, 0));
+        deleteBtn.setForeground(new java.awt.Color(202, 97, 71));
         deleteBtn.setText("Delete");
         deleteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -263,7 +269,7 @@ public class ManagerLoginJPanel extends javax.swing.JPanel {
         });
 
         jLabel8.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Organization:");
 
         organizationCbx.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Choose the Organization", "Sales Organization" }));
@@ -332,7 +338,7 @@ public class ManagerLoginJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(224, 224, 224)
+                .addContainerGap()
                 .addComponent(jTabbedPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 1017, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(209, 209, 209))
         );
