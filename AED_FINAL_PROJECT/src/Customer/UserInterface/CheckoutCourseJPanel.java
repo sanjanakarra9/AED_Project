@@ -67,18 +67,20 @@ public class CheckoutCourseJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         viewCourseJTable = new javax.swing.JTable();
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(43, 45, 66));
 
-        backjButton.setBackground(new java.awt.Color(153, 204, 255));
-        backjButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\sanja\\Desktop\\AED Images\\icons8-return-24.png")); // NOI18N
+        backjButton.setBackground(new java.awt.Color(43, 45, 66));
+        backjButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-back-arrow-48.png"))); // NOI18N
+        backjButton.setBorder(null);
         backjButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backjButtonActionPerformed(evt);
             }
         });
 
-        submitButton.setBackground(new java.awt.Color(153, 204, 255));
+        submitButton.setBackground(new java.awt.Color(202, 97, 71));
         submitButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        submitButton.setForeground(new java.awt.Color(255, 255, 255));
         submitButton.setText("SUBMIT");
         submitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,8 +88,9 @@ public class CheckoutCourseJPanel extends javax.swing.JPanel {
             }
         });
 
-        removeButton.setBackground(new java.awt.Color(153, 204, 255));
+        removeButton.setBackground(new java.awt.Color(202, 97, 71));
         removeButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        removeButton.setForeground(new java.awt.Color(255, 255, 255));
         removeButton.setText("REMOVE");
         removeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,6 +98,7 @@ public class CheckoutCourseJPanel extends javax.swing.JPanel {
             }
         });
 
+        viewCourseJTable.setBackground(new java.awt.Color(242, 233, 228));
         viewCourseJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

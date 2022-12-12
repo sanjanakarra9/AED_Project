@@ -43,7 +43,7 @@
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+          <Color blue="42" green="2d" red="2b" type="rgb"/>
         </Property>
       </Properties>
 
@@ -93,10 +93,13 @@
         <Component class="javax.swing.JButton" name="backjButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="99" type="rgb"/>
+              <Color blue="42" green="2d" red="2b" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\sanja\Desktop\AED Images\icons8-return-24.png"/>
+              <Image iconType="3" name="/Images/icons8-back-arrow-48.png"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="null"/>
             </Property>
           </Properties>
           <Events>
@@ -106,10 +109,13 @@
         <Component class="javax.swing.JButton" name="submitButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="99" type="rgb"/>
+              <Color blue="47" green="61" red="ca" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="SUBMIT"/>
           </Properties>
@@ -120,10 +126,13 @@
         <Component class="javax.swing.JButton" name="removeButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="99" type="rgb"/>
+              <Color blue="47" green="61" red="ca" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="REMOVE"/>
           </Properties>
@@ -140,6 +149,9 @@
           <SubComponents>
             <Component class="javax.swing.JTable" name="viewCourseJTable">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="e4" green="e9" red="f2" type="rgb"/>
+                </Property>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="3" rowCount="0">
                     <Column editable="false" title="Id" type="java.lang.Object"/>

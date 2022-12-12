@@ -47,17 +47,22 @@ public class CourseDetailJPanel extends javax.swing.JPanel {
         IdTxt = new javax.swing.JTextField();
         remainseatsTxt = new javax.swing.JTextField();
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(43, 45, 66));
 
-        jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(202, 97, 71));
         jLabel5.setText("Course Detail");
 
+        backTxt.setBackground(new java.awt.Color(43, 45, 66));
+        backTxt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-back-arrow-48.png"))); // NOI18N
+        backTxt.setBorder(null);
         backTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backTxtActionPerformed(evt);
             }
         });
 
+        coursenameTxt.setBackground(new java.awt.Color(242, 233, 228));
         coursenameTxt.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Course Name", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 1, 13), new java.awt.Color(102, 102, 102))); // NOI18N
         coursenameTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,6 +70,7 @@ public class CourseDetailJPanel extends javax.swing.JPanel {
             }
         });
 
+        IdTxt.setBackground(new java.awt.Color(242, 233, 228));
         IdTxt.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Course ID", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 1, 13), new java.awt.Color(102, 102, 102))); // NOI18N
         IdTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,6 +78,7 @@ public class CourseDetailJPanel extends javax.swing.JPanel {
             }
         });
 
+        remainseatsTxt.setBackground(new java.awt.Color(242, 233, 228));
         remainseatsTxt.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Available Seats", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 1, 13), new java.awt.Color(102, 102, 102))); // NOI18N
         remainseatsTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,19 +91,15 @@ public class CourseDetailJPanel extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(177, 177, 177)
+                .addComponent(backTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(359, 359, 359)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(177, 177, 177)
-                        .addComponent(backTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(399, 399, 399)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(616, 616, 616)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(IdTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(coursenameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(remainseatsTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(588, 588, 588))
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(IdTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(coursenameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(remainseatsTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(588, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
