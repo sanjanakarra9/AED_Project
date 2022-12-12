@@ -225,6 +225,9 @@ public class CourseViewJPanel extends javax.swing.JPanel {
             CardLayout layout = (CardLayout) container.getLayout();
             layout.next(container);
         }
+        else {
+            JOptionPane.showMessageDialog(null, "Please select a Row!!");
+        }
 
     }//GEN-LAST:event_reviewBtnActionPerformed
 
