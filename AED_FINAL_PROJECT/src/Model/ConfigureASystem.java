@@ -52,7 +52,7 @@ public class ConfigureASystem {
         EcoSystem system = EcoSystem.getInstance();
         
         Person person = system.getPersonDirectory().createPerson("sysadmin");
-        UserAcnt ua = system.getUserAccountDirectory().createUserAccount("sysadmin", "sysadmin", person, new SystemAdminRole());
+        UserAcnt ua = system.getUserAccountDirectory().createUserAccount("Systemadmin", "Systemadmin@123", person, new SystemAdminRole());
          
         
         testData(system);
@@ -66,11 +66,11 @@ public class ConfigureASystem {
         //FitnessClub AdmiEnterpriseType
         FitnessEnterprise fitEnterprise = (FitnessEnterprise) network.getEnterpriseDirectory().createAndAddEnterprise("FitEnterprise", Enterprise.EnterpriseType.FitnessClub);
         Person admin1 = fitEnterprise.getPersonDirectory().createPerson("fitadmin");
-        fitEnterprise.getUserAccountDirectory().createUserAccount("fitadmin", "fitadmin", admin1, new FitnessManagerRole());
+        fitEnterprise.getUserAccountDirectory().createUserAccount("Fitnessadmin", "Fitnessadmin@123", admin1, new FitnessManagerRole());
 //        
         OnlineSalesEnterprise onlinesalesEnterprise = (OnlineSalesEnterprise) network.getEnterpriseDirectory().createAndAddEnterprise("Sales", Enterprise.EnterpriseType.OnlineSales);
-//        Person admin2 = onlinesalesEnterprise.getPersonDirectory().createPerson("salesadmin");
-//        onlinesalesEnterprise.getUserAccountDirectory().createUserAccount("salesadmin", "salesadmin", admin2, new OnlineSalesRole());
+  Person admin2 = onlinesalesEnterprise.getPersonDirectory().createPerson("salesadmin");
+        onlinesalesEnterprise.getUserAccountDirectory().createUserAccount("Salesadmin", "Salesadmin@123", admin2, new OnlineSalesAdminRole());
         
         ArrayList<Course> courseList = fitEnterprise.getCourseDirectory().getListOfCourses();
         takeCourse(courseList);
@@ -78,62 +78,60 @@ public class ConfigureASystem {
         //organization 6->Admin
         Organization AdminOrganization=fitEnterprise.getOrganizationDirectory().createOrganization(Organization.Type.Admin);
         Person adminmanager = AdminOrganization.getPersonDirectory().createPerson("Admin");
-        UserAcnt admin = AdminOrganization.getUserAccountDirectory().createUserAccount("admin", "admin", adminmanager, new AdminRole());
+        UserAcnt admin = AdminOrganization.getUserAccountDirectory().createUserAccount("Admin", "Admin@123", adminmanager, new AdminRole());
         
         //organization 3->fitnessclub organization
         Organization fitOrganization = fitEnterprise.getOrganizationDirectory().createOrganization(Organization.Type.FitnessClubManager);
-        Person fitnessclubManager1 = fitOrganization.getPersonDirectory().createPerson("Jessy Manager");
-        UserAcnt ua11 = fitOrganization.getUserAccountDirectory().createUserAccount("manager1", "manager1", fitnessclubManager1, new FitnessManagerRole());
+        Person fitnessclubManager1 = fitOrganization.getPersonDirectory().createPerson("Sonu Manager");
+        UserAcnt ua11 = fitOrganization.getUserAccountDirectory().createUserAccount("Manager1", "Manager1@123", fitnessclubManager1, new FitnessManagerRole());
         //organization 4->analysis organization
         Organization anaOrganization = fitEnterprise.getOrganizationDirectory().createOrganization(Organization.Type.Analysis);
-        Person fitnessclubAnalyst1 = fitOrganization.getPersonDirectory().createPerson("Xianling Zhao");
-        UserAcnt ua66 = fitOrganization.getUserAccountDirectory().createUserAccount("analysis", "analysis", fitnessclubAnalyst1, new AnalysisAdminRole());
-//        Person fitnessclubManager2 = fitOrganization.getPersonDirectory().createPerson("Tom Manager");
+        Person fitnessclubAnalyst1 = fitOrganization.getPersonDirectory().createPerson("Adithi Manager");
+        UserAcnt ua66 = fitOrganization.getUserAccountDirectory().createUserAccount("Analysis", "Analysis@123", fitnessclubAnalyst1, new AnalysisAdminRole());
+//        Person fitnessclubManager2 = fitOrganization.getPersonDirectory().createPerson("Sanju Manager");
 //        UserAccount ua12 = fitOrganization.getUserAccountDirectory().createUserAccount("manager2", "manager2", fitnessclubManager2, new FitnessClubManagerRole());
 //        
-//        Person fitnessclubManager3 = fitOrganization.getPersonDirectory().createPerson("Annie Manager");
+//        Person fitnessclubManager3 = fitOrganization.getPersonDirectory().createPerson("Ram Manager");
 //        UserAccount ua13 = fitOrganization.getUserAccountDirectory().createUserAccount("manager3", "manager3", fitnessclubManager3, new FitnessClubManagerRole());
         
 //Organization 1 ->customer
         Organization cusOrganization = fitEnterprise.getOrganizationDirectory().createOrganization(Organization.Type.Customer);
-        Person cus1 = cusOrganization.getPersonDirectory().createPerson("Lily Customer");
+        Person cus1 = cusOrganization.getPersonDirectory().createPerson("Sai Customer");
         UserAcnt ua1 = cusOrganization.getUserAccountDirectory().createUserAccount("cus1", "cus1", cus1, new CustomerRole());
         
-        Person cus2 = cusOrganization.getPersonDirectory().createPerson("John Customer");
+        Person cus2 = cusOrganization.getPersonDirectory().createPerson("Sanju Customer");
         UserAcnt ua2 = cusOrganization.getUserAccountDirectory().createUserAccount("cus2", "cus2", cus2, new CustomerRole());
         
-        Person cus3 = cusOrganization.getPersonDirectory().createPerson("Bob Customer");
+        Person cus3 = cusOrganization.getPersonDirectory().createPerson("Nikhil Customer");
         UserAcnt ua3 = cusOrganization.getUserAccountDirectory().createUserAccount("cus3", "cus3", cus3, new CustomerRole());
         
-        Person cus4 = cusOrganization.getPersonDirectory().createPerson("Bill Customer");
+        Person cus4 = cusOrganization.getPersonDirectory().createPerson("Anutej Customer");
         UserAcnt ua33 = cusOrganization.getUserAccountDirectory().createUserAccount("cus4", "cus4", cus4, new CustomerRole());
         
-        Person cus5 = cusOrganization.getPersonDirectory().createPerson("Kevin Customer");
+        Person cus5 = cusOrganization.getPersonDirectory().createPerson("Sanjay Customer");
         UserAcnt ua44 = cusOrganization.getUserAccountDirectory().createUserAccount("cus5", "cus5", cus5, new CustomerRole());
         
-        Person cus6 = cusOrganization.getPersonDirectory().createPerson("Nina Customer");
+        Person cus6 = cusOrganization.getPersonDirectory().createPerson("Akhila Customer");
         UserAcnt ua55 = cusOrganization.getUserAccountDirectory().createUserAccount("cus6", "cus6", cus6, new CustomerRole());
         
-        Person cus7 = cusOrganization.getPersonDirectory().createPerson("Rachel Customer");
+        Person cus7 = cusOrganization.getPersonDirectory().createPerson("Sindhu Customer");
         cusOrganization.getUserAccountDirectory().createUserAccount("cus7", "cus7", cus7, new CustomerRole());
         
         //organization2 ->trainer
         Organization trainerOrganization = fitEnterprise.getOrganizationDirectory().createOrganization(Organization.Type.Trainer);
-        Person trainer1 = trainerOrganization.getPersonDirectory().createPerson("Jessica Trainer");
+        Person trainer1 = trainerOrganization.getPersonDirectory().createPerson("Karthik Trainer");
         UserAcnt ua4 = trainerOrganization.getUserAccountDirectory().createUserAccount("trainer1", "trainer1", trainer1, new GymTrainerRole());
         
-        Person trainer2 = trainerOrganization.getPersonDirectory().createPerson("Will Trainer");
+        Person trainer2 = trainerOrganization.getPersonDirectory().createPerson("Nishanth Trainer");
         UserAcnt ua5 = trainerOrganization.getUserAccountDirectory().createUserAccount("trainer2", "trainer2", trainer2, new GymTrainerRole());
         
-        Person trainer3 = trainerOrganization.getPersonDirectory().createPerson("Dalton Trainer");
+        Person trainer3 = trainerOrganization.getPersonDirectory().createPerson("Shiva Trainer");
         UserAcnt ua6 = trainerOrganization.getUserAccountDirectory().createUserAccount("trainer3", "trainer3", trainer3, new GymTrainerRole());
         
-        Person trainer4 = trainerOrganization.getPersonDirectory().createPerson("Sichen Trainer");
+        Person trainer4 = trainerOrganization.getPersonDirectory().createPerson("Devika Trainer");
         UserAcnt ua61 = trainerOrganization.getUserAccountDirectory().createUserAccount("trainer4", "trainer4", trainer4, new GymTrainerRole());
         
-        //doctor admin role
-       // Person dctradmin = HealthservicesOrganization.getPersonDirectory().createPerson("Sonu doctoradmin");
-        //UserAccount ua62 = HealthservicesOrganization.getUserAccountDirectory().createUserAccount("dctradmin", "dctradmin", hospitaladmin, new Healthservicesadminrole());
+        
         
         ArrayList<OnlineSales> salesitemList = onlinesalesEnterprise.getOnlineSalesDirectory().getSalesList();
         
@@ -149,8 +147,8 @@ public class ConfigureASystem {
         //anothersales
         
         
-//        Person sales3 = salesOrganization.getPersonDirectory().createPerson("Geri Sales");
-//        UserAcnt ua9 = salesOrganization.getUserAccountDirectory().createUserAccount("sales3", "sales3", sales3, new SalesAdminRole());
+   Person sales3 = salesOrganization.getPersonDirectory().createPerson("Geri Sales");
+        UserAcnt ua9 = salesOrganization.getUserAccountDirectory().createUserAccount("sales3", "sales3", sales3, new SalesAdminRole());
 //        
         takeCourseRequest(fitEnterprise);
         readOnlineSalesRequest(fitEnterprise, onlinesalesEnterprise);
