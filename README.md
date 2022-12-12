@@ -8,7 +8,7 @@ Gym visits have become a habit as people become more conscious of their health a
 The main aim of the project is to provide the administrator and the user with a platform to interact online about every piece of information and detail required and to make sure the gym is well maintained. It makes it easy for both the admin and the users to stay updated about courses being offered, schedules, Orders, etc.
 
 
-## UML Diagram
+## Object Model Diagram
 ![Gym Management System](https://github.com/sanjanakarra9/AED_Project/blob/bf2b95c20f182a30ee3aa869f768e15702da6cdd/uml.png)
 
 ## Entities:
