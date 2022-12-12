@@ -70,9 +70,8 @@ public class EmployeeViewJPanel extends javax.swing.JPanel {
         backjButton = new javax.swing.JButton();
         addButton = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(43, 45, 66));
+        setBackground(new java.awt.Color(255, 255, 255));
 
-        viewEmployeeJTable.setBackground(new java.awt.Color(242, 233, 228));
         viewEmployeeJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -94,7 +93,6 @@ public class EmployeeViewJPanel extends javax.swing.JPanel {
         viewEmployeeJTable.setSelectionBackground(new java.awt.Color(215, 145, 54));
         jScrollPane1.setViewportView(viewEmployeeJTable);
 
-        viewDetailsjButton1.setBackground(new java.awt.Color(202, 97, 71));
         viewDetailsjButton1.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         viewDetailsjButton1.setText("View Details");
         viewDetailsjButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -104,10 +102,8 @@ public class EmployeeViewJPanel extends javax.swing.JPanel {
         });
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Employees Information");
 
-        deleteEmployeeButton.setBackground(new java.awt.Color(202, 97, 71));
         deleteEmployeeButton.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         deleteEmployeeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/close.png"))); // NOI18N
         deleteEmployeeButton.setText("Delete");
@@ -123,7 +119,6 @@ public class EmployeeViewJPanel extends javax.swing.JPanel {
             }
         });
 
-        addButton.setBackground(new java.awt.Color(202, 97, 71));
         addButton.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         addButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-plus-math-50.png"))); // NOI18N
         addButton.setText("Add");

@@ -81,7 +81,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         organizationEmpJComboBox = new javax.swing.JComboBox();
         jLabel3 = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(43, 45, 66));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         organizationJTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -114,7 +114,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 78, 480, 195));
 
-        addJButton.setBackground(new java.awt.Color(202, 97, 71));
+        addJButton.setBackground(new java.awt.Color(204, 204, 0));
         addJButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         addJButton.setText("CREATE EMPLOYEE");
         addJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -133,11 +133,12 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         jPanel1.add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(422, 17, 119, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setForeground(new java.awt.Color(204, 204, 0));
         jLabel1.setText("Organization");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 20, -1, -1));
 
-        backJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-return-24.png"))); // NOI18N
+        backJButton.setBackground(new java.awt.Color(0, 0, 0));
+        backJButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\sanja\\Downloads\\icons8-go-back-50.png")); // NOI18N
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
@@ -146,7 +147,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         jPanel1.add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 17, -1, 39));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setForeground(new java.awt.Color(204, 204, 255));
         jLabel2.setText("Name");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(275, 382, -1, -1));
         jPanel1.add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 379, 126, -1));
@@ -155,7 +156,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         jPanel1.add(organizationEmpJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 322, 81, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setForeground(new java.awt.Color(204, 204, 255));
         jLabel3.setText("Organization");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(263, 325, -1, -1));
 

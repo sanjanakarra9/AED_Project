@@ -123,10 +123,10 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 
         jSplitPane.setLeftComponent(jPanel1);
 
-        jPanel2.setBackground(new java.awt.Color(43, 45, 66));
+        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
-        btnManageNetwork.setBackground(new java.awt.Color(202, 97, 71));
         btnManageNetwork.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        btnManageNetwork.setForeground(new java.awt.Color(215, 145, 54));
         btnManageNetwork.setText("Manage Network");
         btnManageNetwork.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -134,8 +134,8 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnManageEnterprise.setBackground(new java.awt.Color(202, 97, 71));
         btnManageEnterprise.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        btnManageEnterprise.setForeground(new java.awt.Color(215, 145, 54));
         btnManageEnterprise.setText("Manage Enterprise");
         btnManageEnterprise.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,8 +143,8 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnManageAdmin.setBackground(new java.awt.Color(202, 97, 71));
         btnManageAdmin.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        btnManageAdmin.setForeground(new java.awt.Color(215, 145, 54));
         btnManageAdmin.setText("Manage Enterprise Admin");
         btnManageAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -153,7 +153,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         });
 
         lblSelectedNode.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        lblSelectedNode.setForeground(new java.awt.Color(255, 255, 255));
+        lblSelectedNode.setForeground(new java.awt.Color(204, 204, 0));
         lblSelectedNode.setText("System Administrator Work Area");
 
         jSeparator1.setForeground(new java.awt.Color(204, 204, 204));

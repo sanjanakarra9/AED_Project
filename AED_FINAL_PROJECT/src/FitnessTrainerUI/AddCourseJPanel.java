@@ -52,11 +52,6 @@ public class AddCourseJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         nameTxt = new javax.swing.JTextField();
 
-        setBackground(new java.awt.Color(43, 45, 66));
-        setForeground(new java.awt.Color(255, 255, 255));
-
-        backTxt.setBackground(new java.awt.Color(202, 97, 71));
-        backTxt.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         backTxt.setText("Back");
         backTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,7 +59,6 @@ public class AddCourseJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Storage：");
 
         idTxt.addActionListener(new java.awt.event.ActionListener() {
@@ -73,10 +67,8 @@ public class AddCourseJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("ID:");
 
-        submitButton.setBackground(new java.awt.Color(202, 97, 71));
         submitButton.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         submitButton.setText("Submit");
         submitButton.addActionListener(new java.awt.event.ActionListener() {
@@ -92,10 +84,8 @@ public class AddCourseJPanel extends javax.swing.JPanel {
         });
 
         jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Please add the course");
 
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Name:");
 
         nameTxt.addActionListener(new java.awt.event.ActionListener() {

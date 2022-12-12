@@ -62,9 +62,6 @@ public class CourseViewJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         viewCourseJTable = new javax.swing.JTable();
 
-        setBackground(new java.awt.Color(43, 45, 66));
-
-        viewDetailsJButton1.setBackground(new java.awt.Color(202, 97, 71));
         viewDetailsJButton1.setText("View Details");
         viewDetailsJButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,10 +70,8 @@ public class CourseViewJPanel extends javax.swing.JPanel {
         });
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("View the Fit course");
 
-        backjButton.setBackground(new java.awt.Color(202, 97, 71));
         backjButton.setText("Back");
         backjButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,7 +79,6 @@ public class CourseViewJPanel extends javax.swing.JPanel {
             }
         });
 
-        addCourseButton.setBackground(new java.awt.Color(202, 97, 71));
         addCourseButton.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         addCourseButton.setText("Add Course");
         addCourseButton.addActionListener(new java.awt.event.ActionListener() {
@@ -93,7 +87,6 @@ public class CourseViewJPanel extends javax.swing.JPanel {
             }
         });
 
-        deleteCourseButton.setBackground(new java.awt.Color(202, 97, 71));
         deleteCourseButton.setText("Delete Course");
         deleteCourseButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,7 +94,6 @@ public class CourseViewJPanel extends javax.swing.JPanel {
             }
         });
 
-        viewCourseJTable.setBackground(new java.awt.Color(242, 233, 228));
         viewCourseJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -124,38 +116,43 @@ public class CourseViewJPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(187, 187, 187)
+                .addComponent(backjButton)
+                .addGap(21, 21, 21)
+                .addComponent(deleteCourseButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(addCourseButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(viewDetailsJButton1)
+                .addGap(219, 219, 219))
             .addGroup(layout.createSequentialGroup()
                 .addGap(363, 363, 363)
                 .addComponent(jLabel1)
                 .addGap(398, 398, 398))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(backjButton)
-                        .addGap(21, 21, 21)
-                        .addComponent(deleteCourseButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(addCourseButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(viewDetailsJButton1)))
-                .addGap(219, 219, 219))
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(121, 121, 121)
                 .addComponent(jLabel1)
-                .addGap(19, 19, 19)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(321, 321, 321)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(viewDetailsJButton1)
                     .addComponent(backjButton)
                     .addComponent(addCourseButton)
                     .addComponent(deleteCourseButton))
                 .addGap(111, 111, 111))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
