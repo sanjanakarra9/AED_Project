@@ -57,14 +57,15 @@ public class FCManagerWorkAreaJPanel extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         checkRequestButton = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(245, 245, 245));
+        setBackground(new java.awt.Color(43, 45, 66));
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel1.setText("Please Manage the Fitness Club System");
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("FITNESS MANAGER");
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(242, 233, 228));
 
+        employeeViewBtn.setBackground(new java.awt.Color(202, 97, 71));
         employeeViewBtn.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         employeeViewBtn.setText("Employee View");
         employeeViewBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -90,8 +91,9 @@ public class FCManagerWorkAreaJPanel extends javax.swing.JPanel {
                 .addGap(56, 56, 56))
         );
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(242, 233, 228));
 
+        checkRequestButton.setBackground(new java.awt.Color(202, 97, 71));
         checkRequestButton.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         checkRequestButton.setText("Check Request");
         checkRequestButton.addActionListener(new java.awt.event.ActionListener() {

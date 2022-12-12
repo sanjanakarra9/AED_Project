@@ -61,8 +61,10 @@ public class EmployeeDetailJPanel extends javax.swing.JPanel {
         jobTitleTxt = new javax.swing.JTextField();
         backjButton = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(43, 45, 66));
+        setForeground(new java.awt.Color(255, 255, 255));
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("ID:");
 
         idTxt.addActionListener(new java.awt.event.ActionListener() {
@@ -71,6 +73,7 @@ public class EmployeeDetailJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Evaluation:");
 
         evaluationTxt.addActionListener(new java.awt.event.ActionListener() {
@@ -79,9 +82,12 @@ public class EmployeeDetailJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel5.setBackground(new java.awt.Color(202, 97, 71));
         jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        jLabel5.setText("Employee Detail");
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Employee Details");
 
+        saveBtn.setBackground(new java.awt.Color(202, 97, 71));
         saveBtn.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         saveBtn.setForeground(new java.awt.Color(215, 145, 54));
         saveBtn.setText("Save");
@@ -92,6 +98,7 @@ public class EmployeeDetailJPanel extends javax.swing.JPanel {
             }
         });
 
+        updateBtn.setBackground(new java.awt.Color(202, 97, 71));
         updateBtn.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         updateBtn.setText("Update");
         updateBtn.addItemListener(new java.awt.event.ItemListener() {
@@ -105,6 +112,7 @@ public class EmployeeDetailJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Name:");
 
         nameTxt.addActionListener(new java.awt.event.ActionListener() {
@@ -113,6 +121,7 @@ public class EmployeeDetailJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Course:");
 
         courseTxt.addActionListener(new java.awt.event.ActionListener() {
@@ -121,6 +130,7 @@ public class EmployeeDetailJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Job Title:");
 
         jobTitleTxt.addActionListener(new java.awt.event.ActionListener() {

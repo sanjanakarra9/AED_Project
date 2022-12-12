@@ -68,19 +68,22 @@ public class PublicCourseRequestJPanel extends javax.swing.JPanel {
         requestJTable = new javax.swing.JTable();
         backTxt = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(43, 45, 66));
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Please check the request message:");
 
+        acceptBtn.setBackground(new java.awt.Color(202, 97, 71));
         acceptBtn.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        acceptBtn.setText("Accpet");
+        acceptBtn.setText("Accept");
         acceptBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 acceptBtnActionPerformed(evt);
             }
         });
 
+        cancelBtn.setBackground(new java.awt.Color(202, 97, 71));
         cancelBtn.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         cancelBtn.setText("Cancel");
         cancelBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -89,6 +92,7 @@ public class PublicCourseRequestJPanel extends javax.swing.JPanel {
             }
         });
 
+        requestJTable.setBackground(new java.awt.Color(242, 233, 228));
         requestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
