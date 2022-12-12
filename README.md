@@ -4,6 +4,9 @@
 This repo is for info 5100 final project fall 2022 semester
 
 
+## UML Diagram
+![Gym Management System](https://github.com/sanjanakarra9/AED_Project/blob/bf2b95c20f182a30ee3aa869f768e15702da6cdd/uml.png)
+
 ## Entities:
 
 ### Enterprises:
