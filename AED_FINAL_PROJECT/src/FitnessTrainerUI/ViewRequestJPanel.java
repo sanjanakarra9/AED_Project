@@ -87,8 +87,10 @@ public class ViewRequestJPanel extends javax.swing.JPanel {
         cboClassRoom = new javax.swing.JComboBox();
         jLabel2 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(43, 45, 66));
+        setForeground(new java.awt.Color(255, 255, 255));
 
+        requestJTable.setBackground(new java.awt.Color(242, 233, 228));
         requestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -114,16 +116,19 @@ public class ViewRequestJPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(requestJTable);
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Please check the request message:");
 
+        acceptBtn.setBackground(new java.awt.Color(202, 97, 71));
         acceptBtn.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        acceptBtn.setText("Accpet");
+        acceptBtn.setText("Accept");
         acceptBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 acceptBtnActionPerformed(evt);
             }
         });
 
+        declineBtn.setBackground(new java.awt.Color(202, 97, 71));
         declineBtn.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         declineBtn.setText("Decline");
         declineBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -133,6 +138,7 @@ public class ViewRequestJPanel extends javax.swing.JPanel {
         });
 
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Please select the fit room for the appointment");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
